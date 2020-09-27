@@ -1,0 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { render, RenderResult, fireEvent, screen } from '@testing-library/react';
+import React, { PropsWithChildren } from 'react';
+import {{ pascalCase templateName }} from './index';
+
+
+describe('{{ pascalCase templateName }} should', () => {
+  test('be defined.', () => {
+    const { getByText } = render( <{{ pascalCase templateName }} />);
+    const component = getByText('{{ pascalCase templateName }} works!');
+    expect(component).toBeDefined();
+  });
+});

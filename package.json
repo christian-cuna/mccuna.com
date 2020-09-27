@@ -11,14 +11,23 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "gc": "plop --plopfile src/internals/generators/plopfile.js component",
+    "gt": "plop --plopfile src/internals/generators/plopfile.js template"
   },
   "dependencies": {
+    "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.63",
+    "gatsby-plugin-styled-components": "^3.3.11",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.0.4",
+    "@types/jest": "^26.0.14",
+    "plop": "^2.7.4",
     "prettier": "2.1.1"
   },
   "repository": {
