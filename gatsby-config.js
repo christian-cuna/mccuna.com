@@ -6,5 +6,21 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: ["gatsby-plugin-styled-components"],
+  plugins: [
+    "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(
+          "./src/components/GlobalStyles/index.styles.tsx"
+        ),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography.ts`,
+      },
+    },
+  ],
 }
