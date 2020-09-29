@@ -9,5 +9,4 @@ export const S_Menu = styled.div`
 
 export const S_Link = styled(Link)`
   padding-left: 20px;
-  background-image: none;
 `
