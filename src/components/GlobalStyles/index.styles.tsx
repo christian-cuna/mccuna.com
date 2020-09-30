@@ -1,7 +1,7 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   * {
       box-sizing: border-box;
   }
@@ -32,12 +32,3 @@ const GlobalStyles = createGlobalStyle`
     background-image: none;
   }
 `
-
-export default function ({ children }) {
-  return (
-    <>
-      <GlobalStyles />
-      {children}
-    </>
-  )
-}

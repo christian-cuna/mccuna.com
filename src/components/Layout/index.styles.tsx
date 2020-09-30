@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-const bannerContainerHeight = "175px"
-const footerContainerHeight = "125px"
+const bannerContainerHeight = "200px"
+const footerContainerHeight = "50px"
 
 export const S_Container = styled.div`
   display: flex;
@@ -11,7 +11,7 @@ export const S_Container = styled.div`
 `
 
 export const S_BannerContainer = styled.div`
-  height: bannerContainerHeight;
+  height: ${bannerContainerHeight};
   width: 100%;
 `
 
@@ -20,16 +20,17 @@ export const S_MainContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  height: calc(
-    calc(100% - ${bannerContainerHeight}) - ${footerContainerHeight}
-  );
-  min-height: calc(
-    calc(100% - ${bannerContainerHeight}) - ${footerContainerHeight}
-  );
   width: 100%;
+  /* min-height: calc(
+    calc(100% - ${bannerContainerHeight}) - ${footerContainerHeight}
+  ); */
+  flex: 1 0
+    calc(calc(100% - ${bannerContainerHeight}) - ${footerContainerHeight});
 `
 
 export const S_FooterContainer = styled.div`
   width: 100%;
+  align-self: flex-end;
   height: ${footerContainerHeight};
+  min-height: ${footerContainerHeight};
 `

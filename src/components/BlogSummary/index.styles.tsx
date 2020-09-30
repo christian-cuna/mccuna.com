@@ -3,9 +3,9 @@ import styled from "styled-components"
 
 export const S_Container = styled.div`
   width: 50%;
-  height: 70%;
+  height: 100%;
   border: 3px solid #000;
-  overflow-y: auto;
+  /* overflow-y: auto; */
   padding: 20px;
 `
 
