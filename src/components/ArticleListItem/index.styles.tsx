@@ -1,12 +1,19 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
+import { faDoorClosed } from "@fortawesome/free-solid-svg-icons"
 
 const imgSize = "13rem"
+const padding = "4%"
 
 export const S_Container = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const S_Img = styled.img`
@@ -19,7 +26,21 @@ export const S_Details = styled.div`
   width: calc(100% - ${imgSize});
   height: 12rem;
   background-color: #efefef;
-  padding: 4%;
+  padding: ${padding};
+  position: relative;
+  overflow: hidden;
+`
+
+export const S_Corner = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateY(-50%) translatex(50%) rotate(-45deg);
+  display: inline-block;
+  background-color: green;
+  height: 120px;
+  width: 100px;
+  z-index: 0;
 `
 
 export const S_Title = styled.h5`
@@ -28,4 +49,11 @@ export const S_Title = styled.h5`
 
 export const S_Excerpt = styled.p`
   margin-bottom: 0;
+`
+
+export const S_Icon = styled(FontAwesomeIcon)`
+  position: absolute;
+  right: ${padding};
+  top: ${padding};
+  z-index: 1;
 `

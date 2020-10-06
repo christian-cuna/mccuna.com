@@ -16,8 +16,12 @@
     "gt": "plop --plopfile src/internals/generators/plopfile.js template"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.63",
+    "gatsby-plugin-fontawesome-css": "^1.0.0",
     "gatsby-plugin-layout": "^1.3.11",
     "gatsby-plugin-styled-components": "^3.3.11",
     "gatsby-plugin-typography": "^2.5.11",
