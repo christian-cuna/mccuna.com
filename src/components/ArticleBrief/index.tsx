@@ -3,7 +3,7 @@ import { S_Container, S_Title, S_Excerpt, S_ReadLink } from "./index.styles"
 
 export type Props = {}
 
-const Article: FunctionComponent<Props> = ({}) => {
+const ArticleBrief: FunctionComponent<Props> = ({}) => {
   return (
     <S_Container>
       <S_Title> Article works!</S_Title>
@@ -16,4 +16,4 @@ const Article: FunctionComponent<Props> = ({}) => {
   )
 }
 
-export default Article
+export default ArticleBrief

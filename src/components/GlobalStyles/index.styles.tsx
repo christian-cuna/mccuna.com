@@ -31,4 +31,5 @@ export const GlobalStyles = createGlobalStyle`
   a {
     background-image: none;
   }
+
 `
