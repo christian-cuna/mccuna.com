@@ -1,5 +1,5 @@
 import React from "react"
-import ThirdPersonDescription from "../components/3rdPersonDescription"
+import ThirdPersonDescription from "../components/ThirdPersonDescription"
 import BlogSummary from "../components/BlogSummary"
 
 export default function Home() {
