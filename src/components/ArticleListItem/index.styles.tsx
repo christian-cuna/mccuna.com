@@ -1,24 +1,25 @@
 import styled from "styled-components"
 
-const imgSize = "180px"
+const imgSize = "13rem"
 
 export const S_Container = styled.div`
   display: flex;
   width: 100%;
-  height: 12.5rem;
+  height: 100%;
   align-items: center;
 `
 
 export const S_Img = styled.img`
   width: ${imgSize};
   height: ${imgSize};
-  padding: 10px;
   margin: 0;
 `
 
 export const S_Details = styled.div`
   width: calc(100% - ${imgSize});
-  padding-left: 5%;
+  height: 12rem;
+  background-color: #efefef;
+  padding: 4%;
 `
 
 export const S_Title = styled.h5`
