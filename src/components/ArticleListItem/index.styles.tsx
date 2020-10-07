@@ -1,9 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Link } from "gatsby"
 import styled from "styled-components"
-import { faDoorClosed } from "@fortawesome/free-solid-svg-icons"
 
 const imgSize = "13rem"
 const padding = "4%"
+
+export const S_Link = styled(Link)`
+  color: initial;
+  text-decoration: none;
+`
 
 export const S_Container = styled.div`
   display: flex;
