@@ -9,6 +9,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `./gatsby-graphql.ts`,
+        documentPaths: ["./src/pages/*.{ts,tsx}", "./gatsby-node.js"],
+      },
+    },
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
         extensions: [".mdx", ".md"],
@@ -30,7 +37,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`,
+        path: `${__dirname}/content/articles`,
       },
     },
   ],

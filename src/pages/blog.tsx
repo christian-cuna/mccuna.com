@@ -1,109 +1,48 @@
 import React, { FunctionComponent } from "react"
-import { IArticleListItem } from "../models/ArticleListItem"
-import ArticleListItem from "../components/ArticleListItem"
 import ArticlesList from "../components/ArticlesList"
+import { graphql } from "gatsby"
+import { BlogIndexQuery } from "../../gatsby-graphql"
+import { IArticleListItem } from "../models/IArticleListItem"
 
-export type Props = {}
+export type Props = {
+  data: BlogIndexQuery
+  // data: BlogIndexQuery
+}
 
-const Blog: FunctionComponent = ({}) => {
+const Blog: FunctionComponent<Props> = ({ data }) => {
+  const articles: IArticleListItem[] = data.allMdx.edges.map(edge => ({
+    title: edge.node.frontmatter.title,
+    date: edge.node.frontmatter.date,
+    excerpt: edge.node.excerpt,
+    imageSrc: edge.node.frontmatter.imageSrc,
+    slug: edge.node.slug,
+  }))
   return (
     <div>
-      <ArticlesList articles={mockArticles} />
+      <ArticlesList articles={articles} />
     </div>
   )
 }
 
-const mockArticles: IArticleListItem[] = [
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "Article",
-    immageSrc: "https://via.placeholder.com/160",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-]
+export const query = graphql`
+  query BlogIndex {
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            imageSrc
+          }
+          excerpt
+          slug
+          fields {
+            slug
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Blog

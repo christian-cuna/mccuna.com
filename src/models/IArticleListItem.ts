@@ -1,5 +1,7 @@
 export interface IArticleListItem {
-  immageSrc: string
+  imageSrc: string
   title: string
+  date: string
   excerpt: string
+  slug: string
 }

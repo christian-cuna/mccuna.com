@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { FunctionComponent, useState } from "react"
-import { IArticleListItem } from "../../models/ArticleListItem"
 import {
   S_Container,
   S_Details,
@@ -12,6 +11,7 @@ import {
   S_Link,
 } from "./index.styles"
 import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons"
+import { IArticleListItem } from "../../models/IArticleListItem"
 
 export type Props = {
   article: IArticleListItem
@@ -19,11 +19,11 @@ export type Props = {
 
 const ArticleListItem: FunctionComponent<Props> = ({ article }) => {
   const [detailsIcon, setDetailsIcon] = useState(faDoorClosed)
-
+  debugger
   return (
-    <S_Link to="/article/">
+    <S_Link to={article.slug}>
       <S_Container>
-        <S_Img src={article.immageSrc} />
+        <S_Img src={article.imageSrc} />
         <S_Details
           onMouseEnter={() => setDetailsIcon(faDoorOpen)}
           onMouseLeave={() => setDetailsIcon(faDoorClosed)}

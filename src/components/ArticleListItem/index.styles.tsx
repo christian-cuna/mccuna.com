@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-const imgSize = "13rem"
+const imgSize = "14rem"
 const padding = "4%"
 
 export const S_Link = styled(Link)`
@@ -29,7 +29,7 @@ export const S_Img = styled.img`
 
 export const S_Details = styled.div`
   width: calc(100% - ${imgSize});
-  height: 12rem;
+  height: 13rem;
   background-color: #efefef;
   padding: ${padding};
   position: relative;

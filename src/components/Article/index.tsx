@@ -21,7 +21,6 @@ const Article: FunctionComponent<Props> = ({
   content,
   date,
 }) => {
-  debugger
   return (
     <$Container>
       <$HeaderContainer>
