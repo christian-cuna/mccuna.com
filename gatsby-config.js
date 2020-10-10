@@ -9,6 +9,12 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".mdx", ".md"],
+      },
+    },
+    {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve("./src/components/Layout/index.tsx"),
@@ -18,6 +24,13 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography.ts`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/content/posts`,
       },
     },
   ],

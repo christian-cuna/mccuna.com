@@ -1,6 +1,16 @@
 import React, { FunctionComponent } from "react"
+
+import { MDXProvider } from "@mdx-js/react"
 import { IArticle } from "../../models/IArticle"
-import { S_Header, S_Date } from "./index.styles"
+import {
+  $HeaderContainer,
+  $Date,
+  $Container,
+  $ImgContainer,
+  $ContentContainer,
+} from "./index.styles"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import { Link } from "gatsby"
 
 export type Props = IArticle
 
@@ -11,11 +21,23 @@ const Article: FunctionComponent<Props> = ({
   content,
   date,
 }) => {
+  debugger
   return (
-    <S_Header>
-      <h1>{title}</h1>
-      <S_Date>{date}</S_Date>
-    </S_Header>
+    <$Container>
+      <$HeaderContainer>
+        <h1>{title}</h1>
+        <$Date>{date}</$Date>
+      </$HeaderContainer>
+      <$ImgContainer>
+        <img src={img} />
+        <span>{imgLabel}</span>
+      </$ImgContainer>
+      <$ContentContainer>
+        <MDXProvider components={{ Link }}>
+          <MDXRenderer>{content}</MDXRenderer>
+        </MDXProvider>
+      </$ContentContainer>
+    </$Container>
   )
 }
 
