@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react"
-import { IArticleListItem } from "../../models/ArticleListItem"
+import { IArticleListItem } from "../../models/IArticleListItem"
 import ArticleListItem from "../ArticleListItem"
 import { S_Container, S_Item } from "./index.styles"
 

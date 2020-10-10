@@ -36,9 +36,6 @@ export const query = graphql`
           }
           excerpt
           slug
-          fields {
-            slug
-          }
         }
       }
     }
