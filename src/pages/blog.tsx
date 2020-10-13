@@ -14,7 +14,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
     title: edge.node.frontmatter.title,
     date: edge.node.frontmatter.date,
     excerpt: edge.node.excerpt,
-    imageSrc: edge.node.frontmatter.imageSrc,
+    imageSrc: edge.node.frontmatter.imgSrc,
     slug: edge.node.slug,
   }))
   return (
@@ -32,7 +32,7 @@ export const query = graphql`
           frontmatter {
             title
             date
-            imageSrc
+            imgSrc
           }
           excerpt
           slug

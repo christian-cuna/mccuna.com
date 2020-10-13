@@ -7,33 +7,30 @@ import {
   $Date,
   $Container,
   $ImgContainer,
+  $Img,
   $ContentContainer,
 } from "./index.styles"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
 
-export type Props = IArticle
+export type Props = {
+  article: IArticle
+}
 
-const Article: FunctionComponent<Props> = ({
-  title,
-  img,
-  imgLabel,
-  content,
-  date,
-}) => {
+const Article: FunctionComponent<Props> = ({ article }) => {
   return (
     <$Container>
       <$HeaderContainer>
-        <h1>{title}</h1>
-        <$Date>{date}</$Date>
+        <h1>{article.title}</h1>
+        <$Date>{article.date}</$Date>
       </$HeaderContainer>
       <$ImgContainer>
-        <img src={img} />
-        <span>{imgLabel}</span>
+        <$Img src={article.img} />
+        <span>{article.imgLabel}</span>
       </$ImgContainer>
       <$ContentContainer>
         <MDXProvider components={{ Link }}>
-          <MDXRenderer>{content}</MDXRenderer>
+          <MDXRenderer>{article.content}</MDXRenderer>
         </MDXProvider>
       </$ContentContainer>
     </$Container>
