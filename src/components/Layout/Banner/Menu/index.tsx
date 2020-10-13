@@ -1,5 +1,5 @@
 import React from "react"
-import routes from "../../../utils/routes"
+import routes from "../../../../utils/routes"
 import { S_Link, S_Menu } from "./index.styles"
 
 const Menu = () => {

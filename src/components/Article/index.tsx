@@ -3,15 +3,18 @@ import React, { FunctionComponent } from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { IArticle } from "../../models/IArticle"
 import {
-  $HeaderContainer,
-  $Date,
-  $Container,
-  $ImgContainer,
-  $Img,
-  $ContentContainer,
+  S_HeaderContainer,
+  S_Date,
+  S_Container,
+  S_ImgContainer,
+  S_Img,
+  S_ImgCredits,
+  SC_ArticleIcons,
+  S_BottomDate,
 } from "./index.styles"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { Link } from "gatsby"
+import PaginationLinks from "./PaginationLinks"
 
 export type Props = {
   article: IArticle
@@ -19,21 +22,22 @@ export type Props = {
 
 const Article: FunctionComponent<Props> = ({ article }) => {
   return (
-    <$Container>
-      <$HeaderContainer>
+    <S_Container>
+      <S_HeaderContainer>
         <h1>{article.title}</h1>
-        <$Date>{article.date}</$Date>
-      </$HeaderContainer>
-      <$ImgContainer>
-        <$Img src={article.img} />
-        <span>{article.imgLabel}</span>
-      </$ImgContainer>
-      <$ContentContainer>
-        <MDXProvider components={{ Link }}>
-          <MDXRenderer>{article.content}</MDXRenderer>
-        </MDXProvider>
-      </$ContentContainer>
-    </$Container>
+        <S_Date>{article.date}</S_Date>
+      </S_HeaderContainer>
+      <S_ImgContainer>
+        <S_Img src={article.img} />
+        <S_ImgCredits>{article.imgLabel}</S_ImgCredits>
+      </S_ImgContainer>
+      <MDXProvider components={{ Link }}>
+        <MDXRenderer>{article.content}</MDXRenderer>
+      </MDXProvider>
+      <SC_ArticleIcons />
+      <S_BottomDate>{article.date}</S_BottomDate>
+      <PaginationLinks />
+    </S_Container>
   )
 }
 

@@ -11,7 +11,7 @@ import {
   S_Link,
 } from "./index.styles"
 import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons"
-import { IArticleListItem } from "../../models/IArticleListItem"
+import { IArticleListItem } from "../../../models/IArticleListItem"
 
 export type Props = {
   article: IArticleListItem

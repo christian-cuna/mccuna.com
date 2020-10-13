@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react"
-import { GlobalStyles } from "../GlobalStyles/index.styles"
+import { GlobalStyles } from "./GlobalStyles/index.styles"
 import {
   S_Container,
   S_BannerContainer,
   S_FooterContainer,
   S_MainContainer,
 } from "./index.styles"
-import Banner from "../Banner"
-import Footer from "../Footer"
+import Banner from "./Banner"
+import Footer from "./Footer"
 
 export type Props = {}
 

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { FunctionComponent } from "react"
-import { IArticleBrief } from "../../models/IArticleBrief"
 import { faCalendar } from "@fortawesome/free-solid-svg-icons"
 import {
   S_Container,
@@ -11,6 +10,7 @@ import {
   S_DateContainer,
   S_DateIcon,
 } from "./index.styles"
+import { IArticleBrief } from "../../../models/IArticleBrief"
 
 export type Props = {
   article: IArticleBrief

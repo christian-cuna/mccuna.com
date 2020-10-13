@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react"
 import { IArticleBrief } from "../../models/IArticleBrief"
-import ArticleBrief from "../ArticleBrief"
+import ArticleBrief from "./ArticleBrief"
 import { S_Container, S_ReadAllLink, S_Title } from "./index.styles"
 
 export type Props = {

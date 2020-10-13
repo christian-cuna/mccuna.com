@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-const bannerContainerHeight = "200px"
-const footerContainerHeight = "50px"
+export const bannerContainerHeight = "200px"
+export const footerContainerHeight = "50px"
 
 export const S_Container = styled.div`
   display: flex;
