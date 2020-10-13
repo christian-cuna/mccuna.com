@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Link } from "gatsby"
 import React, { FunctionComponent } from "react"
 import { S_Container } from "./index.styles"
-import PaginationLink from "./PaginationLink"
 
 export type Props = {}
 

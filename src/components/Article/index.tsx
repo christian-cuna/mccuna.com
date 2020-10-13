@@ -1,20 +1,10 @@
 import React, { FunctionComponent } from "react"
 
-import { MDXProvider } from "@mdx-js/react"
 import { IArticle } from "../../models/IArticle"
-import {
-  S_HeaderContainer,
-  S_Date,
-  S_Container,
-  S_ImgContainer,
-  S_Img,
-  S_ImgCredits,
-  SC_ArticleIcons,
-  S_BottomDate,
-} from "./index.styles"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Link } from "gatsby"
-import PaginationLinks from "./PaginationLinks"
+import { S_Container } from "./index.styles"
+import Header from "./Header"
+import Body from "./Body"
+import Footer from "./Footer"
 
 export type Props = {
   article: IArticle
@@ -23,20 +13,9 @@ export type Props = {
 const Article: FunctionComponent<Props> = ({ article }) => {
   return (
     <S_Container>
-      <S_HeaderContainer>
-        <h1>{article.title}</h1>
-        <S_Date>{article.date}</S_Date>
-      </S_HeaderContainer>
-      <S_ImgContainer>
-        <S_Img src={article.img} />
-        <S_ImgCredits>{article.imgLabel}</S_ImgCredits>
-      </S_ImgContainer>
-      <MDXProvider components={{ Link }}>
-        <MDXRenderer>{article.content}</MDXRenderer>
-      </MDXProvider>
-      <SC_ArticleIcons />
-      <S_BottomDate>{article.date}</S_BottomDate>
-      <PaginationLinks />
+      <Header article={article} />
+      <Body article={article} />
+      <Footer article={article} />
     </S_Container>
   )
 }
