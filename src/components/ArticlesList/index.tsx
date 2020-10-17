@@ -1,19 +1,30 @@
 import React, { FunctionComponent } from "react"
+import { LayoutOrientation } from "../../enums/LayoutOrientation"
+import { WrapStatus } from "../../enums/WrapStatus"
 import { IArticleListItem } from "../../models/IArticleListItem"
-import ArticleListItem from "./ArticleListItem"
-import { S_Container, S_Item } from "./index.styles"
+import { S_Container, SC_ArticleListItem } from "./index.styles"
 
 export type Props = {
   articles: IArticleListItem[]
+  className?: string
+  wrapItems?: WrapStatus
+  itemLayoutOrientation?: LayoutOrientation
 }
 
-const ArticlesList: FunctionComponent<Props> = ({ articles }) => {
+const ArticlesList: FunctionComponent<Props> = ({
+  articles,
+  className,
+  itemLayoutOrientation = LayoutOrientation.horizontal,
+  wrapItems = WrapStatus.wrap,
+}) => {
   return (
-    <S_Container>
+    <S_Container className={className} wrapItems={wrapItems}>
       {articles.map(article => (
-        <S_Item>
-          <ArticleListItem article={article} />
-        </S_Item>
+        <SC_ArticleListItem
+          key={article.slug}
+          article={article}
+          layoutOrientation={itemLayoutOrientation}
+        />
       ))}
     </S_Container>
   )

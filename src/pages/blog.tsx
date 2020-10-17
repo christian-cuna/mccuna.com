@@ -3,6 +3,7 @@ import ArticlesList from "../components/ArticlesList"
 import { graphql } from "gatsby"
 import { BlogIndexQuery } from "../../gatsby-graphql"
 import { IArticleListItem } from "../models/IArticleListItem"
+import { WrapStatus } from "../enums/WrapStatus"
 
 export type Props = {
   data: BlogIndexQuery
@@ -19,7 +20,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
   }))
   return (
     <div>
-      <ArticlesList articles={articles} />
+      <ArticlesList articles={articles}  />
     </div>
   )
 }
