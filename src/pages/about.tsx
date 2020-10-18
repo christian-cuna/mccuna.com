@@ -1,8 +1,7 @@
-import { graphql } from "gatsby"
-import React from "react"
+import React, { FunctionComponent } from 'react';
 
-function About() {
-  return <div></div>
-}
+const About: FunctionComponent = () => {
+  return <div></div>;
+};
 
-export default About
+export default About;

@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react"
+import React, { FunctionComponent } from 'react';
 import {
   S_1Description,
   S_Container,
   S_LeftContent,
   S_RightContent,
-} from "./index.styles"
-import Menu from "./Menu"
+} from './index.styles';
+import Menu from './Menu';
 
-export type Props = {}
+export type Props = {};
 
-const IndexBanner: FunctionComponent<Props> = ({}) => {
+const IndexBanner: FunctionComponent<Props> = () => {
   return (
     <S_Container>
       <S_LeftContent>
@@ -20,10 +20,10 @@ const IndexBanner: FunctionComponent<Props> = ({}) => {
         </S_1Description>
       </S_LeftContent>
       <S_RightContent>
-        <img src="https://via.placeholder.com/150" />
+        <img src='https://via.placeholder.com/150' />
       </S_RightContent>
     </S_Container>
-  )
-}
+  );
+};
 
-export default IndexBanner
+export default IndexBanner;

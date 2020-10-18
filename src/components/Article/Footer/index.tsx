@@ -1,56 +1,20 @@
-import React, { FunctionComponent } from "react"
-import { LayoutOrientation } from "../../../enums/LayoutOrientation"
-import { WrapStatus } from "../../../enums/WrapStatus"
-import { IArticle } from "../../../models/IArticle"
-import { IArticleListItem } from "../../../models/IArticleListItem"
-import ArticlesList from "../../ArticlesList"
-import { SC_ArticlesList } from "./index.styles"
-import PaginationLinks from "./PaginationLinks"
-import SocialInteractions from "./SocialInteractions"
+import React, { FunctionComponent } from 'react';
+import { IArticle } from '../../../models/IArticle';
+import OtherArticles from './OtherArticles';
+import PaginationLinks from './PaginationLinks';
+import SocialInteractions from './SocialInteractions';
 
 export type Props = {
-  article: IArticle
-}
+  article: IArticle;
+};
 
-const Footer: FunctionComponent<Props> = ({ article }) => {
+const Footer: FunctionComponent<Props> = () => {
   return (
     <div>
       <PaginationLinks />
       <SocialInteractions />
-      <SC_ArticlesList
-        articles={mockArticles}
-        wrapItems={WrapStatus.noWrap}
-        itemLayoutOrientation={LayoutOrientation.vertical}
-      />
+      <OtherArticles />
     </div>
-  )
-}
-
-const mockArticles: IArticleListItem[] = [
-  {
-    title: "Dummy article",
-    date: "Oct 07 2020",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lectus in turpis vehicula facilisis sit amet ultrices sem.",
-    imageSrc: "https://via.placeholder.com/160",
-    slug: "/dummy-0",
-  },
-  {
-    title: "Dummy article",
-    date: "Oct 07 2020",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lectus in turpis vehicula facilisis sit amet ultrices sem.",
-    imageSrc: "https://via.placeholder.com/160",
-    slug: "/dummy-1",
-  },
-  {
-    title: "Dummy article",
-    date: "Oct 07 2020",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lectus in turpis vehicula facilisis sit amet ultrices sem.",
-    imageSrc: "https://via.placeholder.com/160",
-    slug: "/dummy-2",
-  },
-]
-
-export default Footer
+  );
+};
+export default Footer;

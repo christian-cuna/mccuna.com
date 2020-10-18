@@ -1,45 +1,45 @@
-const { createFilePath } = require("gatsby-source-filesystem")
-const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem');
+const path = require('path');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === "Mdx") {
-    const value = createFilePath({ node, getNode })
+  const { createNodeField } = actions;
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode });
 
     createNodeField({
-      name: "slug",
+      name: 'blogSlug',
       node,
       // value already contains the leading "/"
       value: `/blog${value}`,
-    })
+    });
   }
-}
+};
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
   const result = await graphql(`
     query ArticleSlugs {
       allMdx {
         edges {
           node {
             fields {
-              slug
+              blogSlug
             }
           }
         }
       }
     }
-  `)
+  `);
 
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/BlogArticle/index.tsx`),
+      path: node.fields.blogSlug,
+      component: path.resolve('./src/templates/BlogArticle/index.tsx'),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        slug: node.fields.blogSlug,
       },
-    })
-  })
-}
+    });
+  });
+};

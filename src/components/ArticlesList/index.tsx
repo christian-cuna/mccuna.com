@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react"
-import { LayoutOrientation } from "../../enums/LayoutOrientation"
-import { WrapStatus } from "../../enums/WrapStatus"
-import { IArticleListItem } from "../../models/IArticleListItem"
-import { S_Container, SC_ArticleListItem } from "./index.styles"
+import React, { FunctionComponent } from 'react';
+import { LayoutOrientation } from '../../enums/LayoutOrientation';
+import { WrapStatus } from '../../enums/WrapStatus';
+import { IArticleListItem } from '../../models/IArticleListItem';
+import { S_Container, SC_ArticleListItem } from './index.styles';
 
 export type Props = {
-  articles: IArticleListItem[]
-  className?: string
-  wrapItems?: WrapStatus
-  itemLayoutOrientation?: LayoutOrientation
-}
+  articles: IArticleListItem[];
+  className?: string;
+  wrapItems?: WrapStatus;
+  itemLayoutOrientation?: LayoutOrientation;
+};
 
 const ArticlesList: FunctionComponent<Props> = ({
   articles,
@@ -27,7 +27,7 @@ const ArticlesList: FunctionComponent<Props> = ({
         />
       ))}
     </S_Container>
-  )
-}
+  );
+};
 
-export default ArticlesList
+export default ArticlesList;

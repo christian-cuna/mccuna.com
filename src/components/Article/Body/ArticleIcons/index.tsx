@@ -1,18 +1,17 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { FunctionComponent } from "react"
-import ArticleIcon from "./ArticleIcon"
-import { S_Container } from "./index.styles"
+import React, { FunctionComponent } from 'react';
+import ArticleIcon from './ArticleIcon';
+import { S_Container } from './index.styles';
 import {
   faArrowUp,
   faLongArrowAltUp,
   faCopy as fasCopy,
   faBell as fasBell,
-} from "@fortawesome/free-solid-svg-icons"
-import { faBell, faCopy } from "@fortawesome/free-regular-svg-icons"
+} from '@fortawesome/free-solid-svg-icons';
+import { faBell, faCopy } from '@fortawesome/free-regular-svg-icons';
 
 export type Props = {
-  className?: string
-}
+  className?: string;
+};
 
 const ArticleIcons: FunctionComponent<Props> = ({ className }) => {
   return (
@@ -20,23 +19,23 @@ const ArticleIcons: FunctionComponent<Props> = ({ className }) => {
       <ArticleIcon
         icon={faArrowUp}
         hoverIcon={faLongArrowAltUp}
-        label="To the top"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        label='To the top'
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
       <ArticleIcon
         icon={faCopy}
         hoverIcon={fasCopy}
-        label="Copy article URL"
-        onClick={() => alert("not implemented!")}
+        label='Copy article URL'
+        onClick={() => alert('not implemented!')}
       />
       <ArticleIcon
         icon={faBell}
         hoverIcon={fasBell}
-        label="Subscribe"
-        onClick={() => alert("not implemented!")}
+        label='Subscribe'
+        onClick={() => alert('not implemented!')}
       />
     </S_Container>
-  )
-}
+  );
+};
 
-export default ArticleIcons
+export default ArticleIcons;

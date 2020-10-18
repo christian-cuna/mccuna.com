@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { FunctionComponent, useState } from "react"
+import React, { FunctionComponent, useState } from 'react';
 import {
   S_Props,
   S_Container,
@@ -10,22 +9,21 @@ import {
   S_Icon,
   S_Corner,
   S_Link,
-} from "./index.styles"
-import { faDoorClosed, faDoorOpen } from "@fortawesome/free-solid-svg-icons"
-import { IArticleListItem } from "../../../models/IArticleListItem"
-import { LayoutOrientation } from "../../../enums/LayoutOrientation"
+} from './index.styles';
+import { faDoorClosed, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+import { IArticleListItem } from '../../../models/IArticleListItem';
 
 export type Props = S_Props & {
-  article: IArticleListItem
-  className?: string
-}
+  article: IArticleListItem;
+  className?: string;
+};
 
 const ArticleListItem: FunctionComponent<Props> = ({
   article,
   className,
   ...styleProps
 }) => {
-  const [detailsIcon, setDetailsIcon] = useState(faDoorClosed)
+  const [detailsIcon, setDetailsIcon] = useState(faDoorClosed);
 
   return (
     <S_Link to={article.slug} className={className}>
@@ -43,7 +41,7 @@ const ArticleListItem: FunctionComponent<Props> = ({
         </S_Details>
       </S_Container>
     </S_Link>
-  )
-}
+  );
+};
 
-export default ArticleListItem
+export default ArticleListItem;

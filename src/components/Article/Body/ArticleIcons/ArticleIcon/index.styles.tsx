@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
 export const S_Container = styled.div`
   display: flex;
@@ -10,8 +10,8 @@ export const S_Container = styled.div`
   :hover {
     font-weight: 600;
   }
-`
+`;
 
 export const S_Label = styled.span`
   font-size: 0.75rem;
-`
+`;

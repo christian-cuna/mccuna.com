@@ -7,43 +7,43 @@
 module.exports = {
   /* Your site config here */
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-fontawesome-css",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-fontawesome-css',
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
+      resolve: 'gatsby-plugin-graphql-codegen',
       options: {
-        fileName: `./gatsby-graphql.ts`,
+        fileName: './gatsby-graphql.ts',
         documentPaths: [
-          "./src/pages/*.{ts,tsx}",
-          "./src/templates/**/index.{ts,tsx}",
-          "./gatsby-node.js",
+          // "./src/pages/*.{ts,tsx}",
+          './src/**/index.{ts,tsx}',
+          './gatsby-node.js',
         ],
       },
     },
     {
-      resolve: "gatsby-plugin-mdx",
+      resolve: 'gatsby-plugin-mdx',
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: ['.mdx', '.md'],
       },
     },
     {
-      resolve: `gatsby-plugin-layout`,
+      resolve: 'gatsby-plugin-layout',
       options: {
-        component: require.resolve("./src/components/Layout/index.tsx"),
+        component: require.resolve('./src/components/Layout/index.tsx'),
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        pathToConfigModule: `src/utils/typography.ts`,
+        pathToConfigModule: 'src/utils/typography.ts',
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "posts",
+        name: 'articles',
         path: `${__dirname}/content/articles`,
       },
     },
   ],
-}
+};

@@ -1,7 +1,7 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { FunctionComponent } from "react"
-import { S_ContainerLink } from "./index.styles"
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { FunctionComponent } from 'react';
+import { S_ContainerLink } from './index.styles';
 
 export type Props = {
   icon: IconProp
@@ -15,7 +15,7 @@ const SocialInteraction: FunctionComponent<Props> = ({ icon, label, url }) => {
       <FontAwesomeIcon icon={icon} size="3x" />
       {label}
     </S_ContainerLink>
-  )
-}
+  );
+};
 
-export default SocialInteraction
+export default SocialInteraction;

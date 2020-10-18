@@ -1,12 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { render, RenderResult, fireEvent, screen } from '@testing-library/react';
-import React, { PropsWithChildren } from 'react';
-import Article from './index';
-
+import { render } from '@testing-library/react';
+import React from 'react';
+import Article, { Props } from './index';
 
 describe('Article should', () => {
   test('be defined.', () => {
-    const { getByText } = render( <Article />);
+    const props: Props = {
+      article: null,
+    };
+    const { getByText } = render(<Article {...props} />);
     const component = getByText('Article works!');
     expect(component).toBeDefined();
   });

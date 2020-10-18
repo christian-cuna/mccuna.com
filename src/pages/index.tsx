@@ -1,28 +1,28 @@
-import React, { FunctionComponent } from "react"
-import ThirdPersonDescription from "../components/ThirdPersonDescription"
-import BlogSummary from "../components/BlogSummary"
-import { graphql } from "gatsby"
-import { IndexQuery } from "../../gatsby-graphql"
-import { IArticleBrief } from "../models/IArticleBrief"
+import React, { FunctionComponent } from 'react';
+import ThirdPersonDescription from '../components/ThirdPersonDescription';
+import BlogSummary from '../components/BlogSummary';
+import { graphql } from 'gatsby';
+import { IndexQuery } from '../../gatsby-graphql';
+import { IArticleBrief } from '../models/IArticleBrief';
 
 export type Props = {
-  data: IndexQuery
-}
+  data: IndexQuery;
+};
 
 const Index: FunctionComponent<Props> = ({ data }) => {
   const articles: IArticleBrief[] = data.allMdx.edges.map(edge => ({
-    slug: edge.node.fields.slug,
+    slug: edge.node.fields.blogSlug,
     description: edge.node.frontmatter.description,
     title: edge.node.frontmatter.title,
     date: new Date(edge.node.frontmatter.date).toDateString(),
-  }))
+  }));
   return (
     <>
       <BlogSummary articles={articles} />
       <ThirdPersonDescription />
     </>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query Index {
@@ -35,12 +35,12 @@ export const query = graphql`
             description
           }
           fields {
-            slug
+            blogSlug
           }
         }
       }
     }
   }
-`
+`;
 
-export default Index
+export default Index;

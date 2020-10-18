@@ -1,29 +1,28 @@
-import React, { FunctionComponent } from "react"
-import ArticlesList from "../components/ArticlesList"
-import { graphql } from "gatsby"
-import { BlogIndexQuery } from "../../gatsby-graphql"
-import { IArticleListItem } from "../models/IArticleListItem"
-import { WrapStatus } from "../enums/WrapStatus"
+import React, { FunctionComponent } from 'react';
+import ArticlesList from '../components/ArticlesList';
+import { graphql } from 'gatsby';
+import { BlogIndexQuery } from '../../gatsby-graphql';
+import { IArticleListItem } from '../models/IArticleListItem';
 
 export type Props = {
-  data: BlogIndexQuery
+  data: BlogIndexQuery;
   // data: BlogIndexQuery
-}
+};
 
 const Blog: FunctionComponent<Props> = ({ data }) => {
   const articles: IArticleListItem[] = data.allMdx.edges.map(edge => ({
     title: edge.node.frontmatter.title,
     date: edge.node.frontmatter.date,
     excerpt: edge.node.excerpt,
-    imageSrc: edge.node.frontmatter.imgSrc,
-    slug: edge.node.slug,
-  }))
+    imageSrc: edge.node.frontmatter.imageSrc,
+    slug: edge.node.fields.blogSlug,
+  }));
   return (
     <div>
-      <ArticlesList articles={articles}  />
+      <ArticlesList articles={articles} />
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogIndex {
@@ -33,14 +32,16 @@ export const query = graphql`
           frontmatter {
             title
             date
-            imgSrc
+            imageSrc
           }
           excerpt
-          slug
+          fields {
+            blogSlug
+          }
         }
       }
     }
   }
-`
+`;
 
-export default Blog
+export default Blog;

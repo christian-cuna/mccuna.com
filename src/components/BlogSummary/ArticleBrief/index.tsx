@@ -1,6 +1,5 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { FunctionComponent } from "react"
-import { faCalendar } from "@fortawesome/free-solid-svg-icons"
+import React, { FunctionComponent } from 'react';
+import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import {
   S_Container,
   S_Title,
@@ -9,12 +8,12 @@ import {
   S_ReadLink,
   S_DateContainer,
   S_DateIcon,
-} from "./index.styles"
-import { IArticleBrief } from "../../../models/IArticleBrief"
+} from './index.styles';
+import { IArticleBrief } from '../../../models/IArticleBrief';
 
 export type Props = {
-  article: IArticleBrief
-}
+  article: IArticleBrief;
+};
 
 const ArticleBrief: FunctionComponent<Props> = ({ article }) => {
   return (
@@ -27,7 +26,7 @@ const ArticleBrief: FunctionComponent<Props> = ({ article }) => {
       <S_Excerpt>{article.description}</S_Excerpt>
       <S_ReadLink to={article.slug}>Read -&gt; </S_ReadLink>
     </S_Container>
-  )
-}
+  );
+};
 
-export default ArticleBrief
+export default ArticleBrief;

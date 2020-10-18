@@ -589,8 +589,8 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___imgSrc'
-  | 'childMdx___frontmatter___imgLabel'
+  | 'childMdx___frontmatter___imageSrc'
+  | 'childMdx___frontmatter___imageLabel'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -604,7 +604,7 @@ export type FileFieldsEnum =
   | 'childMdx___wordCount___paragraphs'
   | 'childMdx___wordCount___sentences'
   | 'childMdx___wordCount___words'
-  | 'childMdx___fields___slug'
+  | 'childMdx___fields___blogSlug'
   | 'childMdx___id'
   | 'childMdx___parent___id'
   | 'childMdx___parent___parent___id'
@@ -824,7 +824,7 @@ export type MdxEdge = {
 };
 
 export type MdxFields = {
-  slug?: Maybe<Scalars['String']>;
+  blogSlug?: Maybe<Scalars['String']>;
 };
 
 export type MdxFieldsEnum = 
@@ -833,8 +833,8 @@ export type MdxFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___description'
   | 'frontmatter___date'
-  | 'frontmatter___imgSrc'
-  | 'frontmatter___imgLabel'
+  | 'frontmatter___imageSrc'
+  | 'frontmatter___imageLabel'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -848,7 +848,7 @@ export type MdxFieldsEnum =
   | 'wordCount___paragraphs'
   | 'wordCount___sentences'
   | 'wordCount___words'
-  | 'fields___slug'
+  | 'fields___blogSlug'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -937,7 +937,7 @@ export type MdxFieldsEnum =
   | 'internal___type';
 
 export type MdxFieldsFilterInput = {
-  slug?: Maybe<StringQueryOperatorInput>;
+  blogSlug?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxFilterInput = {
@@ -964,8 +964,8 @@ export type MdxFrontmatter = {
   title: Scalars['String'];
   description?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
-  imgSrc?: Maybe<Scalars['String']>;
-  imgLabel?: Maybe<Scalars['String']>;
+  imageSrc?: Maybe<Scalars['String']>;
+  imageLabel?: Maybe<Scalars['String']>;
 };
 
 
@@ -980,8 +980,8 @@ export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
-  imgSrc?: Maybe<StringQueryOperatorInput>;
-  imgLabel?: Maybe<StringQueryOperatorInput>;
+  imageSrc?: Maybe<StringQueryOperatorInput>;
+  imageLabel?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxGroupConnection = {
@@ -2159,18 +2159,10 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type BlogIndexQuery = { allMdx: { edges: Array<{ node: (
-        Pick<Mdx, 'excerpt' | 'slug'>
-        & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'imgSrc'>> }
-      ) }> } };
-
 export type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type IndexQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'description'>>, fields?: Maybe<Pick<MdxFields, 'slug'>> } }> } };
+export type IndexQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'description'>>, fields?: Maybe<Pick<MdxFields, 'blogSlug'>> } }> } };
 
 export type ArticleQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -2179,10 +2171,10 @@ export type ArticleQueryVariables = Exact<{
 
 export type ArticleQuery = { mdx?: Maybe<(
     Pick<Mdx, 'body'>
-    & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'imgSrc' | 'imgLabel'>> }
+    & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'imageSrc' | 'imageLabel'>> }
   )> };
 
 export type ArticleSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ArticleSlugsQuery = { allMdx: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'slug'>> } }> } };
+export type ArticleSlugsQuery = { allMdx: { edges: Array<{ node: { fields?: Maybe<Pick<MdxFields, 'blogSlug'>> } }> } };

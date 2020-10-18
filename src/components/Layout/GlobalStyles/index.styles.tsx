@@ -1,5 +1,4 @@
-import React from "react"
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   * {
@@ -32,4 +31,4 @@ export const GlobalStyles = createGlobalStyle`
     background-image: none;
   }
 
-`
+`;

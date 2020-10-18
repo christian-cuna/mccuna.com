@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from "react"
-import { IArticle } from "../../../models/IArticle"
+import React, { FunctionComponent } from 'react';
+import { IArticle } from '../../../models/IArticle';
 import {
   S_Date,
   S_ImgCredits,
@@ -7,11 +7,11 @@ import {
   S_Img,
   S_TitleContainer,
   S_Container,
-} from "./index.styles"
+} from './index.styles';
 
 export type Props = {
-  article: IArticle
-}
+  article: IArticle;
+};
 
 const Header: FunctionComponent<Props> = ({ article }) => {
   return (
@@ -22,10 +22,10 @@ const Header: FunctionComponent<Props> = ({ article }) => {
       </S_TitleContainer>
       <S_ImgContainer>
         <S_Img src={article.img} />
-        <S_ImgCredits>{article.imgLabel}</S_ImgCredits>
+        <S_ImgCredits>{article.imageLabel}</S_ImgCredits>
       </S_ImgContainer>
     </S_Container>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
