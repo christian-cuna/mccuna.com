@@ -5,9 +5,8 @@ import {
   faArrowUp,
   faLongArrowAltUp,
   faCopy as fasCopy,
-  faBell as fasBell,
 } from '@fortawesome/free-solid-svg-icons';
-import { faBell, faCopy } from '@fortawesome/free-regular-svg-icons';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
 
 export type Props = {
   className?: string;
@@ -26,12 +25,6 @@ const ArticleIcons: FunctionComponent<Props> = ({ className }) => {
         icon={faCopy}
         hoverIcon={fasCopy}
         label='Copy article URL'
-        onClick={() => alert('not implemented!')}
-      />
-      <ArticleIcon
-        icon={faBell}
-        hoverIcon={fasBell}
-        label='Subscribe'
         onClick={() => alert('not implemented!')}
       />
     </S_Container>

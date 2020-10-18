@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { bannerContainerHeight } from '../../Layout/index.styles';
 import { imgHeight, S_Date } from '../Header/index.styles';
-import ArticleIcons from './ArticleIcons';
+import ArticleIcons from '../ArticleIcons';
 
 export const S_Container = styled.div``;
 

@@ -3,6 +3,7 @@ import { IArticle } from '../../../models/IArticle';
 import OtherArticles from './OtherArticles';
 import PaginationLinks from './PaginationLinks';
 import SocialInteractions from './SocialInteractions';
+import Subscription from './Subscription';
 
 export type Props = {
   article: IArticle;
@@ -13,6 +14,7 @@ const Footer: FunctionComponent<Props> = () => {
     <div>
       <PaginationLinks />
       <SocialInteractions />
+      <Subscription />
       <OtherArticles />
     </div>
   );
