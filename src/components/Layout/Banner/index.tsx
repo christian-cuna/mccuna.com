@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FunctionComponent } from 'react';
 import {
   S_1Description,
@@ -6,6 +7,8 @@ import {
   S_RightContent,
 } from './index.styles';
 import Menu from './Menu';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import { faCopy } from '@fortawesome/free-regular-svg-icons';
 
 export type Props = {};
 
@@ -20,7 +23,7 @@ const IndexBanner: FunctionComponent<Props> = () => {
         </S_1Description>
       </S_LeftContent>
       <S_RightContent>
-        <img src='https://via.placeholder.com/150' />
+        <FontAwesomeIcon icon={faUser} size='9x' />
       </S_RightContent>
     </S_Container>
   );
