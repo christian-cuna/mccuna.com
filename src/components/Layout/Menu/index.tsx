@@ -14,9 +14,9 @@ const Menu: FunctionComponent = () => {
   return (
     <S_Menu>
       <MenuItem to={routes.home} label='MC Cuna' icon={faHome} />
-      <MenuItem to={routes.home} label='Blog' icon={faBlog} />
-      <MenuItem to={routes.home} label='About' icon={faAddressCard} />
-      <MenuItem to={routes.home} label='Contact' icon={faEnvelope} />
+      <MenuItem to={routes.blog} label='Blog' icon={faBlog} />
+      <MenuItem to={routes.about} label='About' icon={faAddressCard} />
+      <MenuItem to={routes.contact} label='Contact' icon={faEnvelope} />
     </S_Menu>
   );
 };

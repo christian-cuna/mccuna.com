@@ -1,6 +1,7 @@
 export { appColors, appBorderStyle };
 
 const appColors = {
+  veryLightGray: '#eee',
   lightGray: '#ccc',
 };
 

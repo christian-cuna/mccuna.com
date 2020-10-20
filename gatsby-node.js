@@ -4,13 +4,13 @@ const path = require('path');
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   if (node.internal.type === 'Mdx') {
-    const value = createFilePath({ node, getNode });
-
+    // /dummy-0/dummy-0/
+    const value = createFilePath({ node, getNode }).split('/')[1];
+    console.log(value);
     createNodeField({
       name: 'blogSlug',
       node,
-      // value already contains the leading "/"
-      value: `/blog${value}`,
+      value: `/blog/${value}`,
     });
   }
 };
@@ -30,6 +30,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+
+  // console.log(JSON.stringify(result, null, 4));
 
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({

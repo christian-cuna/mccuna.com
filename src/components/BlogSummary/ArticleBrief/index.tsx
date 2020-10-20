@@ -19,6 +19,7 @@ const ArticleBrief: FunctionComponent<Props> = ({ article }) => {
   return (
     <S_Container>
       <S_Title> {article.title}</S_Title>
+      <img src={article.iconSrc} />
       <S_DateContainer>
         <S_DateIcon icon={faCalendar} />
         <S_Date>{article.date}</S_Date>
