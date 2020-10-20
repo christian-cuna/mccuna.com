@@ -6,7 +6,7 @@ import {
   S_LeftContent,
   S_RightContent,
 } from './index.styles';
-import Menu from './Menu';
+import Menu from '../Menu';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 // import { faCopy } from '@fortawesome/free-regular-svg-icons';
 

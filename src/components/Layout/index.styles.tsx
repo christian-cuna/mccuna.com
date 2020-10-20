@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import PersonalInfoSide from './PersonalInfoSide';
 
-export const bannerContainerHeight = '200px';
+export const menuContainerHeight = '200px';
 export const footerContainerHeight = '50px';
 
 export const S_Container = styled.div`
@@ -11,8 +12,8 @@ export const S_Container = styled.div`
   width: 100%;
 `;
 
-export const S_BannerContainer = styled.div`
-  height: ${bannerContainerHeight};
+export const S_MenuContainer = styled.div`
+  height: ${menuContainerHeight};
   width: 100%;
 `;
 
@@ -22,8 +23,15 @@ export const S_MainContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 60%;
-  flex: 1 0
-    calc(calc(100% - ${bannerContainerHeight}) - ${footerContainerHeight});
+  padding-top: 2.5%;
+  flex: 1 0 calc(calc(100% - ${menuContainerHeight}) - ${footerContainerHeight});
+`;
+
+export const SC_PersonalInfo = styled(PersonalInfoSide)`
+  position: fixed;
+  right: 10%;
+  top: 25%;
+  transform: translateX(50%);
 `;
 
 export const S_FooterContainer = styled.div`

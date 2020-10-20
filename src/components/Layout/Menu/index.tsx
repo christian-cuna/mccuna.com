@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import routes from '../../../../utils/routes';
+import routes from '../../../utils/routes';
 import { S_Menu } from './index.styles';
 
 import {
