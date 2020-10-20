@@ -10,7 +10,6 @@ export type Props = {
 const BlogSummary: FunctionComponent<Props> = ({ articles }) => {
   return (
     <S_Container>
-      <S_Title> BlogSummary works!</S_Title>
       {articles.map(article => (
         <ArticleBrief key={article.slug} article={article} />
       ))}

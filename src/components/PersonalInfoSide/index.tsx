@@ -4,7 +4,7 @@ import { S_Container, S_Description } from './index.styles';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 export type Props = {
-  className: string;
+  className?: string;
 };
 
 const PersonalInfoSide: FunctionComponent<Props> = ({ className }) => {

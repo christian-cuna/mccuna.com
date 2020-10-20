@@ -4,6 +4,8 @@ import BlogSummary from '../components/BlogSummary';
 import { graphql } from 'gatsby';
 import { IndexQuery } from '../../gatsby-graphql';
 import { IArticleBrief } from '../models/IArticleBrief';
+import PersonalInfoSide from '../components/PersonalInfoSide';
+import IndexBlogDescription from '../components/IndexBlogDescription';
 
 export type Props = {
   data: IndexQuery;
@@ -18,7 +20,9 @@ const Index: FunctionComponent<Props> = ({ data }) => {
   }));
   return (
     <>
+      <IndexBlogDescription />
       <BlogSummary articles={articles} />
+      <PersonalInfoSide />
       <ThirdPersonDescription />
     </>
   );
