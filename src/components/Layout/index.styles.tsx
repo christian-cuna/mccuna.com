@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const menuContainerHeight = '200px';
-export const footerContainerHeight = '50px';
+export const footerContainerHeight = '425px';
 export const mainContainerWidth = '60%;';
 
 export const S_Container = styled.div`
@@ -32,4 +32,5 @@ export const S_FooterContainer = styled.div`
   align-self: flex-end;
   height: ${footerContainerHeight};
   min-height: ${footerContainerHeight};
+  margin-top: 50px;
 `;

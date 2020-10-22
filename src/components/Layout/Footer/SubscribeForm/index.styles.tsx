@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { appBorderStyle, containerPadding } from '../../global/styles';
+import { appBorderStyle, containerPadding } from '../../../../global/styles';
 
 export const S_Container = styled.div`
   padding: ${containerPadding};
   border-left: ${appBorderStyle.containerBorder};
   border-right: ${appBorderStyle.containerBorder};
-  width: 40%;
-  margin-left: 30%;
-  margin-bottom: 5%;
+  width: 30%;
+  margin-left: 40%;
 `;
 
 export const S_Header = styled.h2`

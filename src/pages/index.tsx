@@ -25,7 +25,6 @@ const Index: FunctionComponent<Props> = ({ data }) => {
       <IndexBlogDescription />
       <BlogSummary articles={articles} />
       <PersonalInfoSide />
-      <SubscribeForm />
     </S_Container>
   );
 };
