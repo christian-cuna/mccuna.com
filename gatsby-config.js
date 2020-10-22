@@ -9,6 +9,10 @@ module.exports = {
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-fontawesome-css',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    'gatsby-image',
+    'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
@@ -24,6 +28,22 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+              backgroundColor: '#f00',
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-remark-images',
+      options: {
+        backgroundColor: '#f00',
+        maxWidth: 1035,
       },
     },
     {

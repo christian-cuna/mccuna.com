@@ -6,7 +6,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   if (node.internal.type === 'Mdx') {
     // /dummy-0/dummy-0/
     const value = createFilePath({ node, getNode }).split('/')[1];
-    console.log(value);
+
     createNodeField({
       name: 'blogSlug',
       node,
@@ -30,8 +30,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-
-  // console.log(JSON.stringify(result, null, 4));
 
   result.data.allMdx.edges.forEach(({ node }) => {
     createPage({

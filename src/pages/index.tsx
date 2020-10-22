@@ -17,7 +17,7 @@ const Index: FunctionComponent<Props> = ({ data }) => {
     description: edge.node.frontmatter.description,
     title: edge.node.frontmatter.title,
     date: new Date(edge.node.frontmatter.date).toDateString(),
-    iconSrc: edge.node.frontmatter.iconSrc,
+    iconSrc: edge.node.frontmatter.iconSrc.childImageSharp.fixed,
   }));
   return (
     <>
@@ -38,7 +38,16 @@ export const query = graphql`
             title
             date
             description
-            iconSrc
+            iconSrc {
+              childImageSharp {
+                fixed {
+                  src
+                  srcSet
+                  height
+                  width
+                }
+              }
+            }
           }
           fields {
             blogSlug

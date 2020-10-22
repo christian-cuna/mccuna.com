@@ -8,6 +8,8 @@ import {
   S_ReadLink,
   S_DateContainer,
   S_DateIcon,
+  S_Header,
+  SC_Img,
 } from './index.styles';
 import { IArticleBrief } from '../../../models/IArticleBrief';
 
@@ -18,8 +20,10 @@ export type Props = {
 const ArticleBrief: FunctionComponent<Props> = ({ article }) => {
   return (
     <S_Container>
-      <S_Title> {article.title}</S_Title>
-      <img src={article.iconSrc} />
+      <S_Header>
+        <S_Title> {article.title}</S_Title>
+        <SC_Img fixed={article.iconSrc} />
+      </S_Header>
       <S_DateContainer>
         <S_DateIcon icon={faCalendar} />
         <S_Date>{article.date}</S_Date>
