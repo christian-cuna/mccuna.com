@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useState } from 'react';
+import { OtherArticlesQuery } from '../../gatsby-graphql';
 import { IArticleListItem } from '../models/IArticleListItem';
 import { randomIntFromInterval } from '../utils/math';
 
@@ -9,7 +10,7 @@ export type UseOtherArticles = {
 };
 
 export default function useOtherArticles(): UseOtherArticles {
-  const data = useStaticQuery(graphql`
+  const data: OtherArticlesQuery = useStaticQuery(graphql`
     query OtherArticles {
       allMdx {
         edges {
@@ -21,12 +22,14 @@ export default function useOtherArticles(): UseOtherArticles {
               imageSrc {
                 childImageSharp {
                   fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+                    aspectRatio
+                    src
+                    srcSet
+                    sizes
                     base64
                     tracedSVG
                     srcWebp
                     srcSetWebp
-                    originalImg
-                    originalName
                   }
                 }
               }
@@ -46,7 +49,7 @@ export default function useOtherArticles(): UseOtherArticles {
       date: new Date(edge.node.frontmatter.date).toDateString(),
       slug: edge.node.fields.blogSlug,
       excerpt: edge.node.frontmatter.description,
-      imageSrc: edge.node.frontmatter.imageSrc,
+      imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
     }))
   );
 

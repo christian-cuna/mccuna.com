@@ -5,7 +5,6 @@ import { IndexQuery } from '../../gatsby-graphql';
 import { IArticleBrief } from '../models/IArticleBrief';
 import PersonalInfoSide from '../components/PersonalInfoSide';
 import IndexBlogDescription from '../components/BlogDescription';
-import SubscribeForm from '../components/SubscribeForm';
 import styled from 'styled-components';
 
 export type Props = {

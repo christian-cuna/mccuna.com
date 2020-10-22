@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Img, { FluidObject } from 'gatsby-image';
 
 export const imgHeight = '410px';
 
@@ -18,7 +19,7 @@ export const S_ImgContainer = styled.div`
   width: 100%;
 `;
 
-export const S_Img = styled.img`
+export const S_Img = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
   width: 100%;
   height: ${imgHeight};
   margin-bottom: 0;

@@ -19,22 +19,4 @@ const OtherArticles: FunctionComponent<Props> = () => {
   );
 };
 
-// const getQuery = (slug: string) => graphql`
-//   query OtherArticles {
-//     allMdx(filter: {slug: {ne: '${slug}'}}) {
-//       edges {
-//         node {
-//           frontmatter {
-//             title
-//             date
-//             imageSrc
-//           }
-//           excerpt
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `
-
 export default OtherArticles;

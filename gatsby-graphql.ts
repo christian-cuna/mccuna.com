@@ -3052,7 +3052,7 @@ export type OtherArticlesQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type OtherArticlesQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<(
           Pick<MdxFrontmatter, 'title' | 'date' | 'description'>
-          & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp' | 'originalImg' | 'originalName'>> }> }> }
+          & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp'>> }> }> }
         )>, fields?: Maybe<Pick<MdxFields, 'blogSlug'>> } }> } };
 
 export type ArticleQueryVariables = Exact<{

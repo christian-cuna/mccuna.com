@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { appBorderStyle } from '../../../global/styles';
+import { appBorderStyle, containerPadding } from '../../../global/styles';
 
 export const S_Container = styled.div`
   height: 100%;
@@ -15,4 +16,12 @@ export const S_IconsContainer = styled.div`
   align-items: center;
   width: 10%;
   margin-left: 70%;
+  padding-top: calc(${containerPadding} / 2);
+  padding-bottom: calc(${containerPadding} / 2);
+`;
+
+export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
 `;

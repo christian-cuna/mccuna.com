@@ -67,7 +67,6 @@ export const SC_Img = styled(S_BaseImg)<S_Props>`
 
 const S_BaseDetails = styled.div`
   padding: ${padding};
-  border-right: ${appBorderStyle.containerBorder};
 `;
 
 const detailsHorizontalCss = css`
@@ -75,10 +74,12 @@ const detailsHorizontalCss = css`
   position: relative;
   overflow: hidden;
   height: 13rem;
+  border-right: ${appBorderStyle.containerBorder};
 `;
 const detailsVerticalCss = css`
   width: 100%;
   height: 100%;
+  border-bottom: ${appBorderStyle.containerBorder};
 `;
 
 export const S_Details = styled(S_BaseDetails)<S_Props>`
