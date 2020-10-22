@@ -687,7 +687,40 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___imageSrc'
+  | 'childMdx___frontmatter___imageSrc___sourceInstanceName'
+  | 'childMdx___frontmatter___imageSrc___absolutePath'
+  | 'childMdx___frontmatter___imageSrc___relativePath'
+  | 'childMdx___frontmatter___imageSrc___extension'
+  | 'childMdx___frontmatter___imageSrc___size'
+  | 'childMdx___frontmatter___imageSrc___prettySize'
+  | 'childMdx___frontmatter___imageSrc___modifiedTime'
+  | 'childMdx___frontmatter___imageSrc___accessTime'
+  | 'childMdx___frontmatter___imageSrc___changeTime'
+  | 'childMdx___frontmatter___imageSrc___birthTime'
+  | 'childMdx___frontmatter___imageSrc___root'
+  | 'childMdx___frontmatter___imageSrc___dir'
+  | 'childMdx___frontmatter___imageSrc___base'
+  | 'childMdx___frontmatter___imageSrc___ext'
+  | 'childMdx___frontmatter___imageSrc___name'
+  | 'childMdx___frontmatter___imageSrc___relativeDirectory'
+  | 'childMdx___frontmatter___imageSrc___dev'
+  | 'childMdx___frontmatter___imageSrc___mode'
+  | 'childMdx___frontmatter___imageSrc___nlink'
+  | 'childMdx___frontmatter___imageSrc___uid'
+  | 'childMdx___frontmatter___imageSrc___gid'
+  | 'childMdx___frontmatter___imageSrc___rdev'
+  | 'childMdx___frontmatter___imageSrc___ino'
+  | 'childMdx___frontmatter___imageSrc___atimeMs'
+  | 'childMdx___frontmatter___imageSrc___mtimeMs'
+  | 'childMdx___frontmatter___imageSrc___ctimeMs'
+  | 'childMdx___frontmatter___imageSrc___atime'
+  | 'childMdx___frontmatter___imageSrc___mtime'
+  | 'childMdx___frontmatter___imageSrc___ctime'
+  | 'childMdx___frontmatter___imageSrc___birthtime'
+  | 'childMdx___frontmatter___imageSrc___birthtimeMs'
+  | 'childMdx___frontmatter___imageSrc___publicURL'
+  | 'childMdx___frontmatter___imageSrc___id'
+  | 'childMdx___frontmatter___imageSrc___children'
   | 'childMdx___frontmatter___imageLabel'
   | 'childMdx___frontmatter___iconSrc___sourceInstanceName'
   | 'childMdx___frontmatter___iconSrc___absolutePath'
@@ -1463,7 +1496,66 @@ export type MdxFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___description'
   | 'frontmatter___date'
-  | 'frontmatter___imageSrc'
+  | 'frontmatter___imageSrc___sourceInstanceName'
+  | 'frontmatter___imageSrc___absolutePath'
+  | 'frontmatter___imageSrc___relativePath'
+  | 'frontmatter___imageSrc___extension'
+  | 'frontmatter___imageSrc___size'
+  | 'frontmatter___imageSrc___prettySize'
+  | 'frontmatter___imageSrc___modifiedTime'
+  | 'frontmatter___imageSrc___accessTime'
+  | 'frontmatter___imageSrc___changeTime'
+  | 'frontmatter___imageSrc___birthTime'
+  | 'frontmatter___imageSrc___root'
+  | 'frontmatter___imageSrc___dir'
+  | 'frontmatter___imageSrc___base'
+  | 'frontmatter___imageSrc___ext'
+  | 'frontmatter___imageSrc___name'
+  | 'frontmatter___imageSrc___relativeDirectory'
+  | 'frontmatter___imageSrc___dev'
+  | 'frontmatter___imageSrc___mode'
+  | 'frontmatter___imageSrc___nlink'
+  | 'frontmatter___imageSrc___uid'
+  | 'frontmatter___imageSrc___gid'
+  | 'frontmatter___imageSrc___rdev'
+  | 'frontmatter___imageSrc___ino'
+  | 'frontmatter___imageSrc___atimeMs'
+  | 'frontmatter___imageSrc___mtimeMs'
+  | 'frontmatter___imageSrc___ctimeMs'
+  | 'frontmatter___imageSrc___atime'
+  | 'frontmatter___imageSrc___mtime'
+  | 'frontmatter___imageSrc___ctime'
+  | 'frontmatter___imageSrc___birthtime'
+  | 'frontmatter___imageSrc___birthtimeMs'
+  | 'frontmatter___imageSrc___publicURL'
+  | 'frontmatter___imageSrc___childImageSharp___id'
+  | 'frontmatter___imageSrc___childImageSharp___children'
+  | 'frontmatter___imageSrc___id'
+  | 'frontmatter___imageSrc___parent___id'
+  | 'frontmatter___imageSrc___parent___children'
+  | 'frontmatter___imageSrc___children'
+  | 'frontmatter___imageSrc___children___id'
+  | 'frontmatter___imageSrc___children___children'
+  | 'frontmatter___imageSrc___internal___content'
+  | 'frontmatter___imageSrc___internal___contentDigest'
+  | 'frontmatter___imageSrc___internal___description'
+  | 'frontmatter___imageSrc___internal___fieldOwners'
+  | 'frontmatter___imageSrc___internal___ignoreType'
+  | 'frontmatter___imageSrc___internal___mediaType'
+  | 'frontmatter___imageSrc___internal___owner'
+  | 'frontmatter___imageSrc___internal___type'
+  | 'frontmatter___imageSrc___childMdx___rawBody'
+  | 'frontmatter___imageSrc___childMdx___fileAbsolutePath'
+  | 'frontmatter___imageSrc___childMdx___slug'
+  | 'frontmatter___imageSrc___childMdx___body'
+  | 'frontmatter___imageSrc___childMdx___excerpt'
+  | 'frontmatter___imageSrc___childMdx___headings'
+  | 'frontmatter___imageSrc___childMdx___html'
+  | 'frontmatter___imageSrc___childMdx___mdxAST'
+  | 'frontmatter___imageSrc___childMdx___tableOfContents'
+  | 'frontmatter___imageSrc___childMdx___timeToRead'
+  | 'frontmatter___imageSrc___childMdx___id'
+  | 'frontmatter___imageSrc___childMdx___children'
   | 'frontmatter___imageLabel'
   | 'frontmatter___iconSrc___sourceInstanceName'
   | 'frontmatter___iconSrc___absolutePath'
@@ -1654,7 +1746,7 @@ export type MdxFrontmatter = {
   title: Scalars['String'];
   description?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
-  imageSrc?: Maybe<Scalars['String']>;
+  imageSrc?: Maybe<File>;
   imageLabel?: Maybe<Scalars['String']>;
   iconSrc?: Maybe<File>;
 };
@@ -1671,7 +1763,7 @@ export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
-  imageSrc?: Maybe<StringQueryOperatorInput>;
+  imageSrc?: Maybe<FileFilterInput>;
   imageLabel?: Maybe<StringQueryOperatorInput>;
   iconSrc?: Maybe<FileFilterInput>;
 };
@@ -2936,12 +3028,31 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type BlogIndexQuery = { allMdx: { edges: Array<{ node: (
+        Pick<Mdx, 'excerpt'>
+        & { frontmatter?: Maybe<(
+          Pick<MdxFrontmatter, 'title' | 'date'>
+          & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp'>> }> }> }
+        )>, fields?: Maybe<Pick<MdxFields, 'blogSlug'>> }
+      ) }> } };
+
 export type IndexQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type IndexQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<(
           Pick<MdxFrontmatter, 'title' | 'date' | 'description'>
           & { iconSrc?: Maybe<{ childImageSharp?: Maybe<{ fixed?: Maybe<Pick<ImageSharpFixed, 'src' | 'srcSet' | 'height' | 'width'>> }> }> }
+        )>, fields?: Maybe<Pick<MdxFields, 'blogSlug'>> } }> } };
+
+export type OtherArticlesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type OtherArticlesQuery = { allMdx: { edges: Array<{ node: { frontmatter?: Maybe<(
+          Pick<MdxFrontmatter, 'title' | 'date' | 'description'>
+          & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp' | 'originalImg' | 'originalName'>> }> }> }
         )>, fields?: Maybe<Pick<MdxFields, 'blogSlug'>> } }> } };
 
 export type ArticleQueryVariables = Exact<{
@@ -2951,7 +3062,10 @@ export type ArticleQueryVariables = Exact<{
 
 export type ArticleQuery = { mdx?: Maybe<(
     Pick<Mdx, 'body'>
-    & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title' | 'date' | 'imageSrc' | 'imageLabel'>> }
+    & { frontmatter?: Maybe<(
+      Pick<MdxFrontmatter, 'title' | 'date' | 'imageLabel'>
+      & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp'>> }> }> }
+    )> }
   )> };
 
 export type ArticleSlugsQueryVariables = Exact<{ [key: string]: never; }>;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const menuContainerHeight = '200px';
 export const footerContainerHeight = '50px';
-export const mainContainerWidth = '45%;';
+export const mainContainerWidth = '60%;';
 
 export const S_Container = styled.div`
   display: flex;

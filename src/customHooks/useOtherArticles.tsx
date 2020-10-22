@@ -18,7 +18,18 @@ export default function useOtherArticles(): UseOtherArticles {
               title
               date
               description
-              imageSrc
+              imageSrc {
+                childImageSharp {
+                  fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+                    base64
+                    tracedSVG
+                    srcWebp
+                    srcSetWebp
+                    originalImg
+                    originalName
+                  }
+                }
+              }
             }
             fields {
               blogSlug

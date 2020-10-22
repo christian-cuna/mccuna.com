@@ -13,7 +13,7 @@ const BlogArticle: FunctionComponent<Props> = ({ data }) => {
     title: data.mdx.frontmatter.title,
     content: data.mdx.body,
     date: new Date(data.mdx.frontmatter.date).toDateString(),
-    img: data.mdx.frontmatter.imageSrc,
+    img: data.mdx.frontmatter.imageSrc.childImageSharp.fluid,
     imageLabel: data.mdx.frontmatter.imageLabel,
   };
   return <Article article={article} />;
@@ -25,7 +25,20 @@ export const query = graphql`
       frontmatter {
         title
         date
-        imageSrc
+        imageSrc {
+          childImageSharp {
+            fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+              aspectRatio
+              src
+              srcSet
+              sizes
+              base64
+              tracedSVG
+              srcWebp
+              srcSetWebp
+            }
+          }
+        }
         imageLabel
       }
       body

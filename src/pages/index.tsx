@@ -6,6 +6,7 @@ import { IArticleBrief } from '../models/IArticleBrief';
 import PersonalInfoSide from '../components/PersonalInfoSide';
 import IndexBlogDescription from '../components/BlogDescription';
 import SubscribeForm from '../components/SubscribeForm';
+import styled from 'styled-components';
 
 export type Props = {
   data: IndexQuery;
@@ -20,12 +21,12 @@ const Index: FunctionComponent<Props> = ({ data }) => {
     iconSrc: edge.node.frontmatter.iconSrc.childImageSharp.fixed,
   }));
   return (
-    <>
+    <S_Container>
       <IndexBlogDescription />
       <BlogSummary articles={articles} />
       <PersonalInfoSide />
       <SubscribeForm />
-    </>
+    </S_Container>
   );
 };
 
@@ -40,7 +41,7 @@ export const query = graphql`
             description
             iconSrc {
               childImageSharp {
-                fixed {
+                fixed(width: 38, height: 38) {
                   src
                   srcSet
                   height
@@ -56,6 +57,10 @@ export const query = graphql`
       }
     }
   }
+`;
+
+const S_Container = styled.div`
+  width: 80%;
 `;
 
 export default Index;

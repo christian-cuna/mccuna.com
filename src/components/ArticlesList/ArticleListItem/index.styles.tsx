@@ -3,8 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { LayoutOrientation } from '../../../enums/LayoutOrientation';
+import { appBorderStyle } from '../../../global/styles';
+import Img, { FluidObject } from 'gatsby-image';
 
-export const imgSize = '14rem';
+export const imgSize = '260px';
 const padding = '4%';
 
 export type S_Props = {
@@ -43,7 +45,7 @@ export const S_Container = styled(S_BaseContainer)<S_Props>`
       : containerVerticalCss}
 `;
 
-const S_BaseImg = styled.img`
+const S_BaseImg = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
   height: ${imgSize};
   margin: 0;
 `;
@@ -56,7 +58,7 @@ const imgVerticalCss = css`
   width: 100%;
 `;
 
-export const S_Img = styled(S_BaseImg)<S_Props>`
+export const SC_Img = styled(S_BaseImg)<S_Props>`
   ${props =>
     props.layoutOrientation === LayoutOrientation.horizontal
       ? imgHorizontalCss
@@ -64,8 +66,8 @@ export const S_Img = styled(S_BaseImg)<S_Props>`
 `;
 
 const S_BaseDetails = styled.div`
-  background-color: #efefef;
   padding: ${padding};
+  border-right: ${appBorderStyle.containerBorder};
 `;
 
 const detailsHorizontalCss = css`
@@ -93,8 +95,8 @@ export const S_Corner = styled.div`
   transform: translateY(-50%) translatex(50%) rotate(-45deg);
   display: inline-block;
   background-color: green;
-  height: 120px;
-  width: 100px;
+  height: 65px;
+  width: 65px;
   z-index: 0;
 `;
 
@@ -112,8 +114,10 @@ const S_BaseIcon = styled(FontAwesomeIcon)`
 `;
 
 const horizontalIconCss = css`
-  right: ${padding};
-  top: ${padding};
+  top: 1%;
+  right: 1%;
+  /* right: ${padding};
+  top: ${padding}; */
 `;
 
 const verticalIconCss = css`

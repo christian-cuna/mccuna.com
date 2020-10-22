@@ -6,7 +6,6 @@ import { IArticleListItem } from '../models/IArticleListItem';
 
 export type Props = {
   data: BlogIndexQuery;
-  // data: BlogIndexQuery
 };
 
 const Blog: FunctionComponent<Props> = ({ data }) => {
@@ -14,7 +13,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
     title: edge.node.frontmatter.title,
     date: edge.node.frontmatter.date,
     excerpt: edge.node.excerpt,
-    imageSrc: edge.node.frontmatter.imageSrc,
+    imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
     slug: edge.node.fields.blogSlug,
   }));
   return (
@@ -32,7 +31,20 @@ export const query = graphql`
           frontmatter {
             title
             date
-            imageSrc
+            imageSrc {
+              childImageSharp {
+                fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+                  aspectRatio
+                  src
+                  srcSet
+                  sizes
+                  base64
+                  tracedSVG
+                  srcWebp
+                  srcSetWebp
+                }
+              }
+            }
           }
           excerpt
           fields {

@@ -18,8 +18,10 @@ module.exports = {
       options: {
         fileName: './gatsby-graphql.ts',
         documentPaths: [
-          // "./src/pages/*.{ts,tsx}",
-          './src/**/index.{ts,tsx}',
+          './src/pages/*.{ts,tsx}',
+          // './src/components/**/index.{ts,tsx}',
+          './src/customHooks/**/*.{ts,tsx}',
+          './src/templates/**/index.{ts,tsx}',
           './gatsby-node.js',
         ],
       },
