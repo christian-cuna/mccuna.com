@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { containerPadding } from '../../../../global/styles';
 
 const containerWidth = '400px';
 
 export const S_Container = styled.div`
   border: 1px solid blue;
-  padding: 20px;
+  padding: ${containerPadding};
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: calc(calc(100% - ${containerWidth}) * 0.75);
@@ -20,7 +21,7 @@ export const S_Description = styled.p`
 `;
 
 export const S_InputContainer = styled.div`
-  padding-top: 20px;
+  padding-top: ${containerPadding};
   width: 100%;
 `;
 

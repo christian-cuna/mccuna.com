@@ -1,10 +1,11 @@
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { containerPadding } from '../../global/styles';
 
 export const S_Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: ${containerPadding};
   margin-top: 40px;
 `;
 

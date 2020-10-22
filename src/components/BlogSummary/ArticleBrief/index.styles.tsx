@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { appColors } from '../../../global/styles';
+import { appColors, containerPadding } from '../../../global/styles';
 import Img, { FixedObject } from 'gatsby-image';
 
 export const S_Container = styled.div`
   background-color: ${appColors.veryLightGray};
-  padding: 20px;
+  padding: ${containerPadding};
 
   &:not(:first-child) {
     margin-top: 20px;

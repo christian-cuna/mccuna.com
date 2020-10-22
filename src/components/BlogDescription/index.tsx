@@ -3,7 +3,7 @@ import { S_Container, S_Description, S_Header } from './index.styles';
 
 export type Props = {};
 
-const IndexBlogDescription: FunctionComponent<Props> = () => {
+const BlogDescription: FunctionComponent<Props> = () => {
   return (
     <S_Container>
       <S_Header>McCuna&apos;s blog</S_Header>
@@ -15,4 +15,4 @@ const IndexBlogDescription: FunctionComponent<Props> = () => {
   );
 };
 
-export default IndexBlogDescription;
+export default BlogDescription;

@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from 'react';
-import ThirdPersonDescription from '../components/ThirdPersonDescription';
 import BlogSummary from '../components/BlogSummary';
 import { graphql } from 'gatsby';
 import { IndexQuery } from '../../gatsby-graphql';
 import { IArticleBrief } from '../models/IArticleBrief';
 import PersonalInfoSide from '../components/PersonalInfoSide';
-import IndexBlogDescription from '../components/IndexBlogDescription';
+import IndexBlogDescription from '../components/BlogDescription';
+import SubscribeForm from '../components/SubscribeForm';
 
 export type Props = {
   data: IndexQuery;
@@ -24,7 +24,7 @@ const Index: FunctionComponent<Props> = ({ data }) => {
       <IndexBlogDescription />
       <BlogSummary articles={articles} />
       <PersonalInfoSide />
-      <ThirdPersonDescription />
+      <SubscribeForm />
     </>
   );
 };
