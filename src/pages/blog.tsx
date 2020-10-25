@@ -16,11 +16,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
     imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
     slug: edge.node.fields.blogSlug,
   }));
-  return (
-    <div>
-      <ArticlesList articles={articles} />
-    </div>
-  );
+  return <ArticlesList articles={articles} />;
 };
 
 export const query = graphql`
