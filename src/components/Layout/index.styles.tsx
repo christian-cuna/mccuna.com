@@ -32,5 +32,4 @@ export const S_FooterContainer = styled.div`
   align-self: flex-end;
   height: ${footerContainerHeight};
   min-height: ${footerContainerHeight};
-  margin-top: 50px;
 `;
