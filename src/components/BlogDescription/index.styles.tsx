@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 import { appColors, appBorderStyle } from '../../global/styles';
 
-export const S_Container = styled.div`
-  border-bottom: ${appBorderStyle.containerBorder};
-`;
+export const S_Container = styled.div``;
 
 export const S_Header = styled.h1`
   margin-top: 0;

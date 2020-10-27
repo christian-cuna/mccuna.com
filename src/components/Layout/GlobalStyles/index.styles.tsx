@@ -5,6 +5,11 @@ export const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
   }
 
+  // to remove google chrome focus outline 
+  *:focus {
+    outline: none;
+  }
+
   html {
       width: 100%;
       height: 100%;

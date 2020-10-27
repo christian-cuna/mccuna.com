@@ -5,6 +5,8 @@ import {
   S_IconsContainer,
   S_Container,
   SC_FontAwesomeIcon,
+  SC_RssIcon,
+  SC_GitHub,
 } from './index.styles';
 import SubscribeForm from './SubscribeForm';
 
@@ -15,8 +17,8 @@ const Footer: FunctionComponent<Props> = () => {
     <S_Container>
       <SubscribeForm />
       <S_IconsContainer>
-        <SC_FontAwesomeIcon icon={faRssSquare} size={'2x'} />
-        <SC_FontAwesomeIcon icon={faGithub} size={'2x'} />
+        <SC_RssIcon icon={faRssSquare} size={'2x'} />
+        <SC_GitHub icon={faGithub} size={'2x'} />
       </S_IconsContainer>
     </S_Container>
   );

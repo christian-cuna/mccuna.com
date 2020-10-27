@@ -37,13 +37,20 @@
     "gatsby-remark-images": "^3.3.37",
     "gatsby-source-filesystem": "^2.3.35",
     "gatsby-transformer-sharp": "^2.5.19",
+    "polished": "^4.0.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-typography": "^0.16.19",
     "styled-components": "^5.2.0",
     "typescript": "^4.0.3",
     "typography": "^0.16.19",
-    "typography-theme-lincoln": "^0.16.19"
+    "typography-theme-fairy-gates": "^0.16.19",
+    "typography-theme-grand-view": "^0.16.19",
+    "typography-theme-irving": "^0.16.19",
+    "typography-theme-lawton": "^0.16.19",
+    "typography-theme-lincoln": "^0.16.19",
+    "typography-theme-noriega": "^0.16.19",
+    "typography-theme-sutro": "^0.16.19"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",

@@ -1,6 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { appBorderStyle, containerPadding } from '../../../global/styles';
+import {
+  appBorderStyle,
+  appColors,
+  containerPadding,
+} from '../../../global/styles';
 
 export const S_Container = styled.div`
   height: 100%;
@@ -21,7 +25,21 @@ export const S_IconsContainer = styled.div`
 `;
 
 export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`
+  cursor: pointer;
+
   &:not(:first-child) {
     margin-left: 10px;
+  }
+`;
+
+export const SC_RssIcon = styled(SC_FontAwesomeIcon)`
+  &:hover {
+    color: #ee802f; // rss color
+  }
+`;
+
+export const SC_GitHub = styled(SC_FontAwesomeIcon)`
+  &:hover {
+    color: #000; // github color
   }
 `;

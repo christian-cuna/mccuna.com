@@ -4,9 +4,8 @@ import { WrapStatus } from '../../enums/WrapStatus';
 import ArticleListItem from './ArticleListItem';
 
 export type S_Props = {
-  wrapItems: WrapStatus
-  // itemLayoutOrientation: LayoutOrientation
-}
+  wrapItems: WrapStatus;
+};
 
 export const S_Container = styled.div<S_Props>`
   display: flex;
