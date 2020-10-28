@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { LayoutOrientation } from '../../../enums/LayoutOrientation';
-import { appBorderStyle } from '../../../global/styles';
+import { appBorderStyle, appColors } from '../../../global/styles';
 import Img, { FluidObject } from 'gatsby-image';
 
 export const imgSize = '260px';
@@ -75,6 +75,12 @@ const detailsHorizontalCss = css`
   overflow: hidden;
   height: 13rem;
   border-right: ${appBorderStyle.containerBorder};
+
+  ${S_Container}:hover & {
+    padding-right: calc(${padding} - 5px);
+    border-right: 5px solid ${appColors.secondaryColor};
+    border-bottom: 5px solid ${appColors.secondaryColor};
+  }
 `;
 const detailsVerticalCss = css`
   width: 100%;
@@ -95,10 +101,14 @@ export const S_Corner = styled.div`
   right: 0;
   transform: translateY(-50%) translatex(50%) rotate(-45deg);
   display: inline-block;
-  background-color: green;
+  background-color: ${appColors.primaryColor};
   height: 65px;
   width: 65px;
   z-index: 0;
+
+  ${S_Container}:hover & {
+    background-color: ${appColors.secondaryColor};
+  }
 `;
 
 export const S_Title = styled.h5`
@@ -112,13 +122,12 @@ export const S_Excerpt = styled.p`
 const S_BaseIcon = styled(FontAwesomeIcon)`
   position: absolute;
   z-index: 1;
+  color: #fff;
 `;
 
 const horizontalIconCss = css`
   top: 1%;
   right: 1%;
-  /* right: ${padding};
-  top: ${padding}; */
 `;
 
 const verticalIconCss = css`
