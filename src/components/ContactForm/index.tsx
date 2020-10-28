@@ -1,10 +1,7 @@
 import {
   faBullseye,
   faEnvelope,
-  faEye,
-  faMask,
   faPaperPlane,
-  faRobot,
   faScroll,
   faSignature,
 } from '@fortawesome/free-solid-svg-icons';

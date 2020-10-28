@@ -1,4 +1,4 @@
-import { adjustHue, darken, desaturate, lighten } from 'polished';
+import { darken, lighten } from 'polished';
 import { bodyColor } from '../utils/typography';
 
 export { appColors, brandColors, appBorderStyle, containerPadding };
