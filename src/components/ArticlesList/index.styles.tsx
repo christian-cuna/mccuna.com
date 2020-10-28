@@ -20,7 +20,7 @@ const SC_BaseArticleListItem = styled(ArticleListItem)``;
 const horizontalArticleListItemCss = css`
   width: 47.5%;
   height: 14rem;
-  margin: 20px 0;
+  margin-top: 20px;
 `;
 
 const verticalArticleListItemCss = css`
