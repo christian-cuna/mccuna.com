@@ -16,6 +16,11 @@ export const S_Container = styled.div`
   transform: translateX(50%);
 `;
 
+export const S_Img = styled.img`
+  width: 200px;
+  height: 175px;
+`;
+
 export const S_Description = styled.p`
   margin-top: 15px;
   margin-bottom: 0;
