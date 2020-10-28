@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {
   appBorderStyle,
   appColors,
+  brandColors,
   containerPadding,
 } from '../../../global/styles';
 
@@ -34,12 +35,12 @@ export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`
 
 export const SC_RssIcon = styled(SC_FontAwesomeIcon)`
   &:hover {
-    color: #ee802f; // rss color
+    color: ${brandColors.rssOrange};
   }
 `;
 
 export const SC_GitHub = styled(SC_FontAwesomeIcon)`
   &:hover {
-    color: #000; // github color
+    color: ${brandColors.gitHubBlack};
   }
 `;

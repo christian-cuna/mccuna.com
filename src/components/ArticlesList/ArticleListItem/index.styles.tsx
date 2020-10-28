@@ -36,6 +36,12 @@ const containerVerticalCss = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  border-bottom: ${appBorderStyle.containerBorder};
+
+  &:hover {
+    border-right: 5px solid ${appColors.secondaryColor};
+    border-bottom: 5px solid ${appColors.secondaryColor};
+  }
 `;
 
 export const S_Container = styled(S_BaseContainer)<S_Props>`
@@ -85,7 +91,6 @@ const detailsHorizontalCss = css`
 const detailsVerticalCss = css`
   width: 100%;
   height: 100%;
-  border-bottom: ${appBorderStyle.containerBorder};
 `;
 
 export const S_Details = styled(S_BaseDetails)<S_Props>`
@@ -102,8 +107,8 @@ export const S_Corner = styled.div`
   transform: translateY(-50%) translatex(50%) rotate(-45deg);
   display: inline-block;
   background-color: ${appColors.primaryColor};
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 70px;
   z-index: 0;
 
   ${S_Container}:hover & {
@@ -123,16 +128,15 @@ const S_BaseIcon = styled(FontAwesomeIcon)`
   position: absolute;
   z-index: 1;
   color: #fff;
+  top: 2%;
 `;
 
 const horizontalIconCss = css`
-  top: 1%;
-  right: 1%;
+  right: 1.5%;
 `;
 
 const verticalIconCss = css`
-  top: 4%;
-  right: 2%;
+  right: 1.75%;
 `;
 
 // Prevent passing layoutOrientation to the FontAwesomeIcon

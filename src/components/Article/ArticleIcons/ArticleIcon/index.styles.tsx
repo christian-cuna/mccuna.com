@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { appColors } from '../../../../global/styles';
 
 export const S_Container = styled.div`
   display: flex;
@@ -9,6 +10,7 @@ export const S_Container = styled.div`
 
   :hover {
     font-weight: 600;
+    color: ${appColors.secondaryColor};
   }
 `;
 

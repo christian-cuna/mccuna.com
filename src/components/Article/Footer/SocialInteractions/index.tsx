@@ -4,17 +4,21 @@ import {
   faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import React, { FunctionComponent } from 'react';
-import { S_Container } from './index.styles';
-import SocialInteraction from './SocialInteraction';
+import {
+  SC_GitHub,
+  SC_LinkedIn,
+  SC_Twitter,
+  S_Container,
+} from './index.styles';
 
 export type Props = {};
 
 const SocialInteractions: FunctionComponent<Props> = () => {
   return (
     <S_Container>
-      <SocialInteraction icon={faTwitter} label='Share' url='dummy' />
-      <SocialInteraction icon={faLinkedin} label='Share' url='dummy' />
-      <SocialInteraction icon={faGithub} label='Edit on GitHub' url='dummy' />
+      <SC_Twitter icon={faTwitter} label='Share' url='dummy' />
+      <SC_LinkedIn icon={faLinkedin} label='Share' url='dummy' />
+      <SC_GitHub icon={faGithub} label='Edit on GitHub' url='dummy' />
     </S_Container>
   );
 };

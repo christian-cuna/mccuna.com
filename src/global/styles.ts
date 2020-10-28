@@ -1,7 +1,7 @@
 import { adjustHue, darken, desaturate, lighten } from 'polished';
 import { bodyColor } from '../utils/typography';
 
-export { appColors, appBorderStyle, containerPadding };
+export { appColors, brandColors, appBorderStyle, containerPadding };
 
 const primaryColor = '#07a7cf';
 const secondaryColor = '#E07007';
@@ -25,6 +25,13 @@ const appColors = {
   secondaryColorTnt1: getTint1(secondaryColor),
   secondaryColorTnt2: getTint2(secondaryColor),
   secondaryColorTnt3: getTint3(secondaryColor),
+};
+
+const brandColors = {
+  gitHubBlack: '#211F1F',
+  linkedInBlue: '#2867b2',
+  twitterBlue: '#1da1f2',
+  rssOrange: '#ee802f',
 };
 
 const containerPadding = '20px';
