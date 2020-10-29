@@ -18,6 +18,10 @@ export const S_MailAddress = styled.a`
   color: ${appColors.primaryColor};
   text-decoration: none;
   margin-left: 5px;
+
+  &:hover {
+    color: ${appColors.secondaryColor};
+  }
 `;
 
 export const S_FormContainer = styled.div`
