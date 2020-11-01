@@ -4,7 +4,7 @@ import {
   S_Date,
   S_ImgCredits,
   S_ImgContainer,
-  S_Img,
+  SC_Img,
   S_TitleContainer,
   S_Container,
 } from './index.styles';
@@ -21,7 +21,7 @@ const Header: FunctionComponent<Props> = ({ article }) => {
         <S_Date>{article.date}</S_Date>
       </S_TitleContainer>
       <S_ImgContainer>
-        <S_Img fluid={article.img} />
+        <SC_Img fluid={article.img} />
         <S_ImgCredits>{article.imageLabel}</S_ImgCredits>
       </S_ImgContainer>
     </S_Container>

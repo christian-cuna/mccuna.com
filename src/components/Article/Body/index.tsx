@@ -1,8 +1,8 @@
 import { MDXProvider } from '@mdx-js/react';
-import { Link } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React, { FunctionComponent } from 'react';
 import { IArticle } from '../../../models/IArticle';
+import { components } from '../../Mdx';
 import { S_Container, S_BottomDate } from './index.styles';
 
 export type Props = {
@@ -18,10 +18,6 @@ const Body: FunctionComponent<Props> = ({ article }) => {
       <S_BottomDate>{article.date}</S_BottomDate>
     </S_Container>
   );
-};
-
-const components = {
-  Link,
 };
 
 export default Body;

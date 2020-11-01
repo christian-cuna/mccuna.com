@@ -19,7 +19,7 @@ export const S_ImgContainer = styled.div`
   width: 100%;
 `;
 
-export const S_Img = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
+export const SC_Img = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
   width: 100%;
   height: ${imgHeight};
   margin-bottom: 0;
