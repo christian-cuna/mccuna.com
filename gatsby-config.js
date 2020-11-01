@@ -38,6 +38,12 @@ module.exports = {
               backgroundColor: '#f00',
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: true,
+            },
+          },
         ],
       },
     },

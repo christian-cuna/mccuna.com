@@ -7,6 +7,37 @@ imageLabel: Dummy Article 0 credits
 iconSrc: './Images/archive-solid.jpg'
 ---
 
+```tsx
+const Layout: FunctionComponent<Props> = ({ children }) => {
+  return (
+    <>
+      <GlobalStyles />
+      <S_Container>
+        <S_MenuContainer>
+          <Menu />
+        </S_MenuContainer>
+        <S_MainContainer>{children}</S_MainContainer>
+        <S_FooterContainer>
+          <Footer />
+        </S_FooterContainer>
+      </S_Container>
+    </>
+  );
+};
+```
+
+```javascript
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
+];
+```
+
 #### Section 1
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae lectus in turpis vehicula facilisis sit amet ultrices sem. Donec sed ornare quam, eget blandit lorem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis interdum sit amet sapien sit amet ornare. Vivamus fringilla a nisl eget commodo. Ut commodo nunc et justo elementum finibus. Sed id diam et sapien dignissim placerat. Integer non diam ac nibh venenatis cursus. Etiam laoreet vestibulum arcu, eu gravida felis porttitor id. Suspendisse et viverra velit, in vestibulum enim. Etiam nibh orci, congue at elit ac, tempor porttitor augue. Sed eleifend congue consectetur.
@@ -36,21 +67,6 @@ Nunc a purus laoreet, fringilla magna vel, dignissim augue. Proin sem nunc, rhon
 Praesent tristique turpis quis purus rutrum, quis semper neque placerat. Cras ut justo a nibh luctus bibendum. Etiam eget consequat elit, quis porta nunc. Quisque mattis, mauris nec congue mattis, ex lacus lacinia mi, vel feugiat mi augue vel nulla. Ut consequat augue vitae volutpat faucibus. Vestibulum accumsan dignissim quam quis imperdiet. Quisque efficitur, massa ac tincidunt tempus, felis massa consequat nulla, at pharetra mauris quam non lectus. Pellentesque finibus feugiat nibh, sed vehicula ipsum rutrum ac. Vivamus ut dui est. Donec aliquam, diam ac auctor ultricies, leo lacus gravida velit, ac vehicula dui quam non purus. Vestibulum dapibus massa eu elit facilisis, in congue nisi porttitor. Morbi sed sem dui. Morbi nec massa convallis, aliquet sem sodales, sagittis leo.
 
 Maecenas ultrices diam augue, at ultricies lectus consectetur id. Sed quis dui mauris. Aenean sed sem id mauris sagittis fermentum. Phasellus a porta nisi. Ut vitae rhoncus nibh. Proin sed purus at lacus vulputate finibus. Sed egestas varius nulla a ultricies.
-
-```
-Duis fermentum fermentum nisi, ut rhoncus nisl.
-Sed id sem enim. Ut condimentum malesuada metus vel vulputate.
-Integer laoreet consequat bibendum. Duis vitae venenatis erat.
-Pellentesque interdum dolor velit, sed cursus magna convallis quis.
-Aenean fermentum sem non justo convallis pretium.
-Sed rhoncus mauris eget gravida euismod.
-Ut tincidunt ipsum tellus, quis molestie erat fringilla eget.
-Integer pretium id risus id consectetur.
-Proin vel turpis id leo aliquet feugiat.
-Ut at tortor ac leo sollicitudin rhoncus sed eu nisl.
-Vestibulum massa diam, aliquet eget tincidunt vitae, lacinia nec ipsum.
-Phasellus semper non purus sit amet volutpat.
-```
 
 In non bibendum ex, sit amet interdum mi. Integer non dictum felis. Integer orci sapien, congue vel volutpat sed, consequat vestibulum velit. Curabitur ultrices lorem in condimentum blandit. Phasellus posuere sem nunc, vel sollicitudin dolor aliquam nec. Phasellus semper lectus pretium, ornare nisi nec, vestibulum nisl. Donec vitae mauris dapibus, rutrum velit ac, aliquet leo. Donec scelerisque eros velit, non tincidunt nulla lobortis a. Cras elementum leo enim, vehicula fringilla nisl interdum id. Duis nec tortor leo. Duis tincidunt ultrices nulla vitae tristique. Fusce malesuada faucibus enim. Aliquam vel mauris ultricies, dictum nisi sit amet, scelerisque nulla. Vestibulum nec risus euismod, iaculis dui vel, molestie tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

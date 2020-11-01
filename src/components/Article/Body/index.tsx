@@ -12,12 +12,16 @@ export type Props = {
 const Body: FunctionComponent<Props> = ({ article }) => {
   return (
     <S_Container>
-      <MDXProvider components={{ Link }}>
+      <MDXProvider components={components}>
         <MDXRenderer>{article.content}</MDXRenderer>
       </MDXProvider>
       <S_BottomDate>{article.date}</S_BottomDate>
     </S_Container>
   );
+};
+
+const components = {
+  Link,
 };
 
 export default Body;

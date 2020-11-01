@@ -2825,6 +2825,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___gatsbyRemarkPlugins___resolve'
   | 'pluginOptions___gatsbyRemarkPlugins___options___maxWidth'
   | 'pluginOptions___gatsbyRemarkPlugins___options___backgroundColor'
+  | 'pluginOptions___gatsbyRemarkPlugins___options___showLineNumbers'
   | 'pluginOptions___backgroundColor'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___component'
@@ -2988,11 +2989,13 @@ export type SitePluginPluginOptionsGatsbyRemarkPluginsFilterListInput = {
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptions = {
   maxWidth?: Maybe<Scalars['Int']>;
   backgroundColor?: Maybe<Scalars['String']>;
+  showLineNumbers?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsGatsbyRemarkPluginsOptionsFilterInput = {
   maxWidth?: Maybe<IntQueryOperatorInput>;
   backgroundColor?: Maybe<StringQueryOperatorInput>;
+  showLineNumbers?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SitePluginSortInput = {
