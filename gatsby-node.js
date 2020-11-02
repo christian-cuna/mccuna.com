@@ -1,7 +1,5 @@
 const { createFilePath } = require('gatsby-source-filesystem');
 const path = require('path');
-const { appColors } = require('esm')(module);
-module.exports = require('./src/global/styles');
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -41,7 +39,6 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.blogSlug,
-        appPrimaryColor: appColors.primaryColor,
       },
     });
   });

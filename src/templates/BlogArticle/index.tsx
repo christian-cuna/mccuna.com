@@ -31,7 +31,7 @@ export const query = graphql`
               fit: FILL
               maxWidth: 260
               maxHeight: 260
-              traceSVG: { color: "$appPrimaryColor", background: "#fff" }
+              traceSVG: { color: "#07a7cf", background: "#fff" }
             ) {
               aspectRatio
               src
