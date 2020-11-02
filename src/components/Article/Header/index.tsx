@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { appColors } from '../../../global/styles';
 import { IArticle } from '../../../models/IArticle';
 import {
   S_Date,
@@ -21,7 +22,7 @@ const Header: FunctionComponent<Props> = ({ article }) => {
         <S_Date>{article.date}</S_Date>
       </S_TitleContainer>
       <S_ImgContainer>
-        <SC_Img fluid={article.img} />
+        <SC_Img fluid={article.img} backgroundColor={appColors.primaryColor} />
         <S_ImgCredits>{article.imageLabel}</S_ImgCredits>
       </S_ImgContainer>
     </S_Container>

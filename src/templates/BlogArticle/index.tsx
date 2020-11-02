@@ -27,7 +27,12 @@ export const query = graphql`
         date
         imageSrc {
           childImageSharp {
-            fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+            fluid(
+              fit: FILL
+              maxWidth: 260
+              maxHeight: 260
+              traceSVG: { color: "$appPrimaryColor", background: "#fff" }
+            ) {
               aspectRatio
               src
               srcSet

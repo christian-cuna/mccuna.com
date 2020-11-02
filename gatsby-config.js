@@ -11,7 +11,6 @@ module.exports = {
     'gatsby-plugin-fontawesome-css',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
@@ -42,7 +41,6 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
-              backgroundColor: '#ff0000',
             },
           },
           {
@@ -52,6 +50,12 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 1200,
       },
     },
     {

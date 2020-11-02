@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { appBorderStyle, appColors } from '../../global/styles';
+import { appBorderStyle } from '../../global/styles';
 import { mainContainerWidth } from '../Layout/index.styles';
 
 export const S_Container = styled.div`
@@ -20,7 +20,6 @@ export const S_Img = styled.img`
   width: 220px;
   height: 225px;
   border-radius: 50%;
-  background-color: ${appColors.secondaryColor};
 `;
 
 export const S_Description = styled.p`
