@@ -19,6 +19,7 @@ const BlogArticle: FunctionComponent<Props> = ({ data }) => {
   return <Article article={article} />;
 };
 
+// TODO: Find a way to use appColors.primaryColor instead of the color code
 export const query = graphql`
   query Article($slug: String!) {
     mdx(fields: { blogSlug: { eq: $slug } }) {

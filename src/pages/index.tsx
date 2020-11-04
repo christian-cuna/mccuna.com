@@ -39,7 +39,11 @@ export const query = graphql`
             description
             iconSrc {
               childImageSharp {
-                fixed(width: 38, height: 38) {
+                fixed(
+                  width: 38
+                  height: 38
+                  traceSVG: { color: "#07a7cf", background: "#fff" }
+                ) {
                   src
                   srcSet
                   height
