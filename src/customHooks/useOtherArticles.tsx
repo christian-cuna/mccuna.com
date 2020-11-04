@@ -21,7 +21,12 @@ export default function useOtherArticles(): UseOtherArticles {
               description
               imageSrc {
                 childImageSharp {
-                  fluid(fit: FILL, maxWidth: 260, maxHeight: 260) {
+                  fluid(
+                    fit: FILL
+                    maxWidth: 260
+                    maxHeight: 260
+                    traceSVG: { color: "#07a7cf", background: "#fff" }
+                  ) {
                     aspectRatio
                     src
                     srcSet
@@ -43,27 +48,56 @@ export default function useOtherArticles(): UseOtherArticles {
     }
   `);
 
+  // Go through the edges a single time by using state lazy init
   const [articles] = useState<IArticleListItem[]>(() =>
-    data.allMdx.edges.map(edge => ({
-      title: edge.node.frontmatter.title,
-      date: new Date(edge.node.frontmatter.date).toDateString(),
-      slug: edge.node.fields.blogSlug,
-      excerpt: edge.node.frontmatter.description,
-      imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
-    }))
+    data.allMdx.edges.map(edge => {
+      return {
+        title: edge.node.frontmatter.title,
+        date: new Date(edge.node.frontmatter.date).toDateString(),
+        slug: edge.node.fields.blogSlug,
+        excerpt: edge.node.frontmatter.description,
+        imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
+      };
+    })
   );
 
-  const getRandomArticle = (): IArticleListItem => {
+  const getRandomArticle = (
+    selectedArticles?: IArticleListItem[]
+  ): IArticleListItem => {
     if (!articles.length) {
       return null;
     }
 
-    const index = randomIntFromInterval(0, articles.length - 1);
-    return articles[index];
+    const intervalMax = selectedArticles
+      ? articles.length - 1 - selectedArticles.length
+      : articles.length - 1;
+    const index = randomIntFromInterval(0, intervalMax);
+
+    let collection: IArticleListItem[] = articles;
+    // filter selected articles
+    if (selectedArticles) {
+      collection = articles.filter(
+        (article: IArticleListItem) =>
+          !selectedArticles.some(
+            (selectedArticle: IArticleListItem) =>
+              selectedArticle.slug === article.slug
+          )
+      );
+    }
+
+    return collection[index];
   };
 
   const getRandomArticles = (noOfArticles: number) => {
-    return [...Array(noOfArticles)].map(() => getRandomArticle());
+    const randomArticles: IArticleListItem[] = [];
+    for (let cnt = 0; cnt < noOfArticles; cnt += 1) {
+      const randomArticle = getRandomArticle(randomArticles);
+      if (randomArticle) {
+        randomArticles.push(randomArticle);
+      }
+    }
+
+    return randomArticles;
   };
 
   return {
