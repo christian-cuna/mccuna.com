@@ -141,7 +141,7 @@ const verticalIconCss = css`
 
 // Prevent passing layoutOrientation to the FontAwesomeIcon
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const S_Icon = styled(({ layoutOrientation, ...props }) => (
+export const SC_Icon = styled(({ layoutOrientation, ...props }) => (
   <S_BaseIcon {...props} />
 ))<S_Props>`
   ${props =>

@@ -6,4 +6,5 @@ export interface IArticle {
   img: FluidObject | FluidObject[];
   imageLabel: string;
   content: string;
+  blogSlug: string;
 }

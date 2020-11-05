@@ -9,7 +9,9 @@ export type UseOtherArticles = {
   getRandomArticles: (noOfArticles: number) => IArticleListItem[];
 };
 
-export default function useOtherArticles(): UseOtherArticles {
+export default function useOtherArticles(
+  currentArticleBlogSlug: string
+): UseOtherArticles {
   const data: OtherArticlesQuery = useStaticQuery(graphql`
     query OtherArticles {
       allMdx {
@@ -54,7 +56,7 @@ export default function useOtherArticles(): UseOtherArticles {
       return {
         title: edge.node.frontmatter.title,
         date: new Date(edge.node.frontmatter.date).toDateString(),
-        slug: edge.node.fields.blogSlug,
+        blogSlug: edge.node.fields.blogSlug,
         excerpt: edge.node.frontmatter.description,
         imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
       };
@@ -67,20 +69,22 @@ export default function useOtherArticles(): UseOtherArticles {
     if (!articles.length) {
       return null;
     }
+    let collection: IArticleListItem[] = articles.filter(
+      article => article.blogSlug !== currentArticleBlogSlug
+    );
 
     const intervalMax = selectedArticles
-      ? articles.length - 1 - selectedArticles.length
-      : articles.length - 1;
+      ? collection.length - 1 - selectedArticles.length
+      : collection.length - 1;
     const index = randomIntFromInterval(0, intervalMax);
 
-    let collection: IArticleListItem[] = articles;
     // filter selected articles
     if (selectedArticles) {
-      collection = articles.filter(
+      collection = collection.filter(
         (article: IArticleListItem) =>
           !selectedArticles.some(
             (selectedArticle: IArticleListItem) =>
-              selectedArticle.slug === article.slug
+              selectedArticle.blogSlug === article.blogSlug
           )
       );
     }

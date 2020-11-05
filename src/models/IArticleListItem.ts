@@ -5,5 +5,5 @@ export interface IArticleListItem {
   title: string;
   date: string;
   excerpt: string;
-  slug: string;
+  blogSlug: string;
 }

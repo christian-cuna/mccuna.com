@@ -14,7 +14,7 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
     date: edge.node.frontmatter.date,
     excerpt: edge.node.excerpt,
     imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
-    slug: edge.node.fields.blogSlug,
+    blogSlug: edge.node.fields.blogSlug,
   }));
   return <ArticlesList articles={articles} />;
 };

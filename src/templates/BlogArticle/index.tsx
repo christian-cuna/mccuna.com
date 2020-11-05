@@ -15,6 +15,7 @@ const BlogArticle: FunctionComponent<Props> = ({ data }) => {
     date: new Date(data.mdx.frontmatter.date).toDateString(),
     img: data.mdx.frontmatter.imageSrc.childImageSharp.fluid,
     imageLabel: data.mdx.frontmatter.imageLabel,
+    blogSlug: data.mdx.fields.blogSlug,
   };
   return <Article article={article} />;
 };
@@ -46,6 +47,9 @@ export const query = graphql`
           }
         }
         imageLabel
+      }
+      fields {
+        blogSlug
       }
       body
     }

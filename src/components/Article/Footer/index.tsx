@@ -5,15 +5,15 @@ import PaginationLinks from './PaginationLinks';
 import SocialInteractions from './SocialInteractions';
 
 export type Props = {
-  article: IArticle;
+  currentArticleBlogSlug: string;
 };
 
-const Footer: FunctionComponent<Props> = () => {
+const Footer: FunctionComponent<Props> = ({ currentArticleBlogSlug }) => {
   return (
     <div>
       <PaginationLinks />
       <SocialInteractions />
-      <OtherArticles />
+      <OtherArticles currentArticleBlogSlug={currentArticleBlogSlug} />
     </div>
   );
 };

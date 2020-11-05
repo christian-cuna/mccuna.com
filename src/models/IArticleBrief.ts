@@ -1,7 +1,7 @@
 import { FixedObject } from 'gatsby-image';
 
 export interface IArticleBrief {
-  slug: string;
+  blogSlug: string;
   title: string;
   description: string;
   date: string;

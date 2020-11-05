@@ -4,10 +4,14 @@ import { LayoutOrientation } from '../../../../enums/LayoutOrientation';
 import { WrapStatus } from '../../../../enums/WrapStatus';
 import { SC_ArticlesList } from './index.styles';
 
-export type Props = {};
+export type Props = {
+  currentArticleBlogSlug: string;
+};
 
-const OtherArticles: FunctionComponent<Props> = () => {
-  const { getRandomArticles } = useOtherArticles();
+const OtherArticles: FunctionComponent<Props> = ({
+  currentArticleBlogSlug,
+}) => {
+  const { getRandomArticles } = useOtherArticles(currentArticleBlogSlug);
   const articles = getRandomArticles(3);
 
   return (

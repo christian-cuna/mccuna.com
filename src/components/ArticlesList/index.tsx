@@ -21,7 +21,7 @@ const ArticlesList: FunctionComponent<Props> = ({
     <S_Container className={className} wrapItems={wrapItems}>
       {articles.map(article => (
         <SC_ArticleListItem
-          key={article.slug}
+          key={article.blogSlug}
           article={article}
           layoutOrientation={itemLayoutOrientation}
         />

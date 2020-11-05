@@ -17,7 +17,7 @@ const Article: FunctionComponent<Props> = ({ article }) => {
       <Header article={article} />
       <SC_ArticleIcons />
       <Body article={article} />
-      <Footer article={article} />
+      <Footer currentArticleBlogSlug={article.blogSlug} />
     </S_Container>
   );
 };
