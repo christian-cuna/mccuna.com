@@ -32,6 +32,9 @@ type State = {
   email: string;
 };
 
+{
+  /* TODO: Add e2e testing?*/
+}
 const SubscribeForm: FunctionComponent<Props> = () => {
   const [state, setState] = useState<State>({
     name: '',

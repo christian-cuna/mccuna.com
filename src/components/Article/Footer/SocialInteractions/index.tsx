@@ -16,6 +16,7 @@ export type Props = {};
 const SocialInteractions: FunctionComponent<Props> = () => {
   return (
     <S_Container>
+      {/* TODO: Replace mocks */}
       <SC_Twitter icon={faTwitter} label='Share' url='dummy' />
       <SC_LinkedIn icon={faLinkedin} label='Share' url='dummy' />
       <SC_GitHub icon={faGithub} label='Edit on GitHub' url='dummy' />

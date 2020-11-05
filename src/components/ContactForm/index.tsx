@@ -22,6 +22,9 @@ import {
 
 export type Props = {};
 
+{
+  /* TODO: Add e2e testing? */
+}
 const ContactForm: FunctionComponent<Props> = () => {
   return (
     <S_Container>
