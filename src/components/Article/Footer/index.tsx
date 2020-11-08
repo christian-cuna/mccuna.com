@@ -1,19 +1,16 @@
 import React, { FunctionComponent } from 'react';
-import { IArticle } from '../../../models/IArticle';
+import { useArticleContext } from '../../../contexts/ArticleContext';
 import OtherArticles from './OtherArticles';
 import PaginationLinks from './PaginationLinks';
 import SocialInteractions from './SocialInteractions';
 
-export type Props = {
-  currentArticleBlogSlug: string;
-};
-
-const Footer: FunctionComponent<Props> = ({ currentArticleBlogSlug }) => {
+const Footer: FunctionComponent = () => {
+  const { article } = useArticleContext();
   return (
     <div>
       <PaginationLinks />
       <SocialInteractions />
-      <OtherArticles currentArticleBlogSlug={currentArticleBlogSlug} />
+      <OtherArticles currentArticleBlogSlug={article.blogSlug} />
     </div>
   );
 };

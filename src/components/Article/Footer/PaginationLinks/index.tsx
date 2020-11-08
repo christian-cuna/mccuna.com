@@ -1,23 +1,30 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FunctionComponent } from 'react';
-import { S_Container, SC_Link } from './index.styles';
+import { useArticleContext } from '../../../../contexts/ArticleContext';
+import {
+  SC_NextLink,
+  SC_NextLinkIcon,
+  SC_PrevLink,
+  SC_PrevLinkIcon,
+  S_Container,
+} from './index.styles';
 
-export type Props = {};
-
-const PaginationLinks: FunctionComponent<Props> = () => {
+const PaginationLinks: FunctionComponent = () => {
+  const { article } = useArticleContext();
   return (
     <S_Container>
-      {/* TODO: Replace mocks */}
-      <SC_Link to='/dummy-2'>
-        <FontAwesomeIcon icon={faArrowLeft} />
-        To dynamically fetch previous article name
-      </SC_Link>
-      {/* TODO: Replace mocks */}
-      <SC_Link to='/dummy-0'>
-        To dynamically fetch next article name
-        <FontAwesomeIcon icon={faArrowRight} />
-      </SC_Link>
+      {article.nextArticleLink && (
+        <SC_PrevLink to={article.nextArticleLink.blogSlug}>
+          <SC_PrevLinkIcon icon={faArrowLeft} />
+          {article.nextArticleLink.title}
+        </SC_PrevLink>
+      )}
+      {article.prevArticleLink && (
+        <SC_NextLink to={article.prevArticleLink.blogSlug}>
+          {article.prevArticleLink.title}
+          <SC_NextLinkIcon icon={faArrowRight} />
+        </SC_NextLink>
+      )}
     </S_Container>
   );
 };

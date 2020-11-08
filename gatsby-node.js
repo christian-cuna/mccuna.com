@@ -19,9 +19,12 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query ArticleSlugs {
-      allMdx {
+      allMdx(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
+            frontmatter {
+              title
+            }
             fields {
               blogSlug
             }
@@ -31,7 +34,11 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMdx.edges.forEach(({ node }) => {
+  const edges = result.data.allMdx.edges;
+  edges.forEach(({ node }, idx) => {
+    const prev = idx === 0 ? null : edges[idx - 1].node;
+    const next = idx === edges.length - 1 ? null : edges[idx + 1].node;
+
     createPage({
       path: node.fields.blogSlug,
       component: path.resolve('./src/templates/BlogArticle/index.tsx'),
@@ -39,6 +46,8 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.blogSlug,
+        prev,
+        next,
       },
     });
   });

@@ -2,13 +2,16 @@ import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { ArticleQuery } from '../../../gatsby-graphql';
 import Article from '../../components/Article';
+import { ArticleContextProvder } from '../../contexts/ArticleContext';
 import { IArticle } from '../../models/IArticle';
+import { IPageContext } from '../../models/PageContext';
 
 export type Props = {
   data: ArticleQuery;
+  pageContext: IPageContext;
 };
 
-const BlogArticle: FunctionComponent<Props> = ({ data }) => {
+const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
   const article: IArticle = {
     title: data.mdx.frontmatter.title,
     content: data.mdx.body,
@@ -16,8 +19,21 @@ const BlogArticle: FunctionComponent<Props> = ({ data }) => {
     img: data.mdx.frontmatter.imageSrc.childImageSharp.fluid,
     imageLabel: data.mdx.frontmatter.imageLabel,
     blogSlug: data.mdx.fields.blogSlug,
+    nextArticleLink: pageContext.next && {
+      title: pageContext.next.frontmatter.title,
+      blogSlug: pageContext.next.fields.blogSlug,
+    },
+    prevArticleLink: pageContext.prev && {
+      title: pageContext.prev.frontmatter.title,
+      blogSlug: pageContext.prev.fields.blogSlug,
+    },
   };
-  return <Article article={article} />;
+
+  return (
+    <ArticleContextProvder article={article}>
+      <Article />
+    </ArticleContextProvder>
+  );
 };
 
 // TODO: Find a way to use appColors.primaryColor instead of the color code
