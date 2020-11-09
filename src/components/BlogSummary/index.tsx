@@ -1,11 +1,4 @@
-import {
-  faArrowRight,
-  faBacon,
-  faHandPointRight,
-  faLongArrowAltRight,
-  faSnowman,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import React, { FunctionComponent } from 'react';
 import { IArticleBrief } from '../../models/IArticleBrief';
 import ArticleBrief from './ArticleBrief';
@@ -24,7 +17,7 @@ const BlogSummary: FunctionComponent<Props> = ({ articles }) => {
   return (
     <S_Container>
       {articles.map(article => (
-        <ArticleBrief key={article.slug} article={article} />
+        <ArticleBrief key={article.blogSlug} article={article} />
       ))}
       <S_ReadAllLink to='/dummy'>
         <S_ReadAllLabel>Read all</S_ReadAllLabel>

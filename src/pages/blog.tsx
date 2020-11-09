@@ -3,6 +3,7 @@ import ArticlesList from '../components/ArticlesList';
 import { graphql } from 'gatsby';
 import { BlogIndexQuery } from '../../gatsby-graphql';
 import { IArticleListItem } from '../models/IArticleListItem';
+import SEO from '../components/SEO';
 
 export type Props = {
   data: BlogIndexQuery;
@@ -16,7 +17,12 @@ const Blog: FunctionComponent<Props> = ({ data }) => {
     imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
     blogSlug: edge.node.fields.blogSlug,
   }));
-  return <ArticlesList articles={articles} />;
+  return (
+    <>
+      <SEO title='Blog' description="McCuna's blog posts" />
+      <ArticlesList articles={articles} />
+    </>
+  );
 };
 
 export const query = graphql`

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
@@ -10,6 +8,8 @@ import {
 } from '../../../global/styles';
 import Img, { FixedObject } from 'gatsby-image';
 
+export const iconWidth = '38px;';
+export const iconHeight = '38px;';
 const hoverBorderWidth = '15px';
 
 export const S_Container = styled.div`
@@ -97,7 +97,7 @@ export const S_Excerpt = styled.p`
   }
 `;
 
-export const S_ReadLink = styled(Link)`
+export const S_Read = styled.span`
   color: ${appColors.primaryColor};
   text-shadow: 0 0 #000;
   text-decoration: none;

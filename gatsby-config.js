@@ -6,6 +6,11 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: 'McCuna',
+    description: "McCuna's personal website",
+    author: 'Mihai-Cristian Cuna-Mic',
+  },
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-fontawesome-css',
@@ -17,7 +22,7 @@ module.exports = {
         fileName: './gatsby-graphql.ts',
         documentPaths: [
           './src/pages/*.{ts,tsx}',
-          // './src/components/**/index.{ts,tsx}',
+          './src/components/**/index.{ts,tsx}',
           './src/customHooks/**/*.{ts,tsx}',
           './src/templates/**/index.{ts,tsx}',
           './gatsby-node.js',
@@ -77,5 +82,18 @@ module.exports = {
         path: `${__dirname}/content/articles`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'McCuna',
+        short_name: 'McCuna',
+        start_url: '/',
+        background_color: '#fff',
+        theme_color: '#07a7cf',
+        display: 'standalone',
+        icon: './static/favicon.png',
+      },
+    },
+    'gatsby-plugin-offline',
   ],
 };

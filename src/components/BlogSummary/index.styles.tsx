@@ -1,11 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import {
-  appBorderStyle,
-  appColors,
-  containerPadding,
-} from '../../global/styles';
+import { appColors, containerPadding } from '../../global/styles';
 
 export const S_Container = styled.div`
   width: 100%;

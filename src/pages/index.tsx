@@ -6,6 +6,7 @@ import { IArticleBrief } from '../models/IArticleBrief';
 import PersonalInfoSide from '../components/PersonalInfoSide';
 import IndexBlogDescription from '../components/BlogDescription';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 export type Props = {
   data: IndexQuery;
@@ -13,18 +14,21 @@ export type Props = {
 
 const Index: FunctionComponent<Props> = ({ data }) => {
   const articles: IArticleBrief[] = data.allMdx.edges.map(edge => ({
-    slug: edge.node.fields.blogSlug,
+    blogSlug: edge.node.fields.blogSlug,
     description: edge.node.frontmatter.description,
     title: edge.node.frontmatter.title,
     date: new Date(edge.node.frontmatter.date).toDateString(),
     iconSrc: edge.node.frontmatter.iconSrc.childImageSharp.fixed,
   }));
   return (
-    <S_Container>
-      <IndexBlogDescription />
-      <BlogSummary articles={articles} />
-      <PersonalInfoSide />
-    </S_Container>
+    <>
+      <SEO title='Home' description="Home page of McCuna's personal website" />
+      <S_Container>
+        <IndexBlogDescription />
+        <BlogSummary articles={articles} />
+        <PersonalInfoSide />
+      </S_Container>
+    </>
   );
 };
 

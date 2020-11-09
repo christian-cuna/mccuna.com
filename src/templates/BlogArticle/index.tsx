@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { ArticleQuery } from '../../../gatsby-graphql';
 import Article from '../../components/Article';
+import SEO from '../../components/SEO';
 import { ArticleContextProvder } from '../../contexts/ArticleContext';
 import { IArticle } from '../../models/IArticle';
 import { IPageContext } from '../../models/PageContext';
@@ -27,12 +28,16 @@ const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
       title: pageContext.prev.frontmatter.title,
       blogSlug: pageContext.prev.fields.blogSlug,
     },
+    excerpt: data.mdx.excerpt,
   };
 
   return (
-    <ArticleContextProvder article={article}>
-      <Article />
-    </ArticleContextProvder>
+    <>
+      <SEO title={article.title} description={article.excerpt} />
+      <ArticleContextProvder article={article}>
+        <Article />
+      </ArticleContextProvder>
+    </>
   );
 };
 
@@ -40,6 +45,7 @@ const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
 export const query = graphql`
   query Article($slug: String!) {
     mdx(fields: { blogSlug: { eq: $slug } }) {
+      excerpt
       frontmatter {
         title
         date

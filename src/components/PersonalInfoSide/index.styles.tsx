@@ -2,6 +2,9 @@ import styled from 'styled-components';
 import { appBorderStyle } from '../../global/styles';
 import { mainContainerWidth } from '../Layout/index.styles';
 
+export const imgWidth = '220px';
+export const imgHeight = '238px';
+
 export const S_Container = styled.div`
   border-top: ${appBorderStyle.containerBorder};
   border-bottom: ${appBorderStyle.containerBorder};
@@ -17,8 +20,8 @@ export const S_Container = styled.div`
 `;
 
 export const S_Img = styled.img`
-  width: 220px;
-  height: 225px;
+  width: ${imgWidth};
+  height: ${imgHeight};
   border-radius: 50%;
 `;
 

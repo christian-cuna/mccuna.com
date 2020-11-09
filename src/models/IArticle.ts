@@ -7,6 +7,7 @@ export interface IArticle {
   imageLabel: string;
   content: string;
   blogSlug: string;
+  excerpt: string;
   prevArticleLink?: IArticleNavigationLink;
   nextArticleLink?: IArticleNavigationLink;
 }
