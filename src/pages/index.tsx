@@ -1,12 +1,13 @@
-import React, { FunctionComponent } from 'react';
-import BlogSummary from '../components/BlogSummary';
 import { graphql } from 'gatsby';
-import { IndexQuery } from '../../gatsby-graphql';
-import { IArticleBrief } from '../models/IArticleBrief';
-import PersonalInfoSide from '../components/PersonalInfoSide';
-import IndexBlogDescription from '../components/BlogDescription';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components';
+
+import { IndexQuery } from '../../gatsby-graphql';
+import IndexBlogDescription from '../components/BlogDescription';
+import BlogSummary from '../components/BlogSummary';
+import PersonalInfoSide from '../components/PersonalInfoSide';
 import SEO from '../components/SEO';
+import { IArticleBrief } from '../models/IArticleBrief';
 
 export type Props = {
   data: IndexQuery;

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+
 import { appColors } from '../../../../global/styles';
 
 const hoverBorderWidth = '5px';

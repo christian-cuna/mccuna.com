@@ -1,14 +1,15 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FunctionComponent, useState } from 'react';
+
 import { S_Container, S_Label } from './index.styles';
 
 export type Props = {
-  icon: IconProp
-  hoverIcon: IconProp
-  label: string
-  onClick: () => void
-}
+  icon: IconProp;
+  hoverIcon: IconProp;
+  label: string;
+  onClick: () => void;
+};
 
 const ArticleIcon: FunctionComponent<Props> = ({
   icon,

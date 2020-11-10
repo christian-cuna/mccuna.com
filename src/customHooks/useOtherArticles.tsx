@@ -1,5 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { useState } from 'react';
+
 import { OtherArticlesQuery } from '../../gatsby-graphql';
 import { IArticleListItem } from '../models/IArticleListItem';
 import { randomIntFromInterval } from '../utils/math';
@@ -10,7 +11,7 @@ export type UseOtherArticles = {
 };
 
 export default function useOtherArticles(
-  currentArticleBlogSlug: string
+  currentArticleBlogSlug: string,
 ): UseOtherArticles {
   const data: OtherArticlesQuery = useStaticQuery(graphql`
     query OtherArticles {
@@ -60,17 +61,17 @@ export default function useOtherArticles(
         excerpt: edge.node.frontmatter.description,
         imageSrc: edge.node.frontmatter.imageSrc.childImageSharp.fluid,
       };
-    })
+    }),
   );
 
   const getRandomArticle = (
-    selectedArticles?: IArticleListItem[]
+    selectedArticles?: IArticleListItem[],
   ): IArticleListItem => {
     if (!articles.length) {
       return null;
     }
     let collection: IArticleListItem[] = articles.filter(
-      article => article.blogSlug !== currentArticleBlogSlug
+      article => article.blogSlug !== currentArticleBlogSlug,
     );
 
     const intervalMax = selectedArticles
@@ -84,8 +85,8 @@ export default function useOtherArticles(
         (article: IArticleListItem) =>
           !selectedArticles.some(
             (selectedArticle: IArticleListItem) =>
-              selectedArticle.blogSlug === article.blogSlug
-          )
+              selectedArticle.blogSlug === article.blogSlug,
+          ),
       );
     }
 

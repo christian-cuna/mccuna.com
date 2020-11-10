@@ -1,7 +1,8 @@
 import React, { FunctionComponent } from 'react';
-import { imgWidth, S_Container, S_Description, S_Img } from './index.styles';
-import ProfilePicture from '../../../static/profile.jpg';
+
+import profilePicture from '../../assets/profile.jpg';
 import { imgHeight } from '../Article/Header/index.styles';
+import { imgWidth, S_Container, S_Description, S_Img } from './index.styles';
 
 export type Props = {
   className?: string;
@@ -11,7 +12,7 @@ const PersonalInfoSide: FunctionComponent<Props> = ({ className }) => {
   return (
     <S_Container className={className}>
       <S_Img
-        src={ProfilePicture}
+        src={profilePicture}
         width={imgWidth}
         height={imgHeight}
         alt='McCuna Picture'

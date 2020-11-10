@@ -1,25 +1,15 @@
-import { faReact } from '@fortawesome/free-brands-svg-icons';
-import {
-  faEnvelope,
-  faHandshake,
-  faNewspaper,
-} from '@fortawesome/free-regular-svg-icons';
-import {
-  faPeopleArrows,
-  faSignature,
-  faSync,
-  faUserCheck,
-} from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faNewspaper } from '@fortawesome/free-regular-svg-icons';
+import { faSignature, faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import React, { ChangeEvent, FunctionComponent, useState } from 'react';
+
 import {
   S_Container,
+  S_Description,
   S_FieldContainer,
   S_Header,
-  S_Label,
   S_Input,
+  S_Label,
   S_SubscribeBtn,
-  S_Description,
   SC_HeaderIcon,
   SC_LabelIcon,
   SC_SubscribeBtnIcon,
@@ -32,9 +22,7 @@ type State = {
   email: string;
 };
 
-{
-  /* TODO: Add e2e testing?*/
-}
+/* TODO: Add e2e testing? */
 const SubscribeForm: FunctionComponent<Props> = () => {
   const [state, setState] = useState<State>({
     name: '',

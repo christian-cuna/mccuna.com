@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react';
-import ArticlesList from '../components/ArticlesList';
 import { graphql } from 'gatsby';
+import React, { FunctionComponent } from 'react';
+
 import { BlogIndexQuery } from '../../gatsby-graphql';
-import { IArticleListItem } from '../models/IArticleListItem';
+import ArticlesList from '../components/ArticlesList';
 import SEO from '../components/SEO';
+import { IArticleListItem } from '../models/IArticleListItem';
 
 export type Props = {
   data: BlogIndexQuery;

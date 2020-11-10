@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import Img, { FluidObject } from 'gatsby-image';
+import styled from 'styled-components';
 
 export const imgHeight = '410px';
 

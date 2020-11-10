@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from 'react';
+
 import { useArticleContext } from '../../../contexts/ArticleContext';
 import { appColors } from '../../../global/styles';
 import {
-  S_Date,
-  S_ImgCredits,
-  S_ImgContainer,
-  SC_Img,
-  S_TitleContainer,
   S_Container,
+  S_Date,
+  S_ImgContainer,
+  S_ImgCredits,
+  S_TitleContainer,
+  SC_Img,
 } from './index.styles';
 
 const Header: FunctionComponent = () => {

@@ -1,12 +1,12 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import React, { FunctionComponent } from 'react';
+
 import {
-  S_IconsContainer,
   S_Container,
-  SC_FontAwesomeIcon,
-  SC_RssIcon,
+  S_IconsContainer,
   SC_GitHub,
+  SC_RssIcon,
 } from './index.styles';
 import SubscribeForm from './SubscribeForm';
 
@@ -17,8 +17,8 @@ const Footer: FunctionComponent<Props> = () => {
     <S_Container>
       <SubscribeForm />
       <S_IconsContainer>
-        <SC_RssIcon icon={faRssSquare} size={'2x'} />
-        <SC_GitHub icon={faGithub} size={'2x'} />
+        <SC_RssIcon icon={faRssSquare} size='2x' />
+        <SC_GitHub icon={faGithub} size='2x' />
       </S_IconsContainer>
     </S_Container>
   );

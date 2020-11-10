@@ -1,12 +1,13 @@
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import React, { FunctionComponent } from 'react';
+
 import { useArticleContext } from '../../../../contexts/ArticleContext';
 import {
+  S_Container,
   SC_NextLink,
   SC_NextLinkIcon,
   SC_PrevLink,
   SC_PrevLinkIcon,
-  S_Container,
 } from './index.styles';
 
 const PaginationLinks: FunctionComponent = () => {

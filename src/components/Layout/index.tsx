@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react';
+
+import Footer from './Footer';
 import { GlobalStyles } from './GlobalStyles/index.styles';
 import {
   S_Container,
-  S_MenuContainer,
   S_FooterContainer,
   S_MainContainer,
+  S_MenuContainer,
 } from './index.styles';
-import Footer from './Footer';
 import Menu from './Menu';
 
 export type Props = {};

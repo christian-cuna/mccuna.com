@@ -1,12 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
+import Img, { FixedObject } from 'gatsby-image';
 import styled from 'styled-components';
+
 import {
+  appBorderStyle,
   appColors,
   containerPadding,
-  appBorderStyle,
 } from '../../../global/styles';
-import Img, { FixedObject } from 'gatsby-image';
 
 export const iconWidth = '38px;';
 export const iconHeight = '38px;';

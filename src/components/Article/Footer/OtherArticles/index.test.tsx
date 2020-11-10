@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
+import { render, screen } from '@testing-library/react';
 import * as Gatsby from 'gatsby';
-import useOtherArticles from '../../../../customHooks/useOtherArticles';
+import React from 'react';
+
 import { IArticleListItem } from '../../../../models/IArticleListItem';
 import { getInMDXFormat } from '../../../../utils/testing';
 import OtherArticles, { Props } from './index';
@@ -13,9 +13,7 @@ describe('OtherArticles should', () => {
   test('render a single article when there is a single other article', () => {
     const mockArticle = mockArticles[0];
     const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
-    useStaticQuery.mockImplementationOnce(() => {
-      return getInMDXFormat([mockArticle]);
-    });
+    useStaticQuery.mockImplementationOnce(() => getInMDXFormat([mockArticle]));
 
     const props: Props = {
       currentArticleBlogSlug: '',
@@ -43,9 +41,7 @@ describe('OtherArticles should', () => {
 
   test('render 3 random articles if more are available', () => {
     const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
-    useStaticQuery.mockImplementationOnce(() => {
-      return getInMDXFormat(mockArticles);
-    });
+    useStaticQuery.mockImplementationOnce(() => getInMDXFormat(mockArticles));
 
     const props: Props = {
       currentArticleBlogSlug: '',
@@ -63,9 +59,9 @@ describe('OtherArticles should', () => {
     const [mockArticle0, mockArticle1] = mockArticles;
 
     const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
-    useStaticQuery.mockImplementationOnce(() => {
-      return getInMDXFormat([mockArticle0, mockArticle1]);
-    });
+    useStaticQuery.mockImplementationOnce(() =>
+      getInMDXFormat([mockArticle0, mockArticle1]),
+    );
 
     const props: Props = {
       currentArticleBlogSlug: '',
@@ -83,9 +79,9 @@ describe('OtherArticles should', () => {
     const [mockArticle0, mockArticle1] = mockArticles;
 
     const useStaticQuery = jest.spyOn(Gatsby, 'useStaticQuery');
-    useStaticQuery.mockImplementationOnce(() => {
-      return getInMDXFormat([mockArticle0, mockArticle1]);
-    });
+    useStaticQuery.mockImplementationOnce(() =>
+      getInMDXFormat([mockArticle0, mockArticle1]),
+    );
 
     const props: Props = {
       currentArticleBlogSlug: mockArticle0.blogSlug,

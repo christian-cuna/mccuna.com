@@ -1,6 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import { S_Link, SC_FontAwesomeIcon, S_Label } from './index.styles';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import React, { FunctionComponent } from 'react';
+
+import { S_Label, S_Link, SC_FontAwesomeIcon } from './index.styles';
 
 export type Props = {
   icon: IconProp;

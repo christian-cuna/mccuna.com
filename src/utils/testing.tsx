@@ -1,5 +1,7 @@
 import { IArticleListItem } from '../models/IArticleListItem';
 
+// Too complex to be worth it
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getInMDXFormat = (articles: IArticleListItem[]) => {
   const data = {
     allMdx: {

@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+
 import { menuContainerHeight } from '../../Layout/index.styles';
-import { imgHeight, S_Date } from '../Header/index.styles';
 import ArticleIcons from '../ArticleIcons';
+import { imgHeight, S_Date } from '../Header/index.styles';
 
 export const S_Container = styled.div``;
 

@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet';
+
 import { SiteMetadataQuery } from '../../../gatsby-graphql';
 
 export type Props = {
@@ -20,7 +21,7 @@ const SEO: FunctionComponent<Props> = ({ description, title }) => {
           }
         }
       }
-    `
+    `,
   );
 
   const metaDescription = description || site.siteMetadata.description;

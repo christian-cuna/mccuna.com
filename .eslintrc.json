@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es2021": true
@@ -8,7 +9,8 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "airbnb"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -18,7 +20,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "prettier", "@typescript-eslint", "simple-import-sort"],
   "rules": {
     "react/prop-types": "off",
     "@typescript-eslint/ban-types": "off",
@@ -26,7 +28,27 @@
     "indent": ["error", 2],
     "linebreak-style": ["error", "windows"],
     "quotes": ["error", "single"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "prettier/prettier": "error",
+    "simple-import-sort/sort": "error",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "camelcase": "off",
+    "no-use-before-define": "off",
+    "react/jsx-pascal-case": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "jsx-quotes": ["error", "prefer-single"],
+    "arrow-parens": ["error", "as-needed"],
+    "import/prefer-default-export": "off",
+    "implicit-arrow-linebreak": "off",
+    "function-paren-newline": "off",
+    "arrow-body-style": "off",
+    "object-curly-newline": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error"
   },
   "overrides": [
     {
@@ -38,7 +60,10 @@
     {
       "files": ["*.test.tsx"],
       "rules": {
-        "@typescript-eslint/no-non-null-assertion": "off"
+        "typescript-eslint/no-var-requires": "off",
+        "no-undef": "off",
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "react/jsx-props-no-spreading": "off"
       }
     }
   ]

@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React, { FunctionComponent } from 'react';
+
 import { ArticleQuery } from '../../../gatsby-graphql';
 import Article from '../../components/Article';
 import SEO from '../../components/SEO';

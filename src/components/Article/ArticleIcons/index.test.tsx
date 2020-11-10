@@ -1,5 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
+
 import ArticleIcons from './index';
 
 describe('ArticleIcons should', () => {
@@ -7,7 +8,7 @@ describe('ArticleIcons should', () => {
     const { container } = render(<ArticleIcons />);
 
     const copyIcon = container.querySelector(
-      '[data-icon="copy"][data-prefix="far"]'
+      '[data-icon="copy"][data-prefix="far"]',
     );
     const upArrowIcon = container.querySelector('[data-icon="arrow-up"]');
 
@@ -19,13 +20,13 @@ describe('ArticleIcons should', () => {
     const { container } = render(<ArticleIcons />);
 
     const copyIcon = container.querySelector(
-      '[data-icon="copy"][data-prefix="far"]'
+      '[data-icon="copy"][data-prefix="far"]',
     )!;
 
     fireEvent.mouseEnter(copyIcon);
 
     const hoveredCopyIcon = container.querySelector(
-      '[data-icon="copy"][data-prefix="fas"]'
+      '[data-icon="copy"][data-prefix="fas"]',
     )!;
 
     expect(hoveredCopyIcon).not.toBeNull();

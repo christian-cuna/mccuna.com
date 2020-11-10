@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useContext } from 'react';
+
 import { IArticle } from '../models/IArticle';
 
 const ArticleContext = React.createContext(null);
@@ -18,11 +19,11 @@ export const ArticleContextProvder: FunctionComponent<ArticleContextProvderProps
   );
 };
 
-export type ArticleContext = {
+export type UseArticleContextResult = {
   article: IArticle;
 };
 
-export const useArticleContext = (): ArticleContext => {
+export const useArticleContext = (): UseArticleContextResult => {
   const article = useContext(ArticleContext);
   return { article };
 };

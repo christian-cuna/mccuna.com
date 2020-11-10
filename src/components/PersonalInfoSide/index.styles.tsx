@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { appBorderStyle } from '../../global/styles';
 import { mainContainerWidth } from '../Layout/index.styles';
 

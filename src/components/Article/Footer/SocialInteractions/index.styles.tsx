@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { brandColors } from '../../../../global/styles';
 import SocialInteraction from './SocialInteraction';
 

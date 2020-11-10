@@ -1,21 +1,22 @@
-import React, { FunctionComponent, useState } from 'react';
-import {
-  S_Props,
-  S_Container,
-  S_Details,
-  SC_Img,
-  S_Title,
-  S_Excerpt,
-  SC_Icon,
-  S_Corner,
-  S_Link,
-} from './index.styles';
 import {
   faExternalLinkAlt,
   faExternalLinkSquareAlt,
 } from '@fortawesome/free-solid-svg-icons';
-import { IArticleListItem } from '../../../models/IArticleListItem';
+import React, { FunctionComponent, useState } from 'react';
+
 import { LayoutOrientation } from '../../../enums/LayoutOrientation';
+import { IArticleListItem } from '../../../models/IArticleListItem';
+import {
+  S_Container,
+  S_Corner,
+  S_Details,
+  S_Excerpt,
+  S_Link,
+  S_Props,
+  S_Title,
+  SC_Icon,
+  SC_Img,
+} from './index.styles';
 
 export type Props = S_Props & {
   article: IArticleListItem;

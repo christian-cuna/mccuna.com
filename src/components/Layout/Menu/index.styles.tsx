@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { appBorderStyle, containerPadding } from '../../../global/styles';
 
+import { appBorderStyle, containerPadding } from '../../../global/styles';
 import MenuItem from './MenuItem';
 
 export const S_Menu = styled.div`

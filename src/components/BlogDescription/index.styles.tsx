@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { appColors, appBorderStyle } from '../../global/styles';
 
 export const S_Container = styled.div``;
 

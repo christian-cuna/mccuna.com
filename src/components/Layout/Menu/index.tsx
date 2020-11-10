@@ -1,14 +1,13 @@
-import React, { FunctionComponent } from 'react';
-import routes from '../../../utils/routes';
-import { S_Menu, SC_MenuItem } from './index.styles';
-
+import { faBlogger } from '@fortawesome/free-brands-svg-icons';
 import {
-  faHome,
   faAddressCard,
   faEnvelope,
+  faHome,
 } from '@fortawesome/free-solid-svg-icons';
-import MenuItem from './MenuItem';
-import { faBlogger } from '@fortawesome/free-brands-svg-icons';
+import React, { FunctionComponent } from 'react';
+
+import routes from '../../../utils/routes';
+import { S_Menu, SC_MenuItem } from './index.styles';
 
 const Menu: FunctionComponent = () => {
   return (

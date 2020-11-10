@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { appColors } from '../../../../global/styles';
 
 export const S_Container = styled.div`

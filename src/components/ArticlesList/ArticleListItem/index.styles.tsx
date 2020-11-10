@@ -1,10 +1,11 @@
-import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
+import Img, { FluidObject } from 'gatsby-image';
+import React from 'react';
 import styled, { css } from 'styled-components';
+
 import { LayoutOrientation } from '../../../enums/LayoutOrientation';
 import { appBorderStyle, appColors } from '../../../global/styles';
-import Img, { FluidObject } from 'gatsby-image';
 
 export const imgSize = '260px';
 const padding = '4%';
@@ -45,10 +46,11 @@ const containerVerticalCss = css`
 `;
 
 export const S_Container = styled(S_BaseContainer)<S_Props>`
-  ${props =>
-    props.layoutOrientation === LayoutOrientation.horizontal
+  ${props => {
+    return props.layoutOrientation === LayoutOrientation.horizontal
       ? containerHorizontalCss
-      : containerVerticalCss}
+      : containerVerticalCss;
+  }}
 `;
 
 const S_BaseImg = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
@@ -65,10 +67,11 @@ const imgVerticalCss = css`
 `;
 
 export const SC_Img = styled(S_BaseImg)<S_Props>`
-  ${props =>
-    props.layoutOrientation === LayoutOrientation.horizontal
+  ${props => {
+    return props.layoutOrientation === LayoutOrientation.horizontal
       ? imgHorizontalCss
-      : imgVerticalCss}
+      : imgVerticalCss;
+  }}
 `;
 
 const S_BaseDetails = styled.div`
@@ -94,10 +97,11 @@ const detailsVerticalCss = css`
 `;
 
 export const S_Details = styled(S_BaseDetails)<S_Props>`
-  ${props =>
-    props.layoutOrientation === LayoutOrientation.horizontal
+  ${props => {
+    return props.layoutOrientation === LayoutOrientation.horizontal
       ? detailsHorizontalCss
-      : detailsVerticalCss}
+      : detailsVerticalCss;
+  }}
 `;
 
 export const S_Corner = styled.div`
@@ -142,10 +146,12 @@ const verticalIconCss = css`
 // Prevent passing layoutOrientation to the FontAwesomeIcon
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const SC_Icon = styled(({ layoutOrientation, ...props }) => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
   <S_BaseIcon {...props} />
 ))<S_Props>`
-  ${props =>
-    props.layoutOrientation === LayoutOrientation.horizontal
+  ${props => {
+    return props.layoutOrientation === LayoutOrientation.horizontal
       ? horizontalIconCss
-      : verticalIconCss}
+      : verticalIconCss;
+  }}
 `;

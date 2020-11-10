@@ -1,4 +1,5 @@
 import { darken, lighten } from 'polished';
+
 import { bodyColor } from '../utils/typography';
 
 export { appColors, brandColors, appBorderStyle, containerPadding };
@@ -13,13 +14,13 @@ const appColors = {
   darkGray: '#555',
   veryDarkGray: '#333',
   bodyGreyColor: bodyColor,
-  primaryColor: primaryColor,
+  primaryColor,
   primaryColorSh1: getShade1(primaryColor),
   primaryColorSh2: getShade2(primaryColor),
   primaryColorTnt1: getTint1(primaryColor),
   primaryColorTnt2: getTint2(primaryColor),
   primaryColorTnt3: getTint3(primaryColor),
-  secondaryColor: secondaryColor,
+  secondaryColor,
   secondaryColorSh1: getShade1(secondaryColor),
   secondaryColorSh2: getShade2(secondaryColor),
   secondaryColorTnt1: getTint1(secondaryColor),
