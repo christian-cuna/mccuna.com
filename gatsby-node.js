@@ -12,6 +12,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value: `/blog/${value}`,
     });
+
+    createNodeField({
+      name: '__dirname',
+      node,
+      value: __dirname,
+    });
+
+    createNodeField({
+      name: 'fileAbsoluteWithReplace',
+      node,
+      value: node.fileAbsolutePath.replace(__dirname, ''),
+    });
   }
 };
 
