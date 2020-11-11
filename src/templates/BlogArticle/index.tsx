@@ -32,6 +32,9 @@ const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
     excerpt: data.mdx.excerpt,
   };
 
+  console.log(data.mdx.fields.__dirname);
+  console.log(data.mdx.fields.fileAbsoluteWithReplace);
+
   return (
     <>
       <SEO title={article.title} description={article.excerpt} />
@@ -73,6 +76,8 @@ export const query = graphql`
       }
       fields {
         blogSlug
+        __dirname
+        fileAbsoluteWithReplace
       }
       body
     }
