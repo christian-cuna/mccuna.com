@@ -2,12 +2,10 @@ import { darken, lighten } from 'polished';
 
 import { bodyColor } from '../utils/typography';
 
-export { appColors, brandColors, appBorderStyle, containerPadding };
-
 const primaryColor = '#07a7cf';
 const secondaryColor = '#E07007';
 
-const appColors = {
+export const appColors = {
   veryLightGray: '#eee',
   lightGray: '#bbb',
   mediumGray: '#888',
@@ -28,16 +26,22 @@ const appColors = {
   secondaryColorTnt3: getTint3(secondaryColor),
 };
 
-const brandColors = {
+export const brandColors = {
   gitHubBlack: '#211F1F',
   linkedInBlue: '#2867b2',
   twitterBlue: '#1da1f2',
   rssOrange: '#ee802f',
 };
 
-const containerPadding = '20px';
+export const containerPadding = '20px';
 
-const appBorderStyle = {
+export const deviceSizes = {
+  sm: '576px',
+  md: '768px',
+  lg: '992px',
+  xl: '1200px',
+};
+export const appBorderStyle = {
   containerBorder: `1px solid ${appColors.primaryColor}`,
 };
 

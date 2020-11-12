@@ -32,6 +32,10 @@ export const S_Label = styled.span`
   ${S_Link}:hover & {
     color: ${appColors.secondaryColor};
   }
+
+  ${S_Link}:active & {
+    color: ${appColors.secondaryColor};
+  }
 `;
 
 export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`
