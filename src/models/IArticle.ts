@@ -10,6 +10,7 @@ export interface IArticle {
   excerpt: string;
   prevArticleLink?: IArticleNavigationLink;
   nextArticleLink?: IArticleNavigationLink;
+  editLink: string;
 }
 
 export interface IArticleNavigationLink {

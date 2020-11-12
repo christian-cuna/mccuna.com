@@ -771,8 +771,7 @@ export type FileFieldsEnum =
   | 'childMdx___wordCount___sentences'
   | 'childMdx___wordCount___words'
   | 'childMdx___fields___blogSlug'
-  | 'childMdx___fields___dirname'
-  | 'childMdx___fields___fileAbsoluteWithReplace'
+  | 'childMdx___fields___gitHubRelativeFilePath'
   | 'childMdx___id'
   | 'childMdx___parent___id'
   | 'childMdx___parent___parent___id'
@@ -1544,8 +1543,7 @@ export type MdxEdge = {
 
 export type MdxFields = {
   blogSlug?: Maybe<Scalars['String']>;
-  dirname?: Maybe<Scalars['String']>;
-  fileAbsoluteWithReplace?: Maybe<Scalars['String']>;
+  gitHubRelativeFilePath?: Maybe<Scalars['String']>;
 };
 
 export type MdxFieldsEnum = 
@@ -1689,8 +1687,7 @@ export type MdxFieldsEnum =
   | 'wordCount___sentences'
   | 'wordCount___words'
   | 'fields___blogSlug'
-  | 'fields___dirname'
-  | 'fields___fileAbsoluteWithReplace'
+  | 'fields___gitHubRelativeFilePath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -1780,8 +1777,7 @@ export type MdxFieldsEnum =
 
 export type MdxFieldsFilterInput = {
   blogSlug?: Maybe<StringQueryOperatorInput>;
-  dirname?: Maybe<StringQueryOperatorInput>;
-  fileAbsoluteWithReplace?: Maybe<StringQueryOperatorInput>;
+  gitHubRelativeFilePath?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MdxFilterInput = {
@@ -2039,6 +2035,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2178,6 +2176,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2380,6 +2380,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2472,6 +2474,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -3316,7 +3320,7 @@ export type ArticleQuery = { mdx?: Maybe<(
     & { frontmatter?: Maybe<(
       Pick<MdxFrontmatter, 'title' | 'date' | 'imageLabel'>
       & { imageSrc?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes' | 'base64' | 'tracedSVG' | 'srcWebp' | 'srcSetWebp'>> }> }> }
-    )>, fields?: Maybe<Pick<MdxFields, 'blogSlug' | 'dirname' | 'fileAbsoluteWithReplace'>> }
+    )>, fields?: Maybe<Pick<MdxFields, 'blogSlug' | 'gitHubRelativeFilePath'>> }
   )> };
 
 export type ArticleSlugsQueryVariables = Exact<{ [key: string]: never; }>;

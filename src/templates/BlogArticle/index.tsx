@@ -30,10 +30,8 @@ const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
       blogSlug: pageContext.prev.fields.blogSlug,
     },
     excerpt: data.mdx.excerpt,
+    editLink: `https://github.com/christian-cuna/mccuna.com/tree/master${data.mdx.fields.gitHubRelativeFilePath}`,
   };
-
-  console.log(data.mdx.fields.dirname);
-  console.log(data.mdx.fields.fileAbsoluteWithReplace);
 
   return (
     <>
@@ -76,8 +74,7 @@ export const query = graphql`
       }
       fields {
         blogSlug
-        dirname
-        fileAbsoluteWithReplace
+        gitHubRelativeFilePath
       }
       body
     }

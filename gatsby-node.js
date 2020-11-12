@@ -14,13 +14,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
 
     createNodeField({
-      name: 'dirname',
-      node,
-      value: __dirname,
-    });
-
-    createNodeField({
-      name: 'fileAbsoluteWithReplace',
+      name: 'gitHubRelativeFilePath',
       node,
       value: node.fileAbsolutePath.replace(__dirname, ''),
     });
