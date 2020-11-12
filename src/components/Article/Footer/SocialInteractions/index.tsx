@@ -31,7 +31,7 @@ const SocialInteractions: FunctionComponent<Props> = () => {
         <FontAwesomeIcon icon={faLinkedin} size='3x' />
         <S_Label>Share</S_Label>
       </SC_LinkedIn>
-      <SC_GitHub>
+      <SC_GitHub href={article.editLink}>
         <FontAwesomeIcon icon={faGithub} size='3x' />
         <S_Label>Edit on GitHub</S_Label>
       </SC_GitHub>
