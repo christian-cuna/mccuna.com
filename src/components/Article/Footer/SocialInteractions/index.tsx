@@ -19,15 +19,15 @@ export type Props = {};
 
 const SocialInteractions: FunctionComponent<Props> = () => {
   const { article } = useArticleContext();
-  const { location } = window;
+  const url = typeof window !== 'undefined' ? window.location.href : '';
 
   return (
     <S_Container>
-      <SC_Twitter title={article.title} url={location.href}>
+      <SC_Twitter title={article.title} url={url}>
         <FontAwesomeIcon icon={faTwitter} size='3x' />
         <S_Label>Share</S_Label>
       </SC_Twitter>
-      <SC_LinkedIn title={article.title} url={location.href}>
+      <SC_LinkedIn title={article.title} url={url}>
         <FontAwesomeIcon icon={faLinkedin} size='3x' />
         <S_Label>Share</S_Label>
       </SC_LinkedIn>

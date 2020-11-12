@@ -32,7 +32,7 @@ const BlogArticle: FunctionComponent<Props> = ({ data, pageContext }) => {
     excerpt: data.mdx.excerpt,
   };
 
-  console.log(data.mdx.fields.__dirname);
+  console.log(data.mdx.fields.dirname);
   console.log(data.mdx.fields.fileAbsoluteWithReplace);
 
   return (
@@ -76,7 +76,7 @@ export const query = graphql`
       }
       fields {
         blogSlug
-        __dirname
+        dirname
         fileAbsoluteWithReplace
       }
       body

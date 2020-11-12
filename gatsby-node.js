@@ -14,7 +14,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
 
     createNodeField({
-      name: '__dirname',
+      name: 'dirname',
       node,
       value: __dirname,
     });
