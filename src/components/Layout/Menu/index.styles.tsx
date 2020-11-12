@@ -12,6 +12,12 @@ export const S_Container = styled.div`
   height: 50px;
   border-bottom: ${appBorderStyle.containerBorder};
   position: relative;
+
+  @media (min-width: ${deviceSizes.sm}) {
+    height: auto;
+    border-bottom: none;
+    position: inherit;
+  }
 `;
 
 export const S_BurgerMenuInput = styled.input`
@@ -28,6 +34,10 @@ export const S_BurgerMenuIcon = styled.label`
 
   :hover {
     color: ${appColors.secondaryColor};
+  }
+
+  @media (min-width: ${deviceSizes.sm}) {
+    display: none;
   }
 `;
 
@@ -46,7 +56,7 @@ export const S_Menu = styled.div`
   }
 
   @media (min-width: ${deviceSizes.sm}) {
-    /* display: flex; */
+    display: flex;
     justify-content: space-evenly;
     width: 40%;
     padding: ${containerPadding} 0;
@@ -61,6 +71,8 @@ export const SC_MenuItem = styled(MenuItem)`
 
   @media (min-width: ${deviceSizes.sm}) {
     width: 20%;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 4%;
     &:last-child {
       margin-right: 4%;
