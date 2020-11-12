@@ -15,20 +15,19 @@ const containerLinkCss = css`
   padding: 10px;
   text-decoration: none;
   cursor: pointer;
-  color: ${appColors.primaryColor} important!;
 `;
 
 export const SC_LinkedIn = styled(LinkedinShareButton)`
   ${containerLinkCss}
 
-  svg:hover {
+  svg {
     color: ${brandColors.linkedInBlue};
   }
 `;
 
 export const SC_Twitter = styled(TwitterShareButton)`
   ${containerLinkCss}
-  svg:hover {
+  svg {
     color: ${brandColors.twitterBlue};
   }
 `;
@@ -45,7 +44,5 @@ export const S_Label = styled.span`
 
 export const SC_GitHub = styled.a`
   ${containerLinkCss}
-  &:hover {
-    color: ${brandColors.gitHubBlack};
-  }
+  color: ${brandColors.gitHubBlack};
 `;
