@@ -7,6 +7,7 @@ import IndexBlogDescription from '../components/BlogDescription';
 import BlogSummary from '../components/BlogSummary';
 import PersonalInfoSide from '../components/PersonalInfoSide';
 import SEO from '../components/SEO';
+import { deviceSizes } from '../global/styles';
 import { IArticleBrief } from '../models/IArticleBrief';
 
 export type Props = {
@@ -67,7 +68,15 @@ export const query = graphql`
 `;
 
 const S_Container = styled.div`
-  width: 80%;
+  width: 95%;
+
+  @media (min-width: ${deviceSizes.md}) {
+    width: 90%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 80%;
+  }
 `;
 
 export default Index;

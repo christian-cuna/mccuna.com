@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { appColors, containerPadding } from '../../global/styles';
 
 export const S_Container = styled.div`
-  width: 100%;
-  padding: ${containerPadding};
+  padding: ${containerPadding.xs};
   margin-top: 40px;
+  width: 100%;
 `;
 
 export const S_ReadAllLink = styled(Link)`

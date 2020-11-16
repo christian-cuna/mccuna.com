@@ -6,7 +6,7 @@ import { appColors, containerPadding } from '../../../../global/styles';
 
 export const S_Container = styled.div`
   display: flex;
-  padding: ${containerPadding} 0;
+  padding: ${containerPadding.xs} 0;
   flex-direction: column;
 `;
 

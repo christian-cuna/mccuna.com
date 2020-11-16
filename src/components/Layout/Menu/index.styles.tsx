@@ -32,10 +32,6 @@ export const S_BurgerMenuIcon = styled.label`
   cursor: pointer;
   color: ${appColors.primaryColor};
 
-  :hover {
-    color: ${appColors.secondaryColor};
-  }
-
   @media (min-width: ${deviceSizes.sm}) {
     display: none;
   }
@@ -58,24 +54,44 @@ export const S_Menu = styled.div`
   @media (min-width: ${deviceSizes.sm}) {
     display: flex;
     justify-content: space-evenly;
-    width: 40%;
-    padding: ${containerPadding} 0;
-    margin: 0 30%;
+    width: 80%;
+    margin: 0 10%;
+    padding: ${containerPadding.xs} 0;
     position: relative;
     border-bottom: ${appBorderStyle.containerBorder};
     border-bottom-width: 3px;
+  }
+
+  @media (min-width: ${deviceSizes.md}) {
+    width: 70%;
+    margin: 0 15%;
+  }
+
+  @media (min-width: ${deviceSizes.lg}) {
+    width: 60%;
+    margin: 0 20%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 50%;
+    margin: 0 25%;
   }
 `;
 export const SC_MenuItem = styled(MenuItem)`
   margin: 10px 0;
 
   @media (min-width: ${deviceSizes.sm}) {
-    width: 20%;
+    width: 25%;
     margin-top: 0;
     margin-bottom: 0;
-    margin-left: 4%;
+    margin-left: 2%;
     &:last-child {
-      margin-right: 4%;
+      margin-right: 2%;
     }
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 20%;
+    margin-left: 4%;
   }
 `;

@@ -5,6 +5,7 @@ import {
   appBorderStyle,
   brandColors,
   containerPadding,
+  deviceSizes,
 } from '../../../global/styles';
 
 export const S_Container = styled.div`
@@ -19,10 +20,15 @@ export const S_IconsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
-  margin-left: 70%;
-  padding-top: calc(${containerPadding} / 2);
-  padding-bottom: calc(${containerPadding} / 2);
+  margin-left: 55%;
+  padding-top: calc(${containerPadding.xs} / 2);
+  padding-bottom: calc(${containerPadding.xs} / 2);
+  width: 30%;
+
+  @media (min-width: ${deviceSizes.md}) {
+    width: 10%;
+    margin-left: 70%;
+  }
 `;
 
 export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`

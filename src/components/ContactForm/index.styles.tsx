@@ -29,7 +29,7 @@ export const S_FormContainer = styled.div`
   width: 100%;
   border-top: ${appBorderStyle.containerBorder};
   border-bottom: ${appBorderStyle.containerBorder};
-  padding: ${containerPadding};
+  padding: ${containerPadding.xs};
 `;
 
 export const S_FieldContainer = styled.div`

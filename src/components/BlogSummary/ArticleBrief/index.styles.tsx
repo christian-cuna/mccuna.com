@@ -9,12 +9,11 @@ import {
   containerPadding,
 } from '../../../global/styles';
 
-export const iconWidth = '38px;';
-export const iconHeight = '38px;';
 const hoverBorderWidth = '15px';
 
 export const S_Container = styled.div`
-  padding: ${containerPadding} calc(${containerPadding} + ${hoverBorderWidth});
+  padding: ${containerPadding.xs}
+    calc(${containerPadding.xs} + ${hoverBorderWidth});
   border-top: ${appBorderStyle.containerBorder};
   cursor: pointer;
 
@@ -23,7 +22,7 @@ export const S_Container = styled.div`
 
     &:hover {
       border-right: ${hoverBorderWidth} solid ${appColors.secondaryColor};
-      padding-right: ${containerPadding};
+      padding-right: ${containerPadding.xs};
     }
   }
 
@@ -32,7 +31,7 @@ export const S_Container = styled.div`
 
     &:hover {
       border-left: ${hoverBorderWidth} solid ${appColors.secondaryColor};
-      padding-left: ${containerPadding};
+      padding-left: ${containerPadding.xs};
     }
   }
 

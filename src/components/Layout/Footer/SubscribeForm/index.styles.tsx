@@ -5,15 +5,21 @@ import {
   appBorderStyle,
   appColors,
   containerPadding,
+  deviceSizes,
 } from '../../../../global/styles';
 
 export const S_Container = styled.div`
-  padding: ${containerPadding};
+  padding: ${containerPadding.xs};
   border-left: ${appBorderStyle.containerBorder};
   border-right: ${appBorderStyle.containerBorder};
-  width: 20%;
-  margin-left: 50%;
   cursor: default;
+  width: 90%;
+  margin-left: 5%;
+
+  @media (min-width: ${deviceSizes.md}) {
+    width: 20%;
+    margin-left: 50%;
+  }
 `;
 
 export const S_Header = styled.h2`

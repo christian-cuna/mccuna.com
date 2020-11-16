@@ -33,7 +33,10 @@ export const brandColors = {
   rssOrange: '#ee802f',
 };
 
-export const containerPadding = '20px';
+export const containerPadding = {
+  xs: '10px',
+  md: '20px',
+};
 
 export const deviceSizes = {
   sm: '576px',

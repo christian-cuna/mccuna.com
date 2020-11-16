@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { appBorderStyle } from '../../global/styles';
-import { mainContainerWidth } from '../Layout/index.styles';
+import { mainContainerWidths } from '../Layout/index.styles';
 
 export const imgWidth = '220px';
 export const imgHeight = '238px';
@@ -10,14 +10,25 @@ export const S_Container = styled.div`
   border-top: ${appBorderStyle.containerBorder};
   border-bottom: ${appBorderStyle.containerBorder};
   padding: 15px;
-  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  right: calc(calc(100% - ${mainContainerWidth}) / 3);
+
+  width: 100%;
   top: 25%;
-  transform: translateX(50%);
+
+  @media (min-width: ${mainContainerWidths.md}) {
+    right: calc(calc(100% - ${mainContainerWidths.md}) / 3);
+    position: fixed;
+    width: 250px;
+    transform: translateX(50%);
+  }
+  @media (min-width: ${mainContainerWidths.lg}) {
+    right: calc(calc(100% - ${mainContainerWidths.lg}) / 3);
+  }
+  @media (min-width: ${mainContainerWidths.xl}) {
+    right: calc(calc(100% - ${mainContainerWidths.xl}) / 3);
+  }
 `;
 
 export const S_Img = styled.img`
