@@ -5,7 +5,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 import { LayoutOrientation } from '../../../enums/LayoutOrientation';
-import { appBorderStyle, appColors } from '../../../global/styles';
+import { appBorderStyle, appColors, deviceSizes } from '../../../global/styles';
 
 export const imgSize = '260px';
 const padding = '4%';
@@ -37,11 +37,13 @@ const containerVerticalCss = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  border-bottom: ${appBorderStyle.containerBorder};
-
   &:hover {
     border-right: 5px solid ${appColors.secondaryColor};
     border-bottom: 5px solid ${appColors.secondaryColor};
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    border-bottom: ${appBorderStyle.containerBorder};
   }
 `;
 

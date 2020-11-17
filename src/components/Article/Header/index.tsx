@@ -7,6 +7,7 @@ import {
   S_Date,
   S_ImgContainer,
   S_ImgCredits,
+  S_Title,
   S_TitleContainer,
   SC_Img,
 } from './index.styles';
@@ -16,7 +17,7 @@ const Header: FunctionComponent = () => {
   return (
     <S_Container>
       <S_TitleContainer>
-        <h1>{article.title}</h1>
+        <S_Title>{article.title}</S_Title>
         <S_Date>{article.date}</S_Date>
       </S_TitleContainer>
       <S_ImgContainer>

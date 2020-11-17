@@ -2,12 +2,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { appColors, containerPadding } from '../../../../global/styles';
+import {
+  appColors,
+  containerPadding,
+  deviceSizes,
+} from '../../../../global/styles';
 
 export const S_Container = styled.div`
   display: flex;
   padding: ${containerPadding.xs} 0;
   flex-direction: column;
+  align-items: center;
 `;
 
 const SC_Link = styled(Link)`
@@ -18,10 +23,19 @@ const SC_Link = styled(Link)`
   &:hover {
     color: ${appColors.secondaryColor};
   }
+
+  :first-child {
+    margin-bottom: 5px;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+  }
 `;
 
 export const SC_PrevLink = styled(SC_Link)`
-  align-self: flex-start;
+  @media (min-width: ${deviceSizes.xl}) {
+    align-self: flex-start;
+  }
 `;
 
 export const SC_PrevLinkIcon = styled(FontAwesomeIcon)`
@@ -29,7 +43,9 @@ export const SC_PrevLinkIcon = styled(FontAwesomeIcon)`
 `;
 
 export const SC_NextLink = styled(SC_Link)`
-  align-self: flex-end;
+  @media (min-width: ${deviceSizes.xl}) {
+    align-self: flex-end;
+  }
 `;
 
 export const SC_NextLinkIcon = styled(FontAwesomeIcon)`

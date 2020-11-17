@@ -2,16 +2,23 @@
   background-color: #fdf6e3;
   border-radius: 0.3em;
   margin: 0.5em 0;
-  padding: 1em;
+  /* padding: 1em; */
   overflow: auto;
+  position: relative;
+  margin-left: -5%;
+  margin-right: -5%;
 }
 
 .gatsby-highlight pre[class*='language-'].line-numbers {
   padding: 0;
-  padding-left: 2.8em;
+  padding-left: 2.2em;
   overflow: initial;
+  margin: 0;
 }
 
+.line-numbers .line-numbers-rows {
+  border-right: none;
+}
 .line-numbers-rows > span:before {
   padding-right: 0.4em;
   padding-left: 0.4em;

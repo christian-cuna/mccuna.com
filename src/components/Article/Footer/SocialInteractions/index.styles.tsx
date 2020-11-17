@@ -5,14 +5,16 @@ import { appColors, brandColors } from '../../../../global/styles';
 
 export const S_Container = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  flex-direction: column;
+  margin: 10px 0;
+  height: 275px;
 `;
 
 const containerLinkCss = css`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   text-decoration: none;
   cursor: pointer;
 `;

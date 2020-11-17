@@ -31,6 +31,7 @@ export const S_BurgerMenuIcon = styled.label`
   line-height: 1em;
   cursor: pointer;
   color: ${appColors.primaryColor};
+  z-index: 3;
 
   @media (min-width: ${deviceSizes.sm}) {
     display: none;
@@ -39,6 +40,7 @@ export const S_BurgerMenuIcon = styled.label`
 
 export const S_Menu = styled.div`
   display: none;
+  position: relative;
 
   ${S_BurgerMenuInput}:checked ~ & {
     display: flex;
@@ -49,6 +51,7 @@ export const S_Menu = styled.div`
     padding: 20px;
     border-bottom: ${appBorderStyle.containerBorder};
     border-bottom-width: 5px;
+    z-index: 2;
   }
 
   @media (min-width: ${deviceSizes.sm}) {
