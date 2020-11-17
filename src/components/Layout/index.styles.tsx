@@ -45,6 +45,9 @@ export const S_MainContainer = styled.div`
 
   @media (min-width: ${deviceSizes.md}) {
     width: ${mainContainerWidths.md};
+    flex-basis: calc(
+      calc(100% - ${menuContainerHeight}) - ${footerContainerHeight.md}
+    );
   }
 
   @media (min-width: ${deviceSizes.lg}) {

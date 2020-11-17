@@ -14,7 +14,7 @@ export const S_Description = styled.h2`
   margin-top: 1.2rem;
   width: 100%;
 
-  @media (min-width: ${deviceSizes.md}) {
+  @media (min-width: ${deviceSizes.xl}) {
     width: 75%;
   }
 `;

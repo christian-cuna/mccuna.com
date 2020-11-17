@@ -7,6 +7,7 @@ import {
   appBorderStyle,
   appColors,
   containerPadding,
+  deviceSizes,
 } from '../../../global/styles';
 
 const hoverBorderWidth = '15px';
@@ -90,10 +91,14 @@ export const S_Date = styled.span`
 
 export const S_Excerpt = styled.p`
   margin-bottom: 10px;
-  width: 75%;
+  width: 100%;
 
   ${S_Container}:hover & {
     color: ${appColors.primaryColor};
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 75%;
   }
 `;
 

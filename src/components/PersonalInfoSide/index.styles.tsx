@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { appBorderStyle } from '../../global/styles';
+import { appBorderStyle, deviceSizes } from '../../global/styles';
 import { mainContainerWidths } from '../Layout/index.styles';
 
 export const imgWidth = '220px';
@@ -13,21 +13,24 @@ export const S_Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 100%;
   top: 25%;
 
-  @media (min-width: ${mainContainerWidths.md}) {
-    right: calc(calc(100% - ${mainContainerWidths.md}) / 3);
+  @media (min-width: ${deviceSizes.md}) {
+    width: 80%;
+    margin-left: calc(calc(100% - ${mainContainerWidths.md}) / 2);
+  }
+
+  @media (min-width: ${deviceSizes.lg}) {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    right: calc(calc(100% - ${mainContainerWidths.xl}) / 3);
     position: fixed;
     width: 250px;
     transform: translateX(50%);
-  }
-  @media (min-width: ${mainContainerWidths.lg}) {
-    right: calc(calc(100% - ${mainContainerWidths.lg}) / 3);
-  }
-  @media (min-width: ${mainContainerWidths.xl}) {
-    right: calc(calc(100% - ${mainContainerWidths.xl}) / 3);
   }
 `;
 

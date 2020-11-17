@@ -26,6 +26,11 @@ export const S_IconsContainer = styled.div`
   width: 30%;
 
   @media (min-width: ${deviceSizes.md}) {
+    width: 15%;
+    margin-left: 70%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
     width: 10%;
     margin-left: 70%;
   }

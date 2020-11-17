@@ -17,6 +17,21 @@ export const S_Container = styled.div`
   margin-left: 5%;
 
   @media (min-width: ${deviceSizes.md}) {
+    width: 60%;
+    margin-left: 25%;
+  }
+
+  @media (min-width: ${deviceSizes.lg}) {
+    width: 40%;
+    margin-left: 45%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 30%;
+    margin-left: 50%;
+  }
+
+  @media (min-width: ${deviceSizes.xxl}) {
     width: 20%;
     margin-left: 50%;
   }
