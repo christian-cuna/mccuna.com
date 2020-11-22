@@ -6,40 +6,33 @@ import {
   appColors,
   containerPadding,
   deviceSizes,
-} from '../../../../global/styles';
-import { mainContainerWidths } from '../../index.styles';
+} from '../../../global/styles';
+import { mainContainerWidths } from '../index.styles';
 
 export const S_Container = styled.div`
   padding: ${containerPadding.xs};
   border-left: ${appBorderStyle.containerBorder};
   border-right: ${appBorderStyle.containerBorder};
   cursor: default;
-  width: 90%;
-  margin-left: 5%;
+  width: ${mainContainerWidths.xs};
 
-  /* width: calc(calc(100% - ${mainContainerWidths.xs}) / 2);
-  margin-left: calc(100% - ${mainContainerWidths.xs}); */
+  @media (min-width: ${deviceSizes.sm}) {
+    width: ${mainContainerWidths.sm};
+  }
 
   @media (min-width: ${deviceSizes.md}) {
-    /* width: 60%; */
-
-    width: calc(${mainContainerWidths.md} / 2);
-    margin-left: calc(${mainContainerWidths.md} / 2);
-    /* margin-left: 25%; */
+    width: ${mainContainerWidths.md};
   }
 
   @media (min-width: ${deviceSizes.lg}) {
-    /* width: 40%; */
-
-    width: calc(calc(100% - ${mainContainerWidths.lg}) / 2);
-    margin-left: calc(100% - ${mainContainerWidths.lg});
-    /* margin-left: 45%; */
-    transform: translateX(50%);
+    align-self: flex-end;
+    width: calc(${mainContainerWidths.lg} * 0.75);
+    margin-right: calc(${mainContainerWidths.lg} * 0.25);
   }
 
   @media (min-width: ${deviceSizes.xl}) {
-    width: calc(calc(100% - ${mainContainerWidths.xl}) / 2);
-    margin-left: calc(100% - ${mainContainerWidths.xl});
+    width: calc(${mainContainerWidths.xl} * 0.75);
+    margin-right: calc(${mainContainerWidths.xl} * 0.25);
   }
 `;
 

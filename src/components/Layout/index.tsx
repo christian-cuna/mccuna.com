@@ -9,6 +9,7 @@ import {
   S_MenuContainer,
 } from './index.styles';
 import Menu from './Menu';
+import SubscribeForm from './SubscribeForm';
 
 export type Props = {};
 
@@ -20,7 +21,10 @@ const Layout: FunctionComponent<Props> = ({ children }) => {
         <S_MenuContainer>
           <Menu />
         </S_MenuContainer>
-        <S_MainContainer>{children}</S_MainContainer>
+        <S_MainContainer>
+          {children}
+          <SubscribeForm />
+        </S_MainContainer>
         <S_FooterContainer>
           <Footer />
         </S_FooterContainer>

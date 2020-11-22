@@ -3,10 +3,6 @@ import styled from 'styled-components';
 import { deviceSizes } from '../../global/styles';
 
 export const menuContainerHeight = '200px';
-export const footerContainerHeight = {
-  xs: '400px',
-  md: '475px',
-};
 
 export const mainContainerWidths = {
   xs: '95%',
@@ -56,11 +52,5 @@ export const S_MainContainer = styled.div`
 export const S_FooterContainer = styled.div`
   width: 100%;
   align-self: flex-end;
-  height: ${footerContainerHeight.xs};
-  min-height: ${footerContainerHeight.xs};
-
-  @media (min-width: ${deviceSizes.md}) {
-    height: ${footerContainerHeight.md};
-    min-height: ${footerContainerHeight.md};
-  }
+  margin-top: 25px;
 `;
