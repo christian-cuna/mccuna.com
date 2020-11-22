@@ -5,10 +5,14 @@ import {
   appBorderStyle,
   appColors,
   containerPadding,
+  deviceSizes,
 } from '../../global/styles';
 
 export const S_Container = styled.div`
-  width: 60%;
+  width: 100%;
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 60%;
+  }
 `;
 
 export const S_YouCanFindMeParagraph = styled.p`
@@ -56,11 +60,15 @@ export const SC_LabelIcon = styled(FontAwesomeIcon)`
 `;
 
 export const S_Input = styled.input`
-  width: 300px;
+  width: 100%;
   cursor: pointer;
 
   ${S_FieldContainer}:hover & {
     border: 2px solid ${appColors.secondaryColor};
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 300px;
   }
 `;
 

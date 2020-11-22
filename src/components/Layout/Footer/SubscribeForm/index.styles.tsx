@@ -7,6 +7,7 @@ import {
   containerPadding,
   deviceSizes,
 } from '../../../../global/styles';
+import { mainContainerWidths } from '../../index.styles';
 
 export const S_Container = styled.div`
   padding: ${containerPadding.xs};
@@ -16,24 +17,29 @@ export const S_Container = styled.div`
   width: 90%;
   margin-left: 5%;
 
+  /* width: calc(calc(100% - ${mainContainerWidths.xs}) / 2);
+  margin-left: calc(100% - ${mainContainerWidths.xs}); */
+
   @media (min-width: ${deviceSizes.md}) {
-    width: 60%;
-    margin-left: 25%;
+    /* width: 60%; */
+
+    width: calc(${mainContainerWidths.md} / 2);
+    margin-left: calc(${mainContainerWidths.md} / 2);
+    /* margin-left: 25%; */
   }
 
   @media (min-width: ${deviceSizes.lg}) {
-    width: 40%;
-    margin-left: 45%;
+    /* width: 40%; */
+
+    width: calc(calc(100% - ${mainContainerWidths.lg}) / 2);
+    margin-left: calc(100% - ${mainContainerWidths.lg});
+    /* margin-left: 45%; */
+    transform: translateX(50%);
   }
 
   @media (min-width: ${deviceSizes.xl}) {
-    width: 30%;
-    margin-left: 50%;
-  }
-
-  @media (min-width: ${deviceSizes.xxl}) {
-    width: 20%;
-    margin-left: 50%;
+    width: calc(calc(100% - ${mainContainerWidths.xl}) / 2);
+    margin-left: calc(100% - ${mainContainerWidths.xl});
   }
 `;
 

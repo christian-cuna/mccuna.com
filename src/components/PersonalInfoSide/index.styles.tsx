@@ -9,27 +9,20 @@ export const imgHeight = '238px';
 export const S_Container = styled.div`
   border-top: ${appBorderStyle.containerBorder};
   border-bottom: ${appBorderStyle.containerBorder};
-  padding: 15px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: 25%;
-
-  @media (min-width: ${deviceSizes.md}) {
-    width: 80%;
-    margin-left: calc(calc(100% - ${mainContainerWidths.md}) / 2);
-  }
-
-  @media (min-width: ${deviceSizes.lg}) {
-    width: 60%;
-    margin-left: 20%;
-  }
+  margin-top: 25px;
+  margin-bottom: 25px;
 
   @media (min-width: ${deviceSizes.xl}) {
     right: calc(calc(100% - ${mainContainerWidths.xl}) / 3);
     position: fixed;
     width: 250px;
+    top: 20%;
+    padding: 10px;
     transform: translateX(50%);
   }
 `;

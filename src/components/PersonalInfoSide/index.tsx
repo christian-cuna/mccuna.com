@@ -1,8 +1,13 @@
 import React, { FunctionComponent } from 'react';
 
 import profilePicture from '../../assets/profile.jpg';
-import { imgHeight } from '../Article/Header/index.styles';
-import { imgWidth, S_Container, S_Description, S_Img } from './index.styles';
+import {
+  imgHeight,
+  imgWidth,
+  S_Container,
+  S_Description,
+  S_Img,
+} from './index.styles';
 
 export type Props = {
   className?: string;

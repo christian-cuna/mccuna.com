@@ -74,8 +74,12 @@ const S_Container = styled.div`
     width: 90%;
   }
 
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     width: 80%;
+  }
+
+  @media (min-width: ${deviceSizes.xl}) {
+    width: 70%;
   }
 `;
 

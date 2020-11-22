@@ -4,7 +4,7 @@ import { deviceSizes } from '../../global/styles';
 
 export const menuContainerHeight = '200px';
 export const footerContainerHeight = {
-  xs: '430px',
+  xs: '400px',
   md: '475px',
 };
 
@@ -35,8 +35,6 @@ export const S_MainContainer = styled.div`
   justify-content: space-evenly;
   align-items: center;
   padding-top: 2.5%;
-  flex: 1 0
-    calc(calc(100% - ${menuContainerHeight}) - ${footerContainerHeight.xs});
   width: ${mainContainerWidths.xs};
 
   @media (min-width: ${deviceSizes.sm}) {
@@ -45,9 +43,6 @@ export const S_MainContainer = styled.div`
 
   @media (min-width: ${deviceSizes.md}) {
     width: ${mainContainerWidths.md};
-    flex-basis: calc(
-      calc(100% - ${menuContainerHeight}) - ${footerContainerHeight.md}
-    );
   }
 
   @media (min-width: ${deviceSizes.lg}) {
@@ -60,8 +55,12 @@ export const S_MainContainer = styled.div`
 
 export const S_FooterContainer = styled.div`
   width: 100%;
-  padding-top: 35px;
   align-self: flex-end;
   height: ${footerContainerHeight.xs};
   min-height: ${footerContainerHeight.xs};
+
+  @media (min-width: ${deviceSizes.md}) {
+    height: ${footerContainerHeight.md};
+    min-height: ${footerContainerHeight.md};
+  }
 `;
