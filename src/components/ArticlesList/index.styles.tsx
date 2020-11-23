@@ -7,16 +7,30 @@ import ArticleListItem from './ArticleListItem';
 
 export type S_Props = {
   wrapItems: WrapStatus;
+  itemsLayoutOrientation: LayoutOrientation;
 };
 
-export const S_Container = styled.div<S_Props>`
+const S_BaseContainer = styled.div<S_Props>`
   display: flex;
   justify-content: space-between;
   flex-wrap: ${props => {
     return props.wrapItems === WrapStatus.wrap ? 'wrap' : 'nowrap';
   }};
   align-content: space-around;
+  padding-bottom: 35px;
+`;
+
+const horizontalContainerCss = css``;
+const verticalContainerCss = css`
   flex-direction: column;
+`;
+
+export const S_Container = styled(S_BaseContainer)`
+  ${props => {
+    return props.itemsLayoutOrientation === LayoutOrientation.horizontal
+      ? horizontalContainerCss
+      : verticalContainerCss;
+  }};
 `;
 
 const SC_BaseArticleListItem = styled(ArticleListItem)``;

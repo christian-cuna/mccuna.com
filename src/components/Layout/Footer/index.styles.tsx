@@ -17,6 +17,7 @@ export const S_Container = styled.div`
   padding-top: calc(${containerPadding.xs} / 2);
   padding-bottom: calc(${containerPadding.xs} / 2);
   width: 30%;
+  margin-top: 25px;
 
   @media (min-width: ${deviceSizes.md}) {
     width: 15%;

@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 import { deviceSizes } from '../../global/styles';
 
-export const menuContainerHeight = '200px';
-
 export const mainContainerWidths = {
   xs: '95%',
   sm: '90%',
@@ -21,7 +19,6 @@ export const S_Container = styled.div`
 `;
 
 export const S_MenuContainer = styled.div`
-  height: ${menuContainerHeight};
   width: 100%;
 `;
 
@@ -52,5 +49,4 @@ export const S_MainContainer = styled.div`
 export const S_FooterContainer = styled.div`
   width: 100%;
   align-self: flex-end;
-  margin-top: 25px;
 `;

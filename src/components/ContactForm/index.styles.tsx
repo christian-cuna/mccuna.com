@@ -10,13 +10,15 @@ import {
 
 export const S_Container = styled.div`
   width: 100%;
+  margin-bottom: 25px;
   @media (min-width: ${deviceSizes.xl}) {
-    width: 60%;
+    width: 70%;
   }
 `;
 
 export const S_YouCanFindMeParagraph = styled.p`
   font-size: 1.1rem;
+  margin-bottom: 0.8rem;
 `;
 
 export const S_MailAddress = styled.a`

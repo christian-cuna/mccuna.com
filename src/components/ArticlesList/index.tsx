@@ -9,17 +9,21 @@ export type Props = {
   articles: IArticleListItem[];
   className?: string;
   wrapItems?: WrapStatus;
-  itemLayoutOrientation?: LayoutOrientation;
+  itemsLayoutOrientation?: LayoutOrientation;
 };
 
 const ArticlesList: FunctionComponent<Props> = ({
   articles,
   className,
-  itemLayoutOrientation = LayoutOrientation.horizontal,
+  itemsLayoutOrientation: itemLayoutOrientation = LayoutOrientation.horizontal,
   wrapItems = WrapStatus.wrap,
 }) => {
   return (
-    <S_Container className={className} wrapItems={wrapItems}>
+    <S_Container
+      className={className}
+      wrapItems={wrapItems}
+      itemsLayoutOrientation={itemLayoutOrientation}
+    >
       {articles.map(article => (
         <SC_ArticleListItem
           key={article.blogSlug}
