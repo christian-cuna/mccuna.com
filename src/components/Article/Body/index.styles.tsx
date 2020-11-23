@@ -4,7 +4,7 @@ import ArticleIcons from '../ArticleIcons';
 import { S_Date } from '../Header/index.styles';
 
 export const S_Container = styled.div`
-  margin-top: 75px;
+  margin-top: 25px;
 `;
 
 export const SC_ArticleIcons = styled(ArticleIcons)`
