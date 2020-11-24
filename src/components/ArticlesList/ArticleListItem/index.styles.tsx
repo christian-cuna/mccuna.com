@@ -43,14 +43,14 @@ const containerVerticalCss = css`
     border-bottom: 5px solid ${appColors.secondaryColor};
   }
 
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     border-bottom: ${appBorderStyle.containerBorder};
   }
 `;
 
 export const S_Container = styled(S_BaseContainer)<S_Props>`
   ${containerVerticalCss};
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? containerHorizontalCss
@@ -74,7 +74,7 @@ const imgVerticalCss = css`
 
 export const SC_Img = styled(S_BaseImg)<S_Props>`
   ${imgVerticalCss};
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? imgHorizontalCss
@@ -108,7 +108,7 @@ const detailsVerticalCss = css`
 export const S_Details = styled(S_BaseDetails)<S_Props>`
   width: 100%;
   height: 200px;
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? detailsHorizontalCss
@@ -163,7 +163,7 @@ export const SC_Icon = styled(({ layoutOrientation, ...props }) => (
   <S_BaseIcon {...props} />
 ))<S_Props>`
   ${verticalIconCss};
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.lg}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? horizontalIconCss
