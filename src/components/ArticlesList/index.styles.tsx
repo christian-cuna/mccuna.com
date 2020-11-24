@@ -13,24 +13,36 @@ export type S_Props = {
 const S_BaseContainer = styled.div<S_Props>`
   display: flex;
   justify-content: space-between;
-  flex-wrap: ${props => {
-    return props.wrapItems === WrapStatus.wrap ? 'wrap' : 'nowrap';
-  }};
   align-content: space-around;
   padding-bottom: 35px;
+
+  @media (min-width: ${deviceSizes.md}) {
+    flex-wrap: ${props => {
+      return props.wrapItems === WrapStatus.wrap ? 'wrap' : 'nowrap';
+    }};
+  }
 `;
 
-const horizontalContainerCss = css``;
+const horizontalContainerCss = css`
+  flex-direction: row;
+`;
+
 const verticalContainerCss = css`
   flex-direction: column;
 `;
 
 export const S_Container = styled(S_BaseContainer)`
-  ${props => {
-    return props.itemsLayoutOrientation === LayoutOrientation.horizontal
-      ? horizontalContainerCss
-      : verticalContainerCss;
-  }};
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: ${deviceSizes.md}) {
+    align-items: initial;
+    ${props => {
+      return props.itemsLayoutOrientation === LayoutOrientation.horizontal
+        ? horizontalContainerCss
+        : verticalContainerCss;
+    }};
+  }
 `;
 
 const SC_BaseArticleListItem = styled(ArticleListItem)``;
@@ -44,20 +56,27 @@ const horizontalArticleListItemCss = css`
 const verticalArticleListItemCss = css`
   height: 18rem;
   width: 100%;
-  border-top: ${appBorderStyle.containerBorder};
-  border-bottom: ${appBorderStyle.containerBorder};
   padding: 5px 0;
   margin-bottom: 2.5px;
 
-  @media (min-width: ${deviceSizes.xl}) {
+  @media (min-width: ${deviceSizes.md}) {
     width: 30%;
+    border-bottom: ${appBorderStyle.containerBorder};
+    border-top: ${appBorderStyle.containerBorder};
   }
 `;
 
 export const SC_ArticleListItem = styled(SC_BaseArticleListItem)`
-  ${props => {
-    return props.layoutOrientation === LayoutOrientation.horizontal
-      ? horizontalArticleListItemCss
-      : verticalArticleListItemCss;
-  }};
+  height: 22rem;
+  width: 90%;
+  padding: 5px 0;
+  margin-bottom: 2.5px;
+
+  @media (min-width: ${deviceSizes.md}) {
+    ${props => {
+      return props.layoutOrientation === LayoutOrientation.horizontal
+        ? horizontalArticleListItemCss
+        : verticalArticleListItemCss;
+    }};
+  }
 `;
