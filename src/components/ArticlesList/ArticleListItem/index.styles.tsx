@@ -113,7 +113,11 @@ const detailsVerticalCss = css`
 
 export const S_Details = styled(S_BaseDetails)<S_Props>`
   width: 100%;
-  height: 200px;
+
+  @media (min-width: ${deviceSizes.md}) {
+    height: 175px;
+  }
+
   @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal

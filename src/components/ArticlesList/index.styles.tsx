@@ -29,6 +29,8 @@ const horizontalContainerCss = css`
 
 const verticalContainerCss = css`
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const S_Container = styled(S_BaseContainer)`
@@ -49,7 +51,7 @@ const SC_BaseArticleListItem = styled(ArticleListItem)``;
 
 const horizontalArticleListItemCss = css`
   width: 47.5%;
-  height: 14rem;
+  height: 22rem;
   margin-top: 20px;
 `;
 
@@ -59,9 +61,14 @@ const verticalArticleListItemCss = css`
   padding: 5px 0;
   margin-bottom: 2.5px;
 
-  @media (min-width: ${deviceSizes.xl}) {
-    width: 30%;
+  @media (min-width: ${deviceSizes.md}) {
+    width: 80%;
+    height: 24rem;
     border-bottom: ${appBorderStyle.containerBorder};
+  }
+
+  @media (min-width: ${deviceSizes.lg}) {
+    width: 30%;
     border-top: ${appBorderStyle.containerBorder};
   }
 `;
@@ -75,7 +82,8 @@ export const SC_ArticleListItem = styled(SC_BaseArticleListItem)`
   @media (min-width: ${deviceSizes.md}) {
     width: 47.5%;
   }
-  @media (min-width: ${deviceSizes.xl}) {
+
+  @media (min-width: ${deviceSizes.md}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? horizontalArticleListItemCss

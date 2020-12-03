@@ -19,7 +19,7 @@ const OtherArticles: FunctionComponent<Props> = ({
     <SC_ArticlesList
       articles={articles}
       wrapItems={WrapStatus.noWrap}
-      itemLayoutOrientation={LayoutOrientation.vertical}
+      itemsLayoutOrientation={LayoutOrientation.vertical}
     />
   );
 };

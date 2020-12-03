@@ -1,7 +1,7 @@
 import { LinkedinShareButton, TwitterShareButton } from 'react-share';
 import styled, { css } from 'styled-components';
 
-import { appColors, brandColors } from '../../../../global/styles';
+import { appColors, brandColors, deviceSizes } from '../../../../global/styles';
 
 export const S_Container = styled.div`
   display: flex;
@@ -9,6 +9,13 @@ export const S_Container = styled.div`
   flex-direction: column;
   margin: 10px 0;
   height: 275px;
+
+  @media (min-width: ${deviceSizes.md}) {
+    flex-direction: row;
+    justify-content: space-around;
+    height: auto;
+    margin: 30px 0;
+  }
 `;
 
 const containerLinkCss = css`
