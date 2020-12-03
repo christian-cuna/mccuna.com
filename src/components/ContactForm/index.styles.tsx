@@ -25,6 +25,7 @@ export const S_MailAddress = styled.a`
   color: ${appColors.primaryColor};
   text-decoration: none;
   margin-left: 5px;
+  display: inline-block;
 
   &:hover {
     color: ${appColors.secondaryColor};

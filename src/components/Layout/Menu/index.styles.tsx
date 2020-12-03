@@ -13,7 +13,7 @@ export const S_Container = styled.div`
   border-bottom: ${appBorderStyle.containerBorder};
   position: relative;
 
-  @media (min-width: ${deviceSizes.sm}) {
+  @media (min-width: ${deviceSizes.md}) {
     height: auto;
     border-bottom: none;
     position: inherit;
@@ -33,7 +33,7 @@ export const S_BurgerMenuIcon = styled.label`
   color: ${appColors.primaryColor};
   z-index: 3;
 
-  @media (min-width: ${deviceSizes.sm}) {
+  @media (min-width: ${deviceSizes.md}) {
     display: none;
   }
 `;
@@ -54,21 +54,23 @@ export const S_Menu = styled.div`
     z-index: 2;
   }
 
-  @media (min-width: ${deviceSizes.sm}) {
+  @media (min-width: ${deviceSizes.md}) {
     display: flex;
     justify-content: space-evenly;
-    width: 80%;
-    margin: 0 10%;
+    /* width: 95%;
+    margin: 0 2.5%; */
+    width: 70%;
+    margin: 0 15%;
     padding: ${containerPadding.xs} 0;
     position: relative;
     border-bottom: ${appBorderStyle.containerBorder};
     border-bottom-width: 3px;
   }
 
-  @media (min-width: ${deviceSizes.md}) {
+  /* @media (min-width: ${deviceSizes.md}) {
     width: 70%;
     margin: 0 15%;
-  }
+  } */
 
   @media (min-width: ${deviceSizes.lg}) {
     width: 60%;
@@ -83,7 +85,7 @@ export const S_Menu = styled.div`
 export const SC_MenuItem = styled(MenuItem)`
   margin: 10px 0;
 
-  @media (min-width: ${deviceSizes.sm}) {
+  @media (min-width: ${deviceSizes.md}) {
     width: 25%;
     margin-top: 0;
     margin-bottom: 0;

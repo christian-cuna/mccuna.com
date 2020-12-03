@@ -159,7 +159,11 @@ const horizontalIconCss = css`
 `;
 
 const verticalIconCss = css`
-  right: 1.75%;
+  right: 1.5%;
+
+  @media (min-width: ${deviceSizes.sm}) {
+    right: 1%;
+  }
 `;
 
 // Prevent passing layoutOrientation to the FontAwesomeIcon
