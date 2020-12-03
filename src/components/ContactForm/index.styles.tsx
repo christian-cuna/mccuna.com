@@ -42,6 +42,10 @@ export const S_FormContainer = styled.div`
   border-top: ${appBorderStyle.containerBorder};
   border-bottom: ${appBorderStyle.containerBorder};
   padding: ${containerPadding.xs};
+
+  @media (min-width: ${deviceSizes.md}) {
+    padding: ${containerPadding.md};
+  }
 `;
 
 export const S_FieldContainer = styled.div`

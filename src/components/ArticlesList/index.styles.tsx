@@ -31,6 +31,12 @@ const verticalContainerCss = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: ${deviceSizes.lg}) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: initial;
+  }
 `;
 
 export const S_Container = styled(S_BaseContainer)`
@@ -63,13 +69,20 @@ const verticalArticleListItemCss = css`
 
   @media (min-width: ${deviceSizes.md}) {
     width: 80%;
-    height: 24rem;
-    border-bottom: ${appBorderStyle.containerBorder};
+    height: 22rem;
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
   }
 
   @media (min-width: ${deviceSizes.lg}) {
     width: 30%;
-    border-top: ${appBorderStyle.containerBorder};
+    height: 24rem;
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
   }
 `;
 
@@ -78,10 +91,6 @@ export const SC_ArticleListItem = styled(SC_BaseArticleListItem)`
   width: 90%;
   padding: 5px 0;
   margin-bottom: 2.5px;
-
-  @media (min-width: ${deviceSizes.md}) {
-    width: 47.5%;
-  }
 
   @media (min-width: ${deviceSizes.md}) {
     ${props => {

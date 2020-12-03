@@ -8,7 +8,10 @@ import { LayoutOrientation } from '../../../enums/LayoutOrientation';
 import { appBorderStyle, appColors, deviceSizes } from '../../../global/styles';
 
 export const imgSize = '260px';
-const padding = '4%';
+const padding = {
+  xs: '4%',
+  md: '2%',
+};
 
 export type S_Props = {
   layoutOrientation: LayoutOrientation;
@@ -40,6 +43,7 @@ const containerVerticalCss = css`
   flex-direction: column;
   position: relative;
   overflow: hidden;
+
   &:hover {
     border-right: 5px solid ${appColors.secondaryColor};
     border-bottom: 5px solid ${appColors.secondaryColor};
@@ -52,10 +56,7 @@ export const S_Container = styled(S_BaseContainer)<S_Props>`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  &:hover {
-    border-right: 5px solid ${appColors.secondaryColor};
-    border-bottom: 5px solid ${appColors.secondaryColor};
-  }
+
   @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
@@ -76,6 +77,10 @@ const imgHorizontalCss = css`
 
 const imgVerticalCss = css`
   width: 100%;
+
+  @media (min-width: ${deviceSizes.lg}) {
+    height: 200px;
+  }
 `;
 
 export const SC_Img = styled(S_BaseImg)<S_Props>`
@@ -90,7 +95,11 @@ export const SC_Img = styled(S_BaseImg)<S_Props>`
 `;
 
 const S_BaseDetails = styled.div`
-  padding: ${padding};
+  padding: ${padding.xs};
+
+  @media (min-width: ${deviceSizes.md}) {
+    padding: ${padding.md};
+  }
 `;
 
 const detailsHorizontalCss = css`
@@ -118,6 +127,10 @@ export const S_Details = styled(S_BaseDetails)<S_Props>`
     height: 175px;
   }
 
+  @media (min-width: ${deviceSizes.lg}) {
+    height: auto;
+  }
+
   @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
@@ -143,8 +156,13 @@ export const S_Corner = styled.div`
   }
 `;
 
-export const S_Title = styled.h5`
+export const S_Title = styled.h3`
   margin-top: 0;
+  margin-bottom: 0.5rem;
+
+  @media (min-width: ${deviceSizes.lg}) {
+    margin-top: 0.5rem;
+  }
 `;
 
 export const S_Excerpt = styled.p`
@@ -168,6 +186,10 @@ const verticalIconCss = css`
   @media (min-width: ${deviceSizes.sm}) {
     right: 1%;
     top: 1.5%;
+  }
+
+  @media (min-width: ${deviceSizes.lg}) {
+    right: 1.75%;
   }
 `;
 
