@@ -13,6 +13,11 @@ export const S_Container = styled.div`
   padding: ${containerPadding.xs} 0;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: ${deviceSizes.sm}) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const SC_Link = styled(Link)`
@@ -26,9 +31,6 @@ const SC_Link = styled(Link)`
 
   :first-child {
     margin-bottom: 5px;
-  }
-
-  @media (min-width: ${deviceSizes.xl}) {
   }
 `;
 

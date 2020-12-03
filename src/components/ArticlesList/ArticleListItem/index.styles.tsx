@@ -163,6 +163,7 @@ const verticalIconCss = css`
 
   @media (min-width: ${deviceSizes.sm}) {
     right: 1%;
+    top: 1.5%;
   }
 `;
 
