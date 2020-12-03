@@ -11,12 +11,13 @@ import {
 export const S_Container = styled.div`
   width: 100%;
   margin-bottom: 25px;
+  padding-top: 20px;
   @media (min-width: ${deviceSizes.xl}) {
     width: 70%;
   }
 `;
 
-export const S_YouCanFindMeParagraph = styled.p`
+export const S_MyEmail = styled.p`
   font-size: 1.1rem;
   margin-bottom: 0.8rem;
 `;
@@ -24,12 +25,16 @@ export const S_YouCanFindMeParagraph = styled.p`
 export const S_MailAddress = styled.a`
   color: ${appColors.primaryColor};
   text-decoration: none;
-  margin-left: 5px;
   display: inline-block;
+  margin-left: 5px;
 
   &:hover {
     color: ${appColors.secondaryColor};
   }
+`;
+
+export const S_SendMeAnEmail = styled.h1`
+  margin-bottom: 0.4rem;
 `;
 
 export const S_FormContainer = styled.div`

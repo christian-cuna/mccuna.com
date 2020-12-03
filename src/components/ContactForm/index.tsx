@@ -14,9 +14,10 @@ import {
   S_Input,
   S_Label,
   S_MailAddress,
+  S_MyEmail,
+  S_SendMeAnEmail,
   S_SubmitBtn,
   S_TextArea,
-  S_YouCanFindMeParagraph,
   SC_LabelIcon,
   SC_SubmitBtnIcon,
 } from './index.styles';
@@ -26,8 +27,8 @@ export type Props = {};
 /* TODO: Add e2e testing? */
 const ContactForm: FunctionComponent<Props> = () => (
   <S_Container>
-    <S_YouCanFindMeParagraph>
-      You can find me here:
+    <S_MyEmail>
+      My email:
       <S_MailAddress
         href='mailto:me@mccuna.com'
         target='_blank'
@@ -35,7 +36,8 @@ const ContactForm: FunctionComponent<Props> = () => (
       >
         me@mccuna.com
       </S_MailAddress>
-    </S_YouCanFindMeParagraph>
+    </S_MyEmail>
+    <S_SendMeAnEmail>Send me an email</S_SendMeAnEmail>
     <S_FormContainer>
       <S_FieldContainer>
         <S_Label htmlFor='name'>
