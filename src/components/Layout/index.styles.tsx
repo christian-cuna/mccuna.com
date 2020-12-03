@@ -5,9 +5,10 @@ import { deviceSizes } from '../../global/styles';
 export const mainContainerWidths = {
   xs: '95%',
   sm: '90%',
-  md: '80%',
-  lg: '70%',
-  xl: '60%',
+  md: '85%',
+  lg: '80%',
+  xl: '70%',
+  xxl: '60%',
 };
 
 export const S_Container = styled.div`
@@ -43,6 +44,9 @@ export const S_MainContainer = styled.div`
   }
   @media (min-width: ${deviceSizes.xl}) {
     width: ${mainContainerWidths.xl};
+  }
+  @media (min-width: ${deviceSizes.xxl}) {
+    width: ${mainContainerWidths.xxl};
   }
 `;
 

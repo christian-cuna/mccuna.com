@@ -59,7 +59,7 @@ const verticalArticleListItemCss = css`
   padding: 5px 0;
   margin-bottom: 2.5px;
 
-  @media (min-width: ${deviceSizes.lg}) {
+  @media (min-width: ${deviceSizes.xl}) {
     width: 30%;
     border-bottom: ${appBorderStyle.containerBorder};
     border-top: ${appBorderStyle.containerBorder};
@@ -75,7 +75,7 @@ export const SC_ArticleListItem = styled(SC_BaseArticleListItem)`
   @media (min-width: ${deviceSizes.md}) {
     width: 47.5%;
   }
-  @media (min-width: ${deviceSizes.lg}) {
+  @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? horizontalArticleListItemCss

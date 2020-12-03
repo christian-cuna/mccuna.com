@@ -18,7 +18,7 @@ export const S_Container = styled.div`
   margin-bottom: 25px;
 
   @media (min-width: ${deviceSizes.xl}) {
-    right: calc(calc(100% - ${mainContainerWidths.xl}) / 3);
+    right: 12.5%;
     position: fixed;
     width: 250px;
     top: 20%;

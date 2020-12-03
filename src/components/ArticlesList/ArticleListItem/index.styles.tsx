@@ -32,7 +32,9 @@ const S_BaseContainer = styled.div`
   }
 `;
 
-const containerHorizontalCss = css``;
+const containerHorizontalCss = css`
+  flex-direction: row;
+`;
 
 const containerVerticalCss = css`
   flex-direction: column;
@@ -43,14 +45,18 @@ const containerVerticalCss = css`
     border-bottom: 5px solid ${appColors.secondaryColor};
   }
 
-  @media (min-width: ${deviceSizes.lg}) {
-    border-bottom: ${appBorderStyle.containerBorder};
-  }
+  border-bottom: ${appBorderStyle.containerBorder};
 `;
 
 export const S_Container = styled(S_BaseContainer)<S_Props>`
-  ${containerVerticalCss};
-  @media (min-width: ${deviceSizes.lg}) {
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  &:hover {
+    border-right: 5px solid ${appColors.secondaryColor};
+    border-bottom: 5px solid ${appColors.secondaryColor};
+  }
+  @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? containerHorizontalCss
@@ -74,7 +80,7 @@ const imgVerticalCss = css`
 
 export const SC_Img = styled(S_BaseImg)<S_Props>`
   ${imgVerticalCss};
-  @media (min-width: ${deviceSizes.lg}) {
+  @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? imgHorizontalCss
@@ -108,7 +114,7 @@ const detailsVerticalCss = css`
 export const S_Details = styled(S_BaseDetails)<S_Props>`
   width: 100%;
   height: 200px;
-  @media (min-width: ${deviceSizes.lg}) {
+  @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? detailsHorizontalCss
@@ -163,7 +169,7 @@ export const SC_Icon = styled(({ layoutOrientation, ...props }) => (
   <S_BaseIcon {...props} />
 ))<S_Props>`
   ${verticalIconCss};
-  @media (min-width: ${deviceSizes.lg}) {
+  @media (min-width: ${deviceSizes.xl}) {
     ${props => {
       return props.layoutOrientation === LayoutOrientation.horizontal
         ? horizontalIconCss
