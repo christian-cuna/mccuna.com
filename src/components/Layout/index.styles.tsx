@@ -8,7 +8,6 @@ export const mainContainerWidths = {
   md: '85%',
   lg: '80%',
   xl: '70%',
-  xxl: '60%',
 };
 
 export const S_Container = styled.div`

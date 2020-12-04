@@ -1,210 +1,82 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
-import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { LayoutOrientation } from '../../../enums/LayoutOrientation';
-import { appBorderStyle, appColors, deviceSizes } from '../../../global/styles';
+import { appColors } from '../../../global/styles';
 
-export const imgSize = '260px';
-const padding = {
-  xs: '4%',
-  md: '2%',
-};
-
-export type S_Props = {
-  layoutOrientation: LayoutOrientation;
-};
-
-export const S_Link = styled(Link)`
-  display: block;
-  height: 100%;
-  color: initial;
+export const SC_Link = styled(Link)`
+  width: 600px;
+  height: 250px;
   text-decoration: none;
+  color: initial;
 `;
 
-const S_BaseContainer = styled.div`
+export const S_Container = styled.div`
   display: flex;
-  width: 100%;
-  height: 100%;
   align-items: center;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const containerHorizontalCss = css`
-  flex-direction: row;
-`;
-
-const containerVerticalCss = css`
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
-    border-right: 5px solid ${appColors.secondaryColor};
-    border-bottom: 5px solid ${appColors.secondaryColor};
-  }
-
-  border-bottom: ${appBorderStyle.containerBorder};
-`;
-
-export const S_Container = styled(S_BaseContainer)<S_Props>`
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-
-  @media (min-width: ${deviceSizes.xl}) {
-    ${props => {
-      return props.layoutOrientation === LayoutOrientation.horizontal
-        ? containerHorizontalCss
-        : containerVerticalCss;
-    }}
-  }
-`;
-
-const S_BaseImg = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
-  height: ${imgSize};
-  margin: 0;
-`;
-
-const imgHorizontalCss = css`
-  width: ${imgSize};
-`;
-
-const imgVerticalCss = css`
-  width: 100%;
-
-  @media (min-width: ${deviceSizes.lg}) {
-    height: 200px;
-  }
-`;
-
-export const SC_Img = styled(S_BaseImg)<S_Props>`
-  ${imgVerticalCss};
-  @media (min-width: ${deviceSizes.xl}) {
-    ${props => {
-      return props.layoutOrientation === LayoutOrientation.horizontal
-        ? imgHorizontalCss
-        : imgVerticalCss;
-    }}
-  }
-`;
-
-const S_BaseDetails = styled.div`
-  padding: ${padding.xs};
-
-  @media (min-width: ${deviceSizes.md}) {
-    padding: ${padding.md};
-  }
-`;
-
-const detailsHorizontalCss = css`
-  width: calc(100% - ${imgSize});
-  position: relative;
-  overflow: hidden;
-  height: 13rem;
-  border-right: ${appBorderStyle.containerBorder};
-
-  ${S_Container}:hover & {
-    padding-right: calc(${padding} - 5px);
-    border-right: 5px solid ${appColors.secondaryColor};
-    border-bottom: 5px solid ${appColors.secondaryColor};
-  }
-`;
-const detailsVerticalCss = css`
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 `;
 
-export const S_Details = styled(S_BaseDetails)<S_Props>`
-  width: 100%;
-
-  @media (min-width: ${deviceSizes.md}) {
-    height: 175px;
-  }
-
-  @media (min-width: ${deviceSizes.lg}) {
-    height: auto;
-  }
-
-  @media (min-width: ${deviceSizes.xl}) {
-    ${props => {
-      return props.layoutOrientation === LayoutOrientation.horizontal
-        ? detailsHorizontalCss
-        : detailsVerticalCss;
-    }}
-  }
+export const SC_Image = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
+  width: 250px;
+  height: 250px;
 `;
+
+const cornerWidth = '80px';
+const cornerHeight = '100px';
 
 export const S_Corner = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translateY(-50%) translatex(50%) rotate(-45deg);
-  display: inline-block;
   background-color: ${appColors.primaryColor};
-  height: 70px;
-  width: 70px;
-  z-index: 0;
+  width: ${cornerWidth};
+  height: ${cornerHeight};
+  transform: rotate(45deg);
+  position: absolute;
+  top: calc(calc(calc(${cornerHeight} / 2) + 0.5rem) * -1);
+  right: calc(calc(calc(${cornerWidth} / 2) + 0.5rem) * -1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 5px;
 
   ${S_Container}:hover & {
     background-color: ${appColors.secondaryColor};
   }
 `;
 
-export const S_Title = styled.h3`
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+export const SC_Icon = styled(FontAwesomeIcon)`
+  color: #fff;
+`;
 
-  @media (min-width: ${deviceSizes.lg}) {
-    margin-top: 0.5rem;
+const detailsYPadding = '20px';
+const detailsYBorderWidth = '3px';
+const detailsXPadding = '5px';
+const detailsXBorderWidth = '3px';
+
+export const S_Details = styled.div`
+  height: auto;
+  width: 350px;
+  border-right: 1px solid ${appColors.primaryColor};
+  padding: ${detailsYPadding} ${detailsXPadding};
+  position: relative;
+  overflow: hidden;
+
+  ${S_Container}:hover & {
+    padding-right: calc(${detailsXPadding} - ${detailsXBorderWidth});
+    border-right: ${detailsXBorderWidth} solid ${appColors.secondaryColor};
+    padding-bottom: calc(${detailsYPadding} - ${detailsYBorderWidth});
+    border-bottom: ${detailsYBorderWidth} solid ${appColors.secondaryColor};
+    padding-top: calc(${detailsYPadding} - ${detailsYBorderWidth});
+    border-top: ${detailsYBorderWidth} solid ${appColors.secondaryColor};
   }
+`;
+
+export const S_Title = styled.h3`
+  margin-bottom: 0.6rem;
 `;
 
 export const S_Excerpt = styled.p`
   margin-bottom: 0;
-`;
-
-const S_BaseIcon = styled(FontAwesomeIcon)`
-  position: absolute;
-  z-index: 1;
-  color: #fff;
-  top: 2%;
-`;
-
-const horizontalIconCss = css`
-  right: 1.5%;
-`;
-
-const verticalIconCss = css`
-  right: 1.5%;
-
-  @media (min-width: ${deviceSizes.sm}) {
-    right: 1%;
-    top: 1.5%;
-  }
-
-  @media (min-width: ${deviceSizes.lg}) {
-    right: 1.75%;
-  }
-`;
-
-// Prevent passing layoutOrientation to the FontAwesomeIcon
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const SC_Icon = styled(({ layoutOrientation, ...props }) => (
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  <S_BaseIcon {...props} />
-))<S_Props>`
-  ${verticalIconCss};
-  @media (min-width: ${deviceSizes.xl}) {
-    ${props => {
-      return props.layoutOrientation === LayoutOrientation.horizontal
-        ? horizontalIconCss
-        : verticalIconCss;
-    }}
-  }
 `;
