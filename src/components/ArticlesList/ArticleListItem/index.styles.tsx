@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { appColors } from '../../../global/styles';
 
 export const SC_Link = styled(Link)`
-  width: 350px;
+  width: 100%;
   height: 500px;
   text-decoration: none;
   color: initial;
@@ -22,7 +22,7 @@ export const S_Container = styled.div`
 `;
 
 export const SC_Image = styled(Img)<{ fluid: FluidObject | FluidObject[] }>`
-  width: 350px;
+  width: 100%;
   height: 300px;
 
   ${S_Container}:hover & {
