@@ -11,7 +11,7 @@ const OtherArticles: FunctionComponent<Props> = ({
   currentArticleBlogSlug,
 }) => {
   const { getRandomArticles } = useOtherArticles(currentArticleBlogSlug);
-  const articles = getRandomArticles(2);
+  const articles = getRandomArticles(3);
 
   return <SC_ArticlesList articles={articles} />;
 };

@@ -39,13 +39,9 @@ export const SC_FontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 export const SC_RssIcon = styled(SC_FontAwesomeIcon)`
-  &:hover {
-    color: ${brandColors.rssOrange};
-  }
+  color: ${brandColors.rssOrange};
 `;
 
 export const SC_GitHub = styled(SC_FontAwesomeIcon)`
-  &:hover {
-    color: ${brandColors.gitHubBlack};
-  }
+  color: ${brandColors.gitHubBlack};
 `;
