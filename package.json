@@ -98,7 +98,8 @@
     "typography-theme-noriega": "^0.16.19",
     "typography-theme-sutro": "^0.16.19",
     "unified": "^9.2.0",
-    "vfile": "^4.2.1"
+    "vfile": "^4.2.1",
+    "yup": "^0.32.1"
   },
   "repository": {
     "type": "git",

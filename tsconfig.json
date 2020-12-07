@@ -15,5 +15,5 @@
     "noEmit": true,
     "jsx": "react"
   },
-  "include": ["src/**/*", "backend/**/*", "custom.d.ts"]
+  "include": ["src/**/*", "src/backend/**/*", "custom.d.ts"]
 }
